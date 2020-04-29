@@ -42,7 +42,9 @@
 
 ### AWS
 
-* [建立現代 Web 應用程式](https://aws.amazon.com/tw/getting-started/projects/build-modern-app-fargate-lambda-dynamodb-python/)
+* [Build a Modern Web Application](https://aws.amazon.com/getting-started/hands-on/build-modern-app-fargate-lambda-dynamodb-python/)
+* [AWS: Getting Started](https://aws.amazon.com/tw/getting-started/)
+* [Learn to Build Websites on AWS](https://aws.amazon.com/tw/getting-started/hands-on/websites/)
 * [Deploy a NodeJS WebApp on AWS](https://aws.amazon.com/tw/getting-started/projects/deploy-nodejs-web-app/)
 
 ## Knowledge
