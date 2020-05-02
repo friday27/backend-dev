@@ -2,7 +2,7 @@
 
 ## JavaScript
 
-* Leetcode
+* [Leetcode note](./leetcode_note.md)
 * [Node.js official guide](https://nodejs.dev/how-much-javascript-do-you-need-to-know-to-use-nodejs)
 * [Eloquent JavaScript](https://eloquentjavascript.net/)
   * [JavaScript Notes](./javascript_notes.md)
