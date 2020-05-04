@@ -3,18 +3,21 @@
 ## JavaScript
 
 * [Leetcode note](./leetcode_note.md)
+* [Data Structures and Algorithms in JavaScript (Review)](https://github.com/friday27/javascript-algorithms)
+
 * [Node.js official guide](https://nodejs.dev/how-much-javascript-do-you-need-to-know-to-use-nodejs)
 * [Eloquent JavaScript](https://eloquentjavascript.net/)
   * [JavaScript Notes](./javascript_notes.md)
 
-### [Express.js](http://expressjs.com/en/starter/installing.html)
-
-### Node.js
+## Node.js
 
 * [Official Guide](https://nodejs.dev/)
 * [Node入門](https://www.nodebeginner.org/index-zh-tw.html)
 * [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-* Interview Questions
+
+### Interview Questions
+
+## [Express.js](http://expressjs.com/en/starter/installing.html)
 
 ### TypeScript
 
