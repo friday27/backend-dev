@@ -35,6 +35,15 @@
 
 58\. Length of Last Word  
 66\. Plus One  
+67\. Add Binary  
+
+    var addBinary = function(a, b) {
+      return (BigInt('0b'+a) + BigInt('0b'+b)).toString(2);
+    };
+
+69\. Sqrt(x) **Solve it without built-in methods !!!**  
+70\. Climbing Stairs  
+83\. Remove Duplicates from Sorted List **+1**  
 169\. Majority Element
 
     // my solution: map
@@ -66,7 +75,8 @@
       return parseInt(complement, 2\.;
     };
 
-771\. Jewels and Stones
+771\. Jewels and Stones  
+993\. Cousins in Binary Tree
 
 ## Medium Problems (Target: 50)
 
