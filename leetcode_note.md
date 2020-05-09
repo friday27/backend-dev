@@ -47,6 +47,15 @@
 88\. Merge Sorted Array **(Note: start from the end)**  
 100\. Same Tree  
 101\. Symmetric Tree  
+104\. Maximum Depth of Binary Tree  
+
+    // if the node does not exist, simply return 0. Otherwise, return the 1+the longer distance of its subtree.
+    var maxDepth = function(root) {
+      if (!root) return 0;
+      return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+    };
+
+107\. Binary Tree Level Order Traversal II  
 169\. Majority Element
 
     // my solution: map
@@ -57,6 +66,7 @@
     };
 
 278\. First Bad Version  
+367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 383\. Ransom Note  
 387\. First Unique Character in a String
 
@@ -80,7 +90,7 @@
 
 771\. Jewels and Stones  
 993\. Cousins in Binary Tree  
-1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/))
+1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 
 ## Medium Problems (Target: 50)
 
@@ -110,3 +120,6 @@
       }
       return maxArea;
     };
+
+15\. 3Sum  
+17\. Letter Combinations of a Phone Number (To be improved)  
