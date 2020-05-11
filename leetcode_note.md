@@ -56,6 +56,8 @@
     };
 
 107\. Binary Tree Level Order Traversal II  
+108\. Convert Sorted Array to Binary Search Tree **(To Be Improved)**  
+110\. Balanced Binary Tree  
 169\. Majority Element
 
     // my solution: map
@@ -88,8 +90,10 @@
       return parseInt(complement, 2);
     };
 
+733\. Flood Fill  
 771\. Jewels and Stones  
 993\. Cousins in Binary Tree  
+997\. Find the Town Judge  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 
 ## Medium Problems (Target: 50)
@@ -107,6 +111,7 @@
     let range2 = [...Array(5).keys].slice(1, 4).reverse();
     // [3, 2, 1]
 
+8\. String to Integer (atoi)  
 11\. **Container With Most Water (TBR !!!)**
 
     var maxArea = function(height) {
@@ -123,3 +128,4 @@
 
 15\. 3Sum  
 17\. Letter Combinations of a Phone Number (To be improved)  
+19\. Remove Nth Node From End of List  
