@@ -5,7 +5,6 @@
 * [Leetcode note](./leetcode_note.md)
 * [Data Structures and Algorithms in JavaScript (Review)](https://github.com/friday27/javascript-algorithms)
 
-* [Node.js official guide](https://nodejs.dev/how-much-javascript-do-you-need-to-know-to-use-nodejs)
 * [Eloquent JavaScript](https://eloquentjavascript.net/)
   * [JavaScript Notes](./javascript_notes.md)
 
@@ -35,9 +34,11 @@ Common: Factory, Singleton, Adapter, Sub/Pub, Template, Strategy, Proxy, flyweig
 * [Heroku Postgres](https://devcenter.heroku.com/categories/heroku-postgres)
 * SQL (PostgreSQL)
 * NoSQL (MongoDBs)
-* SQL Optimization, index, normalization, data structures, features
 
-* [[Book] Beginning Database Design Solutions](https://www.amazon.com/Beginning-Database-Design-Solutions-Stephens/dp/0470385499?creativeASIN=0470385499&linkCode=w61&imprToken=L36KtVQNa.lu-ZrptXxQNA&slotNum=2&tag=javamysqlanta-20) (Progress: p.61)
+* [[Book] Beginning Database Design Solutions](https://www.amazon.com/Beginning-Database-Design-Solutions-Stephens/dp/0470385499?creativeASIN=0470385499&linkCode=w61&imprToken=L36KtVQNa.lu-ZrptXxQNA&slotNum=2&tag=javamysqlanta-20)
+
+* SQL Optimization, index, normalization, data structures, features ... and more interview questions
+
 * [[Book] Six-Step Relational Database Design](https://www.amazon.com/-/zh/Six-Step-Relational-Database-DesignTM-Second-ebook-dp-B00CQSYOY2/dp/B00CQSYOY2/ref=mt_kindle?_encoding=UTF8&me=&qid=)
 
 ## REST APIs
@@ -86,6 +87,10 @@ XSS, SQL Injection, CSRF, hijacking clicking...
 * [AWS: Getting Started](https://aws.amazon.com/tw/getting-started/)
 * [Learn to Build Websites on AWS](https://aws.amazon.com/tw/getting-started/hands-on/websites/)
 * [Deploy a NodeJS WebApp on AWS](https://aws.amazon.com/tw/getting-started/projects/deploy-nodejs-web-app/)
+
+## System Design
+
+[Grokking the System Design Interview](https://www.educative.io/courses/grokking-the-system-design-interview)
 
 ## Distributed Systems
 
