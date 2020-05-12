@@ -1,5 +1,9 @@
 # Leetcode Note
 
+## TODOs
+
+* Review and check time and space complexity
+
 ## Easy Problems (Target: 100 / 321)
 
 1\. Two Sum  
@@ -58,6 +62,9 @@
 107\. Binary Tree Level Order Traversal II  
 108\. Convert Sorted Array to Binary Search Tree **(To Be Improved)**  
 110\. Balanced Binary Tree  
+111\. Minimum Depth of Binary Tree (time: O(n), space: O(n) for BFS)  
+112\. Path Sum (time: O(n)  for DFS)  
+118\. Pascal's Triangle  
 169\. Majority Element
 
     // my solution: map
@@ -129,3 +136,23 @@
 15\. 3Sum  
 17\. Letter Combinations of a Phone Number (To be improved)  
 19\. Remove Nth Node From End of List  
+22\. Generate Parentheses
+
+    var generateParenthesis = function(n) {
+      const res = [];
+
+      function generate(left, right, str) {
+        if (left > right) return;
+        if (left === 0 && right === 0) {
+          res.push(str);
+          return;
+        }
+        if (left > 0) generate(left-1, right, str+'(');
+        if (right > 0) generate(left, right-1, str+')');
+      };
+
+      generate(n, n, '');
+      return res;
+    };
+
+540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
