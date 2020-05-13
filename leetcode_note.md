@@ -65,6 +65,9 @@
 111\. Minimum Depth of Binary Tree (time: O(n), space: O(n) for BFS)  
 112\. Path Sum (time: O(n)  for DFS)  
 118\. Pascal's Triangle  
+119\. Pascal's Triangle II  
+121\. Best Time to Buy and Sell Stock  
+122\. Best Time to Buy and Sell Stock II  
 169\. Majority Element
 
     // my solution: map
@@ -153,6 +156,43 @@
 
       generate(n, n, '');
       return res;
+    };
+
+24\. Swap Nodes in Pairs (time: O(n))
+
+    var swapPairs = function(head) {
+      if (!head || !head.next) return head;
+      const p1 = head, p2 = head.next, p3 = p2.next;
+      p2.next = p1;
+      p1.next = swapPairs(p3);
+      return p2;
+    };
+
+402\. Remove K Digits (time: O(n))
+
+    var removeKdigits = function(num, k) {
+      if (k >= num.length) return '0';
+
+      let remove = 0;
+      const stack = [];
+      for (let n of num) {
+        while (stack.length && n < stack[stack.length-1] && remove < k) {
+          stack.pop();
+          remove++;
+        }
+        stack.push(n);
+      }
+
+      while (remove < k) {
+        stack.pop();
+        remove++;
+      }
+
+      while (stack.length && stack[0] === '0') {
+        stack.shift();
+      }
+
+      return stack.length? stack.join(''): '0';
     };
 
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
