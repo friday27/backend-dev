@@ -1,5 +1,12 @@
 # Design Patterns
 
+Progress: [Prototype Pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#prototypepatternjavascript)
+
+## TODOs
+
+* Advantages and disadvantages
+* Real coding examples
+
 Design patterns are reusable solutions to commonly occurring problems in software design.
 
 Design patterns could be categorized in the following way:
@@ -12,6 +19,9 @@ These patterns deal with **object creation** mechanisms which optimize object cr
 ### Abstract factory
 ### Builder
 ### Prototype
+
+The prototype pattern creates objects based on a template of an existing object through cloning.
+
 ### Singleton
 
 The singleton pattern is used in scenarios when we need **exactly 1 instance** of a class.  
@@ -76,10 +86,82 @@ These types of patterns recognize, implement, and improve communication between 
 ### Command
 ### Iterator
 ### Mediator
+
+A mediator pattern is a behavioral design pattern that allows us to expose a unified interface through which the different parts of a system may communicate. (e.g. airport traffic control system)
+
 ### Memento
 ### Observer
 
-There're 2 main parts of the pattern: The first is a **subject** and the second is **observers**.
+The observer pattern is a design pattern where an object (subject) maintains a list of objects depending on it (observers), automatically notifying them of any changes to state.
+
+When a subject needs to notify observers about something interesting happening, it broadcasts a notification to the observers. When we no longer wish for a particular observer to be notified of changes by the subject they are registered with, the subject can remove them from the list of observers.
+
+		// model the list of dependent Observers a subject may have
+		function ObserverList(){
+			this.observerList = [];
+		}
+
+		ObserverList.prototype.add = function( obj ){
+			return this.observerList.push( obj );
+		};
+
+		ObserverList.prototype.count = function(){
+			return this.observerList.length;
+		};
+		 
+		ObserverList.prototype.get = function( index ){
+			if( index > -1 && index < this.observerList.length ){
+		    return this.observerList[ index ];
+		  }
+		};
+		 
+		ObserverList.prototype.indexOf = function( obj, startIndex ){
+		  var i = startIndex;
+		 
+		  while( i < this.observerList.length ){
+		    if( this.observerList[i] === obj ){
+		      return i;
+		    }
+		    i++;
+		  }
+		 
+		  return -1;
+		};
+		 
+		ObserverList.prototype.removeAt = function( index ){
+		  this.observerList.splice( index, 1 );
+		};
+
+		// model the Subject
+		function Subject(){
+		  this.observers = new ObserverList();
+		}
+		 
+		Subject.prototype.addObserver = function( observer ){
+		  this.observers.add( observer );
+		};
+		 
+		Subject.prototype.removeObserver = function( observer ){
+		  this.observers.removeAt( this.observers.indexOf( observer, 0 ) );
+		};
+		 
+		Subject.prototype.notify = function( context ){
+		  var observerCount = this.observers.count();
+		  for(var i=0; i < observerCount; i++){
+		    this.observers.get(i).update( context );
+		  }
+		};
+
+		// The Observer
+		function Observer(){
+		  this.update = function(){
+		    // ...
+		  };
+		}
+
+#### Observer v.s. Publish/Subscribe
+
+This differs from the Observer pattern as it allows any subscriber implementing an appropriate event handler to register for and receive topic notifications broadcast by the publisher.
 
 ### State
 ### Strategy
