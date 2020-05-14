@@ -2,7 +2,20 @@
 
 ## TODOs
 
+* Pass by value and pass by reference in JS
+* in v.c. includes
+* The meaning of ^ operator (136. Single Number)
+
 * Review and check time and space complexity
+
+* Design patterns - handwriting note!
+
+* To Read
+  * [Top Node.js Interview Questions You Must Prepare In 2020](https://www.edureka.co/blog/interview-questions/top-node-js-interview-questions-2016/)
+
+  * [The Comprehensive Guide to JavaScript Design Patterns](https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns)
+  * [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#introduction)
+  * [4 JavaScript Design Patterns You Should Know](https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know)
 
 ## Easy Problems (Target: 100 / 321)
 
@@ -68,6 +81,18 @@
 119\. Pascal's Triangle II  
 121\. Best Time to Buy and Sell Stock  
 122\. Best Time to Buy and Sell Stock II  
+125\. Valid Palindrome
+
+    // replace other than alphanumeric
+    const strippedString = s.replace(/\W/g, '');
+
+136\. Single Number
+
+    var singleNumber = function(nums) {
+      return nums.reduce((prev, curr) => prev^curr, 0);
+    };
+
+141\. Linked List Cycle  
 169\. Majority Element
 
     // my solution: map
@@ -168,6 +193,8 @@
       return p2;
     };
 
+29\. Divide Two Integers **[Read](https://leetcode.com/problems/divide-two-integers/discuss/13516/JavaScript-solution-with-O(logN)-time-and-O(logN)-stack-space)**  
+208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 402\. Remove K Digits (time: O(n))
 
     var removeKdigits = function(num, k) {
