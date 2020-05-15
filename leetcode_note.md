@@ -93,6 +93,9 @@
     };
 
 141\. Linked List Cycle  
+155\. Min Stack  
+160\. Intersection of Two Linked Lists  
+167\. Two Sum II - Input array is sorted  
 169\. Majority Element
 
     // my solution: map
@@ -223,3 +226,4 @@
     };
 
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
+918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
