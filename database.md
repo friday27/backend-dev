@@ -2,8 +2,6 @@
 
 Based on "Beginning Database Design Solutions, Rod Stephens"
 
-Progress: Ch.9 Common Design Patterns
-
 TODOs:
 
 * Go through examples after BCNF in Ch.7 Normalizing Data
