@@ -17,7 +17,7 @@
   * [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#introduction)
   * [4 JavaScript Design Patterns You Should Know](https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know)
 
-## Easy Problems (Target: 100 / 321)
+## Easy Problems
 
 1\. Two Sum  
 7\. Reverse Integer  
@@ -96,6 +96,7 @@
 155\. Min Stack  
 160\. Intersection of Two Linked Lists  
 167\. Two Sum II - Input array is sorted  
+168\. Excel Sheet Column Title **(Review - recursive)**  
 169\. Majority Element
 
     // my solution: map
@@ -105,6 +106,8 @@
       return nums[Math.floor(nums.length/2)];
     };
 
+171\. Excel Sheet Column Number  
+172\. Factorial Trailing Zeroes **(Review - recursive)**  
 278\. First Bad Version  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 383\. Ransom Note  
@@ -134,7 +137,7 @@
 997\. Find the Town Judge  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 
-## Medium Problems (Target: 50)
+## Medium Problems
 
 2\. Add Two Numbers  
 3\. **Longest Substring Without Repeating Characters (TBR !!!)**  
@@ -198,6 +201,7 @@
 
 29\. Divide Two Integers **[Read](https://leetcode.com/problems/divide-two-integers/discuss/13516/JavaScript-solution-with-O(logN)-time-and-O(logN)-stack-space)**  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
+328\. Odd Even Linked List  
 402\. Remove K Digits (time: O(n))
 
     var removeKdigits = function(num, k) {
@@ -227,3 +231,7 @@
 
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
+
+## SQL
+
+175\. Combine Two Tables  
