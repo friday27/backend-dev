@@ -229,6 +229,7 @@
       return stack.length? stack.join(''): '0';
     };
 
+438\. Find All Anagrams in a String (sliding window)  
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
 
