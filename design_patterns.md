@@ -1,8 +1,11 @@
 # Design Patterns
 
-Progress: [Prototype Pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#prototypepatternjavascript)
+Progress:
+[Prototype Pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#prototypepatternjavascript)
 
 ## TODOs
+
+* Re-read from the beginnng and handcraft every code
 
 * Advantages and disadvantages
 * Real coding examples
