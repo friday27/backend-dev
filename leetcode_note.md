@@ -17,6 +17,23 @@
   * [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#introduction)
   * [4 JavaScript Design Patterns You Should Know](https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know)
 
+## Notes
+
+* [3 ways to merge 2 arrays](https://www.samanthaming.com/tidbits/49-2-ways-to-merge-arrays/)
+
+      const arr1 = [1,2,3];
+      const arr2 = [4,5,6];
+
+      // method 1: using oncat with 2 versions
+      console.log([].concat(arr1, arr2));
+      console.log(arr1.concat(arr2));
+      
+      // method 2: using spread
+      console.log([...arr1, ...arr2]);
+
+      // method 3: using push
+      console.log(arr1.push(...arr2));
+
 ## Easy Problems
 
 1\. Two Sum  
@@ -108,6 +125,8 @@
 
 171\. Excel Sheet Column Number  
 172\. Factorial Trailing Zeroes **(Review - recursive)**  
+189\. Rotate Array  
+191\. Number of 1 Bits  
 278\. First Bad Version  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 383\. Ransom Note  
@@ -200,6 +219,8 @@
     };
 
 29\. Divide Two Integers **[Read](https://leetcode.com/problems/divide-two-integers/discuss/13516/JavaScript-solution-with-O(logN)-time-and-O(logN)-stack-space)**  
+33\. Search in Rotated Sorted Array **(Review)**  
+34\. Find First and Last Position of Element in Sorted Array **(To be improved from O(n) to O(log n))**  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 328\. Odd Even Linked List  
 402\. Remove K Digits (time: O(n))
@@ -231,8 +252,26 @@
 
 438\. Find All Anagrams in a String (sliding window)  
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
+567\. Permutation in String (sliding window) **(To be improved from O(n) to O(log n))**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
 
 ## SQL
 
 175\. Combine Two Tables  
+176\. Second Highest Salary
+
+    select (
+      select distinct Salary
+      from Employee
+      order by Salary desc
+      limit 1 offset 1) as SecondHighestSalary;
+
+181\. Employees Earning More Than Their Managers  
+182\. Duplicate Emails
+
+    select Email
+    from Person
+    group by Email
+    having count(Email) > 1;
+
+183\. Customers Who Never Order
