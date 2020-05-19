@@ -127,6 +127,29 @@
 172\. Factorial Trailing Zeroes **(Review - recursive)**  
 189\. Rotate Array  
 191\. Number of 1 Bits  
+198\. House Robber **(Review)**  
+202\. Happy Number  
+203\. Remove Linked List Elements  
+204\. Count Primes
+
+    var countPrimes = function(n) {
+      let flagArray = [], result = 0;
+      for(let i = 2; i < n; i++){
+        if(flagArray[i] === undefined){
+          // is Primes
+          flagArray[i] = 1;
+          result++;
+          // rm it's multiples
+          let j = 2;
+          while(i * j < n){
+            flagArray[i * j] = 0;
+            j++;
+          }
+        }
+      }
+      return result;
+    };
+
 278\. First Bad Version  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 383\. Ransom Note  
@@ -221,6 +244,7 @@
 29\. Divide Two Integers **[Read](https://leetcode.com/problems/divide-two-integers/discuss/13516/JavaScript-solution-with-O(logN)-time-and-O(logN)-stack-space)**  
 33\. Search in Rotated Sorted Array **(Review)**  
 34\. Find First and Last Position of Element in Sorted Array **(To be improved from O(n) to O(log n))**  
+36\. Valid Sudoku  **(Review)**  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 328\. Odd Even Linked List  
 402\. Remove K Digits (time: O(n))
@@ -253,6 +277,7 @@
 438\. Find All Anagrams in a String (sliding window)  
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
 567\. Permutation in String (sliding window) **(To be improved from O(n) to O(log n))**  
+901\. Online Stock Span **(Review)**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
 
 ## SQL
@@ -275,3 +300,16 @@
     having count(Email) > 1;
 
 183\. Customers Who Never Order
+196\. Delete Duplicate Emails
+
+    delete p1
+    from Person p1, Person p2
+    where p1.Email = p2.Email
+    and p1.Id > p2.Id;
+
+197\. Rising Temperature
+
+    SELECT a.Id
+    FROM Weather a, Weather b
+    WHERE DATEDIFF(a.RecordDate, b.RecordDate)=1 
+    AND a.Temperature > b.Temperature;
