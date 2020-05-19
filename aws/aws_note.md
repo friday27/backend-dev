@@ -99,3 +99,32 @@ Based on [Udemy: Ultimate AWS Certified Developer Associate 2020](https://www.ud
     systemctl start httpd.service
     systemctl enable httpd.service
     echo "Hello World from $(hostname -f)" > /var/www/html/index.html
+
+### EC2 Instance Launch Type
+
+* On Demand Instances
+* Reserved (minimum 1 year)
+  * Reserved Instances
+  * Convertable Reserved Instances
+  * Scheduled Reserved Instances
+* Spot Instances (less reliable)
+* Dedicated Instances
+* Dedicated Hosts (an entire physical server, control instance placement) (BYOL, Bring Your Own License)
+
+### ENI, Elastic Network Interfaces
+
+* Logical component in a VPC that represents a virtual network card
+* You can create ENI independently and attach them on EC2 instances
+* Each ENI can have:
+  * Primary private IPv4, one or more secondary IPv4
+  * One Elastic IP (IPv4) per private IPv4
+  * One public IPv4
+  * One or more security groups
+  * A MAC address
+* Bound to specific availability zone (AZ)
+
+### AMI
+
+* An image to use to create our instances
+* AMIs can be built for Linux or Windows machines
+* **AMIs are built for a specific AWS region**

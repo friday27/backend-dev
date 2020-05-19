@@ -1,6 +1,6 @@
 # Clean Code
 
-Progress: Ch.3 Functions - Common Monadic Forms (p.41)
+Progress: Ch.7 Error Handling
 
 Based on **Clean Code - A Handbook of Agile Software Craftsmanship, Robert C. Martin**
 
@@ -23,7 +23,10 @@ There are two parts to learning craftsmanship: knowledge and work. You must gain
   * Functions should hardly ever be 20 lines long, and it would be better to keep it under 10 lines.
   * The blocks within if, else and while statements, and so on should be one line long. Probably that line should be a function call.
   * The indent level of a function should not be greater than one or two.
-  * The ideal number of arguments for a function is zero. Next comes one. Three arguments should be avoided where possible. More than three equires very special justification -- and then shouldn’t be used anyway.
+  * The ideal number of arguments for a function is zero. Next comes one. Three arguments should be avoided where possible. More than three equires very special justification -- and then shouldn’t be used anyway. When a function seems to need more than 2 or 3 arguments, it is likely that some of those arguments ought to be wrapped into a class of their own. Consider, for example, the difference between the two following declarations:
+
+      Circle makeCircle(double x, double y, double radius);
+      Circle makeCircle(Point center, double radius);
 
 * Function should do one thing only. One way to know that a function is doing more than "one thing" is if you can extract another function from it.
 
