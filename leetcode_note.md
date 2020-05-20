@@ -6,7 +6,7 @@
 * in v.c. includes
 * The meaning of ^ operator (136. Single Number)
 
-* Review and check time and space complexity
+* Study + Review + Complexity
 
 * Design patterns - handwriting note!
 
@@ -150,6 +150,9 @@
       return result;
     };
 
+205\. Isomorphic Strings **(Study!)**  
+206\. Reverse Linked List  
+217\. Contains Duplicate  
 278\. First Bad Version  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 383\. Ransom Note  
@@ -245,7 +248,9 @@
 33\. Search in Rotated Sorted Array **(Review)**  
 34\. Find First and Last Position of Element in Sorted Array **(To be improved from O(n) to O(log n))**  
 36\. Valid Sudoku  **(Review)**  
+39\. Combination Sum **(Study)**  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
+230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
 402\. Remove K Digits (time: O(n))
 
