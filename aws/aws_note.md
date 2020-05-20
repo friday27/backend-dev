@@ -4,10 +4,16 @@ Based on [Udemy: Ultimate AWS Certified Developer Associate 2020](https://www.ud
 
 ## TODOs
 
+* ALB hands on (34)
+* Review lecture PDF
+* Mock exam
+
 ## Basics
 
 * AWS Availability Zones (AZ) - Geographically-isolated (but connected) data centers
 * Check [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&loc=4) if the service you want to use is not supported in your current region.
+
+-----
 
 ## IAM, Identity and Access Management (Global Service)
 
@@ -17,6 +23,8 @@ Based on [Udemy: Ultimate AWS Certified Developer Associate 2020](https://www.ud
 * MFA (Multi Factor Authentication) can be setup (e.g. Google Authenticator app).
 * Least Privilege Principle: It's best to give users the minimal amount of permissions they need to perform their jobs.
 * 1 IAM user for 1 person; 1 IAM role for 1 application.
+
+-----
 
 ## EC2, Elastic Compute Cloud (Reginal Service)
 
@@ -128,3 +136,79 @@ Based on [Udemy: Ultimate AWS Certified Developer Associate 2020](https://www.ud
 * An image to use to create our instances
 * AMIs can be built for Linux or Windows machines
 * **AMIs are built for a specific AWS region**
+
+-----
+
+## ELB, EC2 Load Balancer
+
+* High availability
+  * High availability means running your application/system in at least 2 data centers (AZ).
+  * The goal is to survive a data center loss.
+
+* You can setup internal(private) or external(public) ELBs.
+
+* AWS has 3 types of manages load balancer
+  1. Classic Load Balancer (v1 - old generation), 2009
+      * Supports TCP (layer 4), HTTP, HTTPS (layer 7)
+      * Health checks are TCP ot HTTP based.
+      * Fixed hostname (xxx.region.elb.amazonaws.com)
+
+  2. Application Load Balancer (v2 - new generation), Layer 7 , 2016
+      * Support HTTP, HTTPS, WebSocket
+      * Support redirects (e.g. HTTP to HTTPS)
+      * Routing tables to different **target groups** based on:
+        * Path in URL (e.g. /users and /search)
+        * Hostname in URL
+        * Query strings and headers
+      * Target groups could be:
+        * EC2 instances (can be managed by an Auto Scailing Group) - HTTP
+        * ECS tasks (managed by ECS itself) - HTTP
+        * Lambda functions - HTTP requests is translated into a JSON event
+        * IP Addresses (must be private IPs)
+      * ALB can route to multiple target groups. Health checks are at the target group level.
+      * ALB is a great fit for micro services & container-based applications (e.g. Docker, Amazon EC2)
+      * Has a port mapping feature to redirect to a dynamic port in ECS
+      * Fixed hostname (xxx.region.elb.amazonaws.com)
+      * The application servers don't see the IP of client directly. The true IP of the client is inserted in the header X-Forwarded-For
+
+  3. Network Load Balancer (v2 - new generation), Layer 4, 2017 (not included in free tier)
+      * Supports TCP, TLS (Secure TCP), UDP
+      * Handle millions of request per second
+      * Less latency ~ 100 ms (400 ms for ALB)
+      * NLB has **1 static IP per AZ** and supports assigning Elastic IP
+      * NLBs are used for extreme performance, TCP/UDP level traffic
+
+* Load Balancer Stickness
+  * Stickness: the same client is always redirected to the same instance behind a load balancer
+  * It works to CLB and ALB
+  * The cookie used for stickness has an expiration date you control
+  * Enabling stickness may bring imbalance to the load over the backend EC2 instances
+
+* Cross-Zone Load Balancing
+  * Each load balancer instance distributes evenly across all registered instances in all AZ
+  * CLB - Disabled by default, free to enable
+  * ALB - Always on (cannot be disabled), free
+  * NLB - Disabled by default, cost needed
+
+* SSL/TLS Basics
+  * SSL refers to Secure Socket Layer, used to encrypted connections
+  * TLS refers to Transport Layer Security, which is newer version
+  * A SSL certificate allows traffic between your clients and your load balancer to be ecrypted in transit (in-flight encryption)
+  * Public SSL certificates are issued by Certificate Authorities (CA)
+  * SSL certificates have an expiration date (you set) and must be renewed
+
+![SSL Certificate](./img/ssl-certificate.png)
+
+* SNI, Server Name Indication
+  * SNI solves the problem of loading multiple SSL certificates onto one web server (to server multiple websites)
+  * SNI is a newer protocal and requires the client to indicate the hostname of the target server in the initial SSL handshake. The server will find the correct certificate or return the default one
+  * SNI only works for ALB, NLB, CloudFront
+
+* SSL Certificates
+  * CLBs support only 1 SSL certificate. Must use multiple CLBs for hostnames with multiple SSL certificates
+  * ALBs/NLBs support multiple listeners with multiple SSL certificates and use SNI to make it work
+
+* Connection Draining (Deregistration Delay)
+  * It's the time to complete "in-flight requests" while the instance is de-registering or unhealthy
+  * ELB will stop sending new requests to the instance which is de-registering
+  * Deregistration Delay will be 300 seconds by default (can be set from 0 (disabled) to 3600 seconds)
