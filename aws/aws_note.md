@@ -24,8 +24,6 @@ Based on [Udemy: Ultimate AWS Certified Developer Associate 2020](https://www.ud
 * Least Privilege Principle: It's best to give users the minimal amount of permissions they need to perform their jobs.
 * 1 IAM user for 1 person; 1 IAM role for 1 application.
 
------
-
 ## EC2, Elastic Compute Cloud (Reginal Service)
 
 * It mainly consists in the capability of:
@@ -133,7 +131,7 @@ Based on [Udemy: Ultimate AWS Certified Developer Associate 2020](https://www.ud
 
 ### AMI
 
-* An image to use to create our instances
+* An image to use to create our instances (e.g. Amazon Linux 2)
 * AMIs can be built for Linux or Windows machines
 * **AMIs are built for a specific AWS region**
 
@@ -175,7 +173,7 @@ Based on [Udemy: Ultimate AWS Certified Developer Associate 2020](https://www.ud
       * Supports TCP, TLS (Secure TCP), UDP
       * Handle millions of request per second
       * Less latency ~ 100 ms (400 ms for ALB)
-      * NLB has **1 static IP per AZ** and supports assigning Elastic IP
+      * NLB has **1 static IP per AZ** and supports assigning Elastic IP. **Network Load Balancers expose a public static IP, whereas an Application or Classic Load Balancer exposes a static DNS (URL).**
       * NLBs are used for extreme performance, TCP/UDP level traffic
 
 * Load Balancer Stickness
@@ -212,3 +210,24 @@ Based on [Udemy: Ultimate AWS Certified Developer Associate 2020](https://www.ud
   * It's the time to complete "in-flight requests" while the instance is de-registering or unhealthy
   * ELB will stop sending new requests to the instance which is de-registering
   * Deregistration Delay will be 300 seconds by default (can be set from 0 (disabled) to 3600 seconds)
+
+## ASG, Auto Scailing Groups
+
+* The goal of ASG is to:
+  * Scale out (add EC2 instances) to match an increased load
+  * Scale in (remove EC2 instances) to match decreased load
+  * Automatically register new instances to load balancer
+
+* ASG will scale based on CloudWatch alarms
+  * An alarm monitors a metric (such as average CPU)
+
+* Types of Scailing Policies
+  1. Target Tracking Scailing (e.g. the **average** ASG CPU to stay at around 40%)
+  2. Simple/Step Scailing: When a **CloudWatch alarm** is triggered (e.g. CPU > 70%), add 2 units. When a CloudWatch alarm is triggered (e.g. CPU < 30%), remove 1 unit.
+  3. Scheduled Action
+      * Anticipte a scailing based on known usage patterns
+      * e.g. increase the min capacity to 10 at 5 pm on Fridays
+
+* Scailing Cooldowns
+  * The cooldown period ensures that ASG group doesn't launch or terminate additional instances before previous scailing activity takes effect.
+  * Cooldowns can be customised to a specific **simple scailing policy**.
