@@ -154,6 +154,9 @@
 206\. Reverse Linked List  
 217\. Contains Duplicate  
 278\. First Bad Version  
+219\. Contains Duplicate II  
+225\. Implement Stack using Queues  
+226\. Invert Binary Tree  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 383\. Ransom Note  
 387\. First Unique Character in a String
@@ -249,6 +252,7 @@
 34\. Find First and Last Position of Element in Sorted Array **(To be improved from O(n) to O(log n))**  
 36\. Valid Sudoku  **(Review)**  
 39\. Combination Sum **(Study)**  
+40\. Combination Sum II (see 39)  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
@@ -284,6 +288,7 @@
 567\. Permutation in String (sliding window) **(To be improved from O(n) to O(log n))**  
 901\. Online Stock Span **(Review)**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
+1277\. Count Square Submatrices with All Ones **(Review)**  
 
 ## SQL
 
