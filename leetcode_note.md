@@ -157,6 +157,14 @@
 219\. Contains Duplicate II  
 225\. Implement Stack using Queues  
 226\. Invert Binary Tree  
+231\. Power of Two  
+
+    // (n & (n-1)) 消除到剩 1 or 0
+    var isPowerOfTwo = function(n) {
+      return n > 0 && (n & (n - 1)) === 0;
+    };
+
+232\. Implement Queue using Stacks  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 383\. Ransom Note  
 387\. First Unique Character in a String
@@ -284,6 +292,14 @@
     };
 
 438\. Find All Anagrams in a String (sliding window)  
+451\. Sort Characters By Frequency  
+
+    // sort dict by values
+    const sorted = Object.keys(hmap).sort((a, b) => hmap[b] - hmap[a])
+
+    // repeat char
+    result += char.repeat(hmap[char])
+
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
 567\. Permutation in String (sliding window) **(To be improved from O(n) to O(log n))**  
 901\. Online Stock Span **(Review)**  
