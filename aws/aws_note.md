@@ -4,7 +4,10 @@ Based on [Udemy: Ultimate AWS Certified Developer Associate 2020](https://www.ud
 
 ## TODOs
 
-* ALB hands on (34)
+* Hands On
+  * ALB (34)
+  * EBS (44)
+  * EFS (48)
 * Review lecture PDF
 * Mock exam
 
@@ -231,3 +234,136 @@ Based on [Udemy: Ultimate AWS Certified Developer Associate 2020](https://www.ud
 * Scailing Cooldowns
   * The cooldown period ensures that ASG group doesn't launch or terminate additional instances before previous scailing activity takes effect.
   * Cooldowns can be customised to a specific **simple scailing policy**.
+
+-----
+
+## EBS, Elastic Block Store
+
+* An EBS volume is a **network drive** you can attach to your instances while they run. It allows your instance to persist data. **It's locked to an AZ**
+
+### 4 EBS Volume Types
+
+EBS volumes are characterized in size, throughput, IOPS (I/O Ops Per Sec). Here are 4  EBS Volume Types:
+
+1. GP2 (SSD)
+  
+    General purpose SSD volume that balances price and performance for a wide variety of workloads
+
+    * Size: 1GB ~ 16 TB
+    * **3 IOPS/GB**, means at 5,334 GB we are at the max IOPS
+    * Small GP2 volumes can burst from MIN 100 IOPS to 3000 IOPS, Max IOPS is 16,000 (+ 1 TB = + 3000 IOPS)
+    * Use cases:
+      * Recommend for most workloads
+      * System boot volumes
+      * Virtual desktops
+      * Low-latency interactive apps
+      * Development and test environments
+
+2. IO1 (SSD)
+
+    Higest-performance SSD volume for mission-critical low-latency or high throughput workloads. Only GP2 and IO1 can be used as boot volumes
+
+    * Size: 4 GB ~ 16 TB
+    * **IOPS is provisioned (PIOPS)** - MIN 100, MAX 64,000 (Nitro instances) else MAX 32,000 (other instances)
+    * The maximum ratio of provisioned IOPS to requested volume size is 50:1 (in GB)
+    * Use cases:
+      * Critical business applications (requires sustained IOPS performance, or more than 16,000 IOPS per volume (GP2 limit))
+      * Large database workloads (MongoDB, Cassandra, MySQL...etc)
+
+3. ST1 (HDD)
+
+    Low cost HDD volume designed for frequently accessed, **throughput-intensive** workloads
+
+    * Cannot be a boot volume
+    * Size: 500 GB ~ 16 TB
+    * Max IOPS: 500
+    * Max throughput: 500 MB/s
+    * Use cases: big data, data warehouses, log processing, Apache Kafka
+
+4. SC1 (HDD)
+
+    **Lowest cost** HDD volume designed for infrequently accessed workloads
+
+    * Cannot be a boot volume
+    * Size: 500 GB ~ 16 TB
+    * Max IOPS: 250
+    * Max throughput: 250 MB/s
+
+### EBS v.s. Instance Store
+
+* Some instance doesn't come with Root EBS volumes, instead they come with instance store (ephemeral storage)
+* Instance store is physically attached to the machine, whereas EBS is a network drive
+* Pros of instance store:
+  * Better I/O performance (very high IOPS)
+  * Good for buffer/cache/scratch data/temporary content
+  * Data survives reboot
+  * Disk up to 7.5 GB, stripped to reach 30 GB
+* Cons:
+  * On stop or termination, the instance store is lost
+  * You can't resize the instance store
+  * Backups must be operated by the user
+  * Cannot be increased in size
+
+### [Hands on](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html)
+
+1. SSH into the instance
+2. `lsblk` will list all attached drives
+3. `sudo file -s /dev/nvme1n1` gets information about a device
+4. `sudo mkfs -t ext4 /dev/nvme1n1` creates a file system on the volume
+5. `sudo mkdir /data` creates a mount point directory for the volume. The mount point is where the volume is located in the file system tree and where you read and write files to after you mount the volume
+6. `sudo mount /dev/nvme1n1 /data` mounts the volume at the directory you created
+7. Test with `sudo touch hello.txt`
+8. To mount an attached volume automatically after reboot
+    * `sudo cp /etc/fstab /etc/fstab.orig`
+    * `sudo nano /etc/fstab`
+    * Add this line: `/dev/nvme1n1	/data	ext4	defaults,nofail	0 2`
+9. Check by `sudo file -s /dev/nvme1n1`
+10. Unmount data `sudo umount /data`
+11. Mount data `sudo mount /data`
+
+## EFS, Elastic File System
+
+Managed NFS (Network File System) that can be mounted on many EC2 instances **across AZ**.
+
+* Use cases: content management, web serving, data sharing, WordPress
+* Use NFSv4.1 protocol (for inbound rules)
+* Use security groups to control access to EFS
+* Compatible with Linux based AMI only
+* Encryption at rest using KMS
+* POSIX file system that has a standard file API
+* 1000s of concurrent NFS clients, 10 GB+/s throughput
+* Grow to PB-scale network file system automatically
+
+### Performance  modes
+
+1. General purpose (default): latency-sensitive use cases (web server, CMS..)
+2. Max I/O: higher latancy, throughput, highly parallel (big data, media processing)
+
+### Storage Tiers
+
+Storage Tiers (lifecycle management feature - move from from tier to tier after N days)
+
+1. Standard: for frequently accessed files
+2. Infrequently access (EFS-IA): cost to retrive files, lower price to store
+
+### EBS v.s. EFS
+
+* EBS volumes
+  * Can be attached to only one instance at a time
+  * Are locked at the AZ level
+  * GP2: IO increases if the disk size increases
+  * IO1: can increase IO independently
+  * To migrate an EBS volume across AZ
+    * Take a snapshot
+    * Restore the snapshot to another AZ
+    * EBS backups use IO and you shouldn’t run them while your application is handling a lot of traffic
+  * Root EBS Volumes of instances get terminated by default if the EC2 instance gets terminated. (you can disable that)
+
+* EFS
+  * Mounting 100s of instances across AZ
+  * EFS share website files (WordPress)
+  * Only for Linux Instances (POSIX)
+  * EFS has a higher price point than EBS
+  * Can leverage EFS-IA for cost savings
+
+-----
