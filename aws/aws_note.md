@@ -21,13 +21,15 @@
 IAM allows you to manage users and their levels of access to AWS console
 
 * IAM is universal. It does not apply to regions
-* IAM role: an IAM entity you use to delegate access to your AWS resources to users, groups or services
+* IAM role: a secure way to grant permissions to entities (users, groups or services) that you trust
 * IAM policy: a JSON document which defines one or more permissions
 
-* IAM Federation - Enterprises integrate their own repository of users with IAM using SAML standard (Active Directory).
-* MFA (Multi Factor Authentication) can be setup (e.g. Google Authenticator app).
-* Least Privilege Principle: It's best to give users the minimal amount of permissions they need to perform their jobs.
-* Basic rule: 1 IAM user for 1 person; 1 IAM role for 1 application.
+* IAM Federation - Enterprises integrate their own repository of users with IAM using SAML standard (Active Directory)
+* MFA (Multi Factor Authentication) can be setup (e.g. Google Authenticator app)
+* **Least Privilege Principle**: It's best to give users the minimal amount of permissions they need to perform their jobs
+* Always create groups then assign your users to that group
+* Basic rule: 1 IAM user for 1 person; 1 IAM role for 1 application
+* Security group: virtual firewall to allow traffic in and out to your instance
 
 -----
 
@@ -79,11 +81,34 @@ C - Compute
 P - Graphics  
 X - Extreme Memory  
 
-### EBS, Elastic Block Store
+### EC2 Lab
 
-You can think EC2 is a virtual server in the cloud, and EBS is a virtual disk. EBS allows you to create storage volumes and attach them to EC2 instances. EBS volumes are placed in **specific AZ**
+#### SSH into EC2 instance
 
-#### 4 EBS Volume Types
+1. Copy the public IP of your instance
+2. `chmod 0400 your_key.pem` (needed to solve **permission error exception**)
+3. `ssh -i your_key.pem ec2-user@your_public_ip` (Use `logout` to logout)
+
+#### Turn your Linux server into a web server through Apache
+
+1. SSH into the instance
+2. `sudo su` to switch to root account
+3. `yum update -y` to update the operating system
+4. `yum install httpd -y` to install Apache
+5. `service httpd start` or `systemctl start httpd.service` to start server
+6. `chkconfig httpd on` or `systemctl enable httpd.service` to make Apache come on automatically after reboot
+7. `service httpd status` or `systemctl status httpd.service` to check if Apache server is running
+8. `cd /var/www/html/` to check the root dir of web server
+9. `nano index.html` and add `<html><body><h1>Hello Cloud Gurus!</h1></body></html>`
+10. Now you can access to this newly created index.html from the public IP
+
+-----
+
+## EBS, Elastic Block Store
+
+You can think EC2 is a virtual server in the cloud, and EBS is a **virtual disk**. EBS allows you to create storage volumes and attach them to EC2 instances. EBS volumes are placed in **specific AZ**
+
+### 4 EBS Volume Types
 
 EBS volumes are characterized in size, throughput, IOPS (I/O Ops Per Sec). Here are 4  EBS Volume Types:
 
@@ -115,29 +140,96 @@ EBS volumes are characterized in size, throughput, IOPS (I/O Ops Per Sec). Here 
 
 -----
 
-(old notes)
+## AMI, Amazon Machine Image
 
-## EC2
+* An image to use to create our instances (e.g. Amazon Linux 2)
+* AMIs can be built for Linux or Windows machines
+* **AMIs are built for a specific AWS region**
+
+-----
+
+## ELB, Elastic Load Balancers
+
+Load balancers help us balance our load across multiple different servers
+
+### 3 types of load balancer
+
+1. Application Load Balancer
+    * best suited for HTTP and HTTPS traffic
+    * operating at Layer 7
+    * application-aware
+
+2. Network Load Balancer
+    * Best suited for TCP traffic where extreme performance is required (handiling millions of requests per second)
+    * low latency
+    * operating at the connection level (Layer 4)
+
+3. Classic Load Balancer (legacy)
+    * Layer 7 (HTTP, HTTPS) and Layer 4 (TCP)
+    * X-forwarded
+    * Sticky sessions
+
+### Load balancer errors
+
+If your application stops responding, the CLB responsed with a 504 error (gateway timeout error). The issue could be at either web server layer or database layer. CLB will identify where the application is falling and scale it up or out if possible
+
+### X-Forwarded-For header
+
+When the instance wants to get the client IP (the IPv4 address of your end user) but only get private IP of load balancer, it can get the client IP from X-Forwarded-For header
+
+-----
+
+## Route53 (Amazon's DNS Service)
+
+Route53 allows you to:
+
+* Register domain names
+* [Create record sets by types](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html)
+* Map your domain names to EC2 instances, load balancers, S3 buckets
+
+-----
+
+## S3
+
+* [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/index.html)
+
+### S3 Lab
+
+#### Connect to AWS S3 from instance using Access Key ID
+
+1. SSH into an instance
+2. `aws configure` and use user's Access Key ID and Secret Access Key
+3. Create a bucket `aws s3 mb s3://acloudguru1234-xxxx`
+4. Test with `aws s3 ls`
+5. `echo "hello" > hello.txt`
+6. `aws s3 cp hello.txt s3://acloudguru1234-xxxx`
+7. `aws s3 ls s3://acloudguru1234-xxxx`
+
+#### Connect to AWS S3 from instance using IAM role (preferred from a security perspective)
+
+IAM roles allow you not to user Access Key IDs and Secret Access Keys
+
+1. Create an IAM role for S3 full access
+2. Instance/Instance Settings/Attach IAM Role
+3. SSH into the instance
+4. (optional) Remove old configs by `rm ~/.aws/config` and `rm ~/.aws/credentials`
+5. Test with `aws s3 ls`
+
+-----
+
+### VPC
+
+Virtual cloud data center
+
+-----
+
+(old notes)
 
 * It mainly consists in the capability of:
   * Renting virtual machines (EC2)
   * Storing data in virtual drives (EBS)
   * Distributing load across machines (ELB)
   * Scaling the services using an auto-scaling group (ASG)
-
-* Launch an instance
-  * The operating systme in saved in a disk called **storage**.
-  * It's better to add a tag called **Name** as it will show in the UI.
-  * Security Group: the firewall around your instance.
-  * Key pair allows you to ssh into the instance.
-
-* SSH into EC2 instance
-  1. Copy the public IP of your instance
-  2. `chmod 0400 EC2Turotial.pem` (needed to solve **permission error exception**)
-  3. `ssh -i EC2Tutorial.pem ec2-user@your_public_ip`
-  4. User `logout` to logout
-
-* SSH connection could be edited through EC2/Security Groups/Inbound rules
 
 ### Security Groups
 
@@ -172,19 +264,6 @@ EBS volumes are characterized in size, throughput, IOPS (I/O Ops Per Sec). Here 
   * You can only have 5 Elastic IP in your account (could ask AWS to increase that).
   * Overall, try to avoid using Elastic IP. Use a random public IP and register a DNS name to it. (more scalable), or use a Load Balancer.
 
-### Install Apache on EC2
-
-1. SSH into the instance
-2. `sudo su` to switch to root account
-3. `yum update -y` forces the machine to update itself
-4. `yum install -y https.x86_64`
-5. `systemctl start httpd.service`
-6. `systemctl enable httpd.service`
-7. `curl localhost:80`
-8. Add an inbound rule in security groups for HTTP (port 80) to solve **network timeout issue**
-9. Use browser to connect http://public_ip:80
-10. `echo "Hello World from $(hostname -f)" > /var/www/html/index.html`
-
 ### EC2 User Data
 
 * You could boostrap your instances using an EC2 User Data script, which will only run once at the instance first start.
@@ -210,12 +289,6 @@ EBS volumes are characterized in size, throughput, IOPS (I/O Ops Per Sec). Here 
   * One or more security groups
   * A MAC address
 * Bound to specific availability zone (AZ)
-
-### AMI
-
-* An image to use to create our instances (e.g. Amazon Linux 2)
-* AMIs can be built for Linux or Windows machines
-* **AMIs are built for a specific AWS region**
 
 -----
 
