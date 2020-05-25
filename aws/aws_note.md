@@ -138,6 +138,38 @@ EBS volumes are characterized in size, throughput, IOPS (I/O Ops Per Sec). Here 
     * Lowest cost per gigabyte of all EBS volume types that is bootable
     * Use case: infrequently accessed data + lowest storage cost is important
 
+### EBS Lab
+
+If you create an EBS volume from an encrypted snapshot, the volume will automatically be encrypted, vice versa
+
+#### How to create and attach an EBS Volume to EC2
+
+1. Create an encrypted EBS volume (remember to check the AZ which should be the same as your instance) and attach it to you instance
+2. SSH into the instance ans switch to root account `sudo su`
+3. Use `lsblk` to show all volumes
+4. Use `file -s /dev/xvdf` to check. "/dev/xvdf: data" means no data on the volume, so it's ok to create a file system
+5. Create a file system `mkfs -t ext4 /dev/xvdf`
+6. Create a folder `mkdir /filesystem` and mount it `mount /dev/xvdf /filesystem/`
+7. Use `lsblk` to check if it's mounted
+8. Use `umount -d /dev/xvdf`
+
+#### How to encrypt an EBS Volume attached to EC2
+
+1. Detach the volume from instance
+2. Create a snapshot of the volume
+3. Delete the volume
+4. Create a volume from the snapshot (Under EBS/Snapshots)
+5. Attach the newly created volume to EC2 instance
+6. Mount the volume to dir `mount /dev/xvdf /filesystem`
+7. Now you can see your old files `ls /filesystem`
+
+#### Create an encrypted snapshot of the root volume
+
+1. Create a snapshot of the volume
+2. Copy the snapshot with encryption
+3. Create an image from the new encrypted snapshot
+4. Launch an instance from the image
+
 -----
 
 ## AMI, Amazon Machine Image
@@ -176,6 +208,73 @@ If your application stops responding, the CLB responsed with a 504 error (gatewa
 ### X-Forwarded-For header
 
 When the instance wants to get the client IP (the IPv4 address of your end user) but only get private IP of load balancer, it can get the client IP from X-Forwarded-For header
+
+-----
+
+## RDS
+
+### OLTP v.s. OLAP
+
+Online Transaction Processing (OLTP) differs from Online Analytics Processing (OLAP) in terms of the types of queries you will run (e.g. OLTP - insertion, OLAP - calculate the net profit of a product)
+
+### AWS Database Types
+
+* RDS - OLTP (MySQL, PostgreSQL, Oracle, Aurora, MariaDB)
+* DynamoDB - NoSQL
+* RedShift - OLAP (big data)
+* Elasticache - In memory caching (Memcached, Redis)
+
+### Backups, Multi-AZ and Read Replicas
+
+* There're 2 types of backups for AWS:
+  1. Automated backups
+      * enabled by default
+      * recover your database to any point within a retention period (1~35 days)
+      * It allows you to do a point in time recovery down to a second
+      * The backup is stored in S3 (you get free space = the size of db)
+      * Backups are taken within a defined backup window. Storage I/O may be suspended and you may experience elevated latency
+  2. Database snapshots
+      * done manually
+      * DB snapshots are stored after you delete the original RDS instance, unlike automated backups
+* Restored version of the database will be a new RDS instance with a new DNS endpoint
+
+* Multi-AZ: Each RDS database has a exact copy (synchornously replicated) in a different AZ **for disaster recovery** only. The failover (of RDS DNS endppint) is automatically
+
+* Read Replica (**for performance/ scailing**)
+  * Assume 90% traffic is read traffic
+  * Read replicas allow you to have a read-only copy of the production database
+  * Using asynchronous replication from the primary RDS instance to the read replica
+  * You can have up to 5 read replicas of any database
+  * You can have a read replicain another region
+  * You can promote read replicas to databases (the replication will be broken)
+
+### RDS Lab
+
+#### Connect EC2 instance to RDS instance
+
+1. Create a RDS database
+2. Launch a new instance with bootstrape script
+
+        #!/bin/bash  
+        yum install httpd php php-mysql -y  
+        yum update -y  
+        chkconfig httpd on  
+        service httpd start  
+        echo "<?php phpinfo();?>" > /var/www/html/index.php
+        cd /var/www/html  
+        wget https://s3.amazonaws.com/acloudguru-production/connect.php
+
+3. SSH into the instance and go to /var/www/html
+4. Paste the endpoint of your RDS database to $hostname of connect.php
+5. Add inbound rule to the RDS security group for instance traffic
+    * Type: MySQL/Aurora
+    * Port: 3306
+    * Source: security group of the instance
+6. Browse public_ip/connect.php
+
+-----
+
+## Elasticache
 
 -----
 
