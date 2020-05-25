@@ -170,6 +170,9 @@
 237\. Delete Node in a Linked List  
 242\. Valid Anagram  
 257\. Binary Tree Paths  
+258\. Add Digits  
+263\. Ugly Number  
+268\. Missing Number  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 383\. Ransom Note  
 387\. First Unique Character in a String
@@ -266,6 +269,7 @@
 36\. Valid Sudoku  **(Review)**  
 39\. Combination Sum **(Study)**  
 40\. Combination Sum II (see 39)  
+43\. Multiply Strings **(Review)**  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
@@ -311,6 +315,7 @@
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
 986\. Interval List Intersections **(Review)**  
 1008\. Construct Binary Search Tree from Preorder Traversal  
+1035\. Uncrossed Lines **(Study: DP!)**  
 1277\. Count Square Submatrices with All Ones **(Review)**  
 
 ## SQL
