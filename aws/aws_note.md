@@ -274,7 +274,23 @@ Online Transaction Processing (OLTP) differs from Online Analytics Processing (O
 
 -----
 
-## Elasticache
+## Elasticache (for read-heavy applications)
+
+Scenarios:
+
+* Memcached
+  * object caching is your primary goal
+  * keep things as simple as possible
+  * running large cache nodes
+  * multithreaded/ multiple cores
+  * horizontally scale your cache
+
+* Redis
+  * more advanced data types (list, hash, set)
+  * sorting and ranking
+  * data persistent
+  * Multi-AZ
+  * pub/sub capailities are needed
 
 -----
 
