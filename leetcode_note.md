@@ -173,6 +173,15 @@
 258\. Add Digits  
 263\. Ugly Number  
 268\. Missing Number  
+283\. Move Zeroes  
+290\. Word Pattern  
+292\. Nim Game
+
+    var canWinNim = function(n) {return (n % 4 !== 0};
+
+299\. Bulls and Cows  
+389\. Find the Difference (XOR operation)  
+392\. Is Subsequence  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 383\. Ransom Note  
 387\. First Unique Character in a String
@@ -270,6 +279,7 @@
 39\. Combination Sum **(Study)**  
 40\. Combination Sum II (see 39)  
 43\. Multiply Strings **(Review)**  
+46\. Permutations  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
@@ -309,6 +319,7 @@
     // repeat char
     result += char.repeat(hmap[char])
 
+525\. Contiguous Array **(Review)**  
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
 567\. Permutation in String (sliding window) **(To be improved from O(n) to O(log n))**  
 901\. Online Stock Span **(Review)**  
