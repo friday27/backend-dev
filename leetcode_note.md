@@ -180,6 +180,11 @@
     var canWinNim = function(n) {return (n % 4 !== 0};
 
 299\. Bulls and Cows  
+303\. Range Sum Query - Immutable  
+326\. Power of Three **(Review)**  
+342\. Power of Four  
+344\. Reverse String  
+345\. Reverse Vowels of a String  
 389\. Find the Difference (XOR operation)  
 392\. Is Subsequence  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
@@ -193,6 +198,7 @@
       return -1;
     };
 
+404\. Sum of Left Leaves  
 476\. Number Complement (same as 1009.Complement of Base 10 Integer) (binary !!!)
 
     const findComplement = function(num) {
@@ -280,6 +286,19 @@
 40\. Combination Sum II (see 39)  
 43\. Multiply Strings **(Review)**  
 46\. Permutations  
+47\. Permutations II  
+
+    var rotate = function(matrix) {
+      matrix = matrix.reverse();
+      for (let i = 0; i < matrix.length; i++) {
+        for (let j = i+1; j < matrix.length; j++) {
+          const tmp = matrix[i][j];
+          matrix[i][j] = matrix[j][i];
+          matrix[j][i] = tmp;
+        }
+      }
+    };
+
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
@@ -322,6 +341,7 @@
 525\. Contiguous Array **(Review)**  
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
 567\. Permutation in String (sliding window) **(To be improved from O(n) to O(log n))**  
+886\. Possible Bipartition **(Study!)**  
 901\. Online Stock Span **(Review)**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
 986\. Interval List Intersections **(Review)**  
