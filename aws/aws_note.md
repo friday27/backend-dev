@@ -6,7 +6,9 @@
   * ALB (34)
   * EBS (44)
   * EFS (48)
-* Review lecture PDF
+* Review lecture PDF and notes
+* Review Guru comments
+* Review AWS FAQs (e.g. [S3 FAQs](https://aws.amazon.com/tw/s3/faqs/))
 * Mock exam
 
 ## Basics
@@ -304,9 +306,54 @@ Route53 allows you to:
 
 -----
 
-## S3
+## S3, Simple Storage Service
 
-* [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/index.html)
+[AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/index.html)
+
+* Object-based storage (not block-based) Objects consist of the following:
+  * key (name)
+  * value (data)
+  * version ID
+  * metadata (data about data, e.g. author, related projects...)
+  * subresources (bucker-specific configuration, e.g. bucker policies, access control lists, CORS - Cross Origin Resource Sharing, transfer acceleration)
+
+* Files can be up to 5TB
+* Files are stored in buckets (similar to folder)
+* Unlimited storage
+* S3 is a universal namespace
+
+* Data consistency model for S3
+  1. PUTS of new Objects: Read after Write consistency (immediately)
+  2. Overwrite PUTS and DELETES: eventual consistency (take some time)
+
+### S3 Storage Tiers/ Classes
+
+* S3: 99.9% availability, 99.999999999% durability
+* S3 - IA (Infrequently Accessed): Lower fee than S3, but you are charged a retrieval fee
+* S3 - One Zone IA: single AZ, 99.5% availability, cheapest
+* Reduced Redundancy Storage (depreciated)
+* Glacier: cheap but used for archival only. Optimised for data that is infrequently accessed and it takes hours to restore from Glacier
+* Intelligent Tiering
+  * Unknown and unpredictable access patterns
+  * 2 tiers - frequent and infrequent (automatically moves your data to most cost-effective tier based on frequency)
+
+![S3 Storage Tiers](./img/s3-storage-tiers.png)
+
+### S3 Security
+
+* All newly created buckets are private by default
+* You can set up access control to your buckets using:
+  1. Bucket Policies - Applied at a bucket level
+  2. Access Control Lists - Applied at an object level
+
+### S3 Encryption
+
+* In Transit: SSL/TLS
+* At Rest - Server Side Encryption (AWS manages the keys for you)
+  * SSE-S3: S3 Managed Keys
+  * SSE-KMS: AWS Key Management Service
+  * SSE-C: Server side encryption with customer provided keys
+* Client Side Encryption
 
 ### S3 Lab
 
