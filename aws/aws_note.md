@@ -6,10 +6,17 @@
   * ALB (34)
   * EBS (44)
   * EFS (48)
+* Lab
+  * CORS
 * Review lecture PDF and notes
 * Review Guru comments
 * Review AWS FAQs (e.g. [S3 FAQs](https://aws.amazon.com/tw/s3/faqs/))
 * Mock exam
+
+* Suggestions
+  * Share Lecture PDF
+  * Lab
+    * Tell the users in the beginning that if the following lab will cost them any amount of money
 
 ## Basics
 
@@ -317,7 +324,8 @@ Route53 allows you to:
   * metadata (data about data, e.g. author, related projects...)
   * subresources (bucker-specific configuration, e.g. bucker policies, access control lists, CORS - Cross Origin Resource Sharing, transfer acceleration)
 
-* Files can be up to 5TB
+* Files can be up to 5 TB
+  * The largest size file you can transfer using PUT is 5 GB
 * Files are stored in buckets (similar to folder)
 * Unlimited storage
 * S3 is a universal namespace
@@ -331,7 +339,7 @@ Route53 allows you to:
 * S3: 99.9% availability, 99.999999999% durability
 * S3 - IA (Infrequently Accessed): Lower fee than S3, but you are charged a retrieval fee
 * S3 - One Zone IA: single AZ, 99.5% availability, cheapest
-* Reduced Redundancy Storage (depreciated)
+* Reduced Redundancy Storage (depreciated): for data that is easily reproduced, such as thumbnails
 * Glacier: cheap but used for archival only. Optimised for data that is infrequently accessed and it takes hours to restore from Glacier
 * Intelligent Tiering
   * Unknown and unpredictable access patterns
@@ -348,12 +356,27 @@ Route53 allows you to:
 
 ### S3 Encryption
 
-* In Transit: SSL/TLS
-* At Rest - Server Side Encryption (AWS manages the keys for you)
-  * SSE-S3: S3 Managed Keys
-  * SSE-KMS: AWS Key Management Service
-  * SSE-C: Server side encryption with customer provided keys
-* Client Side Encryption
+* Encryption In-Transit: SSL/TLS
+* Encryption At Rest
+  * Server Side Encryption
+    * SSE-S3 (AWS manages the keys for you, aka Advanced Encryption Standard (AES) 256)
+    * SSE-KMS (like S3 with more functions)
+    * SSE-C (customer provided keys)
+  * Client Side Encryption (customer encrypted and provided keys)
+
+* We can use a Bucket Policy to prevent unencrypted files from being uploaded by using creating a policy which only allows requests including the **x-amz-server-side-encryption** parameter in the request header
+
+### CORS, Cross Origin Resource Sharing
+
+A way of allowing code in one S3 bucket to access or reference to code that is in another S3 bucket (Let one resource cross origin another resource)
+
+### S3 Performance Optimization
+
+* GET-intensive workloads: Use **CloudFront** CDN service
+
+* Mixed request type workloads: (for exam)
+  * In July 2018, Amazon announced a massive increase in S3 performance to 3500 PUTs and 5500 GETs per second, which negated random key names as following:
+  * S3 uses the key name of object to determine which partition an object will be stored in. Using sequential key names increases the likehood of having multiple objects stored on the same partition, which can cause I/O issues. By using a **random key name prefix** to key names, you can force S3 to distribute your keys across multiple partitions thus distributing the I/O workload
 
 ### S3 Lab
 
@@ -376,6 +399,24 @@ IAM roles allow you not to user Access Key IDs and Secret Access Keys
 3. SSH into the instance
 4. (optional) Remove old configs by `rm ~/.aws/config` and `rm ~/.aws/credentials`
 5. Test with `aws s3 ls`
+
+-----
+
+### CloudFront
+
+* CDN (Content Delivery Network): A CDN is a system of distributed servers that deliver webpages and other web content to users based on geographic location of the user, the origin of the webpage, and a content delivery server.
+
+* Edge Location: The location where content is cached and can also be written. Seperate to an AZ Region/AZ
+
+* 2 Types of CloudFront Distributions:
+  1. Web Distribution - Typically used for websites
+  2. RTMP (Real Time Messaging Protocal) - Used for media streaming
+
+* Amazon CloudFront can be used to deliver your entire website using a global network of edge locations. Requests will be automatically routed to the nearest edge location
+
+* CloudFront edge locations are utilised by S3 Transfer Accelaration to reducy latency for S3 uploads
+
+* Objects are cached for the life of the TTL (Time to Live)
 
 -----
 
