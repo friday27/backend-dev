@@ -5,6 +5,7 @@
 * Pass by value and pass by reference in JS
 * in v.c. includes
 * The meaning of ^ operator (136. Single Number)
+* bit manipulation
 
 * Study + Review + Complexity
 
@@ -188,6 +189,7 @@
 389\. Find the Difference (XOR operation)  
 392\. Is Subsequence  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
+374\. Guess Number Higher or Lower  
 383\. Ransom Note  
 387\. First Unique Character in a String
 
@@ -199,6 +201,7 @@
     };
 
 404\. Sum of Left Leaves  
+405\. Convert a Number to Hexadecimal  
 476\. Number Complement (same as 1009.Complement of Base 10 Integer) (binary !!!)
 
     const findComplement = function(num) {
@@ -299,9 +302,11 @@
       }
     };
 
+49\. Group Anagrams  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
+338\. Counting Bits  
 402\. Remove K Digits (time: O(n))
 
     var removeKdigits = function(num, k) {
