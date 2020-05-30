@@ -202,6 +202,9 @@
 
 404\. Sum of Left Leaves  
 405\. Convert a Number to Hexadecimal  
+409\. Longest Palindrome  
+412\. Fizz Buzz  
+414\. Third Maximum Number  
 476\. Number Complement (same as 1009.Complement of Base 10 Integer) (binary !!!)
 
     const findComplement = function(num) {
@@ -303,6 +306,7 @@
     };
 
 49\. Group Anagrams  
+50\. Pow(x, n) **(Review: recursive)**  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
