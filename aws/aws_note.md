@@ -4,9 +4,12 @@
 
 * Lab
   * CORS
+  * Make an Alexa Skill Lab
 * Review lecture PDF and notes
 * Review Guru comments
-* Review AWS FAQs (e.g. [S3 FAQs](https://aws.amazon.com/tw/s3/faqs/))
+* Review AWS FAQs
+  * [Lambda](https://aws.amazon.com/lambda/faqs/?nc1=h_ls)
+  * [S3 FAQs](https://aws.amazon.com/tw/s3/faqs/)
 * Mock exam
 
 * Suggestions
@@ -427,7 +430,7 @@ Virtual cloud data center
 AWS Lambda is an event-driven compute service where you can upload your code and create a Lambda function. AWS Lambda takes care of provisioning and managig servers that you use to run the code
 
 * Supported Languages: Node.js, Java, Python, C#, Go
-* Lambda scales horizontally
+* Lambda scales out (horizontally) automatically
 * Lambda functions are independent (1 event = 1 function)
 * Lambda is serverless
 * Lambda function can trigger other Lambda functions
@@ -441,13 +444,17 @@ AWS Lambda is an event-driven compute service where you can upload your code and
 * You can create an alias (e.g. PROD) and map it to the newest (and the most stable) version
 * You can also use aliases to split traffic, but you cannot apply it to $LATEST
 
+### Step Functions
+
+Step functions allow you to visualize and test your serverless applications
+
 -----
 
 ## [API Gateway](https://docs.aws.amazon.com/apigateway/api-reference/)
 
 An API is an Application Programming Interface (e.g. waiter in a restaurant, Expedia)
 
-* Types of APIs
+* Types of APIs (You can use API Gateway as both)
   * REST APIs (Representational State Transfer)
     * Uses JSON
     * Newer and more popular
@@ -459,10 +466,17 @@ An API is an Application Programming Interface (e.g. waiter in a restaurant, Exp
   * Serverless-ly connect to servers like Lambda & DynamoDB
   * Send each API endpoint to a different target
   * Run efficiently with low cost
-  * Scale effortlessly
+  * Scale automatically
   * Track and control usage by API Key
   * Throttle requests to prevent attacks
   * Connect to CloudFront to log all requests for monitoring
+  * Cache the most common requests to increase performance
+  * Can split traffic using aliases to different versions (but $LATEST not included)
+
+* API Throttling
+  * By default, API Gateway limit the steady-state request rate to 10,000 requests per second (rps)
+  * The maximum concorrent (in millisecond) requests is 5000 requests across all APIs within an AWS account
+  * Over the upperbound (10,000 rps or 5000 concurrent requests) -> Error: 427 too many requests
 
 * Same Origin Policy
 
@@ -474,6 +488,10 @@ An API is an Application Programming Interface (e.g. waiter in a restaurant, Exp
   It's forced by web browsers and ignored by tools like Postman and curl.
 
   CORS is one way the server at the other end can relax the Same Origin Policy. So when you see an error "Origin policy cannot be read by the remote resource", you need to enable CORS on API Gateway.
+
+* You can import an API from a Swagger v2.0 definition file into API Gateway
+  * POST - create a new API
+  * PUT - update an existing API
 
 ### Lab
 
@@ -504,3 +522,90 @@ An API is an Application Programming Interface (e.g. waiter in a restaurant, Exp
 10. Go to S3, set the bucket to public and upload index.html, error.html
 11. Go to Route 53 and set the alias target to S3 website endpoint
 12. Check the URL (from Route 53 or S3)
+
+#### Make an Alexa Skill Lab
+
+1. Create a public S3 bucket and set bucket policy to
+
+      {
+          "Version": "2012-10-17",
+          "Statement": [
+              {
+                  "Sid": "PublicReadGetObject",
+                  "Effect": "Allow",
+                  "Principal": "*",
+                  "Action": "s3:GetObject",
+                  "Resource": "Bucket_ARN/*"
+              }
+          ]
+      }
+
+2. Go to Amazon Polly
+    * Paste some text and click Synthesize to S3
+    * Wait until the task is completed
+
+3. Go to Lambda
+    * Create function with the option "Browse serverless app repository"
+    * Select "alexa-skills-kit-nodejs-factskill" and deploy
+    * Add/Change the data utterances
+
+4. Go to [developer.amazon.com](developer.amazon.com)
+    * Create an Alexa skill
+    * Choose "Fact Skill" template
+    * Change invocation name
+    * Intent/ GetNewFactIntent/ Add a new sample utterance (e.g. a cloud fact)
+    * Save model and build model
+    * Go to "Test" tab and change env to development
+    * Test using "Alexa Simulator" and type your invocation
+
+5. Point the fact to mp3 file in S3 bucket
+    * Go to S3 bucket and copy the Object URL of the mp3 file
+    * Paste `'<audio src=\"mp3-url\" />'` as the only element in FACTS array of the data variable in Lambda
+
+-----
+
+## X-Ray
+
+AWS X-Ray is a service that collects data about requests that your application serves
+
+* X-Ray supported languages: Java, Go, Node.js, Python, Ruby, .NET
+
+* The X-Ray SDK provides:
+  * Interceptors to add to your code to trace incoming HTTP requests
+  * Client handlers to instrument AWS SDK clients that your application uses to call other AWS services
+  * An HTTP client to use to instrument calls to other internal and external HTTP web services
+
+-----
+
+## DynamoDB
+
+DynamoDB is a low-latency NoSQL database service which supports both document and key-value data models
+
+* Stored on SSD storage (Solid State Disk)
+* spread across 3 geographically distint data centers
+* Choice of 2 consistency models:
+  1. Eventually Consistency Reads (default) (within 1 second)
+  2. Strongly Consistency Reads (immediately)
+* Documents can be written in JSON, HTML or XML
+* You can use a special IAM condition parameter (dynamodb:\<LeadingKey\>) to restrict user access to only their records (access control)
+
+* Keywords
+  * Table
+  * Item (Row)
+  * Attribute (Column)
+
+* 2 types of DynamoDB primary key
+  1. Partition Key (unique) - use hash function to determine the partition or physical location which the data is stored
+  2. Composite Key (parition key + sort key)
+
+### Indexes
+
+* Indexes enable fast queries on specific data columns
+* In DynamoDB, 2 types of indexes are supported to help speed-up your DynamoDB queries:
+  1. Local Secondary Index
+      * can only be created when you're createing your table (cannot modify it later)
+      * has the same partition key as your original table but a different sort key
+
+  2. Global Secondary Index
+      * can be created and modified anytime
+      * different partition key and sort key
