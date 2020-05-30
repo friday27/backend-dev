@@ -205,6 +205,8 @@
 409\. Longest Palindrome  
 412\. Fizz Buzz  
 414\. Third Maximum Number  
+415\. Add Strings  
+434\. Number of Segments in a String  
 476\. Number Complement (same as 1009.Complement of Base 10 Integer) (binary !!!)
 
     const findComplement = function(num) {
