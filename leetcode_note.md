@@ -207,6 +207,7 @@
 414\. Third Maximum Number  
 415\. Add Strings  
 434\. Number of Segments in a String  
+437\. Path Sum III  
 476\. Number Complement (same as 1009.Complement of Base 10 Integer) (binary !!!)
 
     const findComplement = function(num) {
@@ -355,6 +356,7 @@
 886\. Possible Bipartition **(Study!)**  
 901\. Online Stock Span **(Review)**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
+973\. K Closest Points to Origin  
 986\. Interval List Intersections **(Review)**  
 1008\. Construct Binary Search Tree from Preorder Traversal  
 1035\. Uncrossed Lines **(Study: DP!)**  
