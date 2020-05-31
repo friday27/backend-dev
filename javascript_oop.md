@@ -4,9 +4,12 @@ Progress: p.3
 
 ## References
 
+* [Callbacks, Promises and Async/Await](https://medium.com/@Esakkimuthu/callbacks-promises-and-async-await-881b20a1666)
 * [A Guide to Object-Oriented Programming in JavaScript
 ](https://medium.com/better-programming/object-oriented-programming-in-javascript-b3bda28d3e81)
 * The Principles of Object-Oriented JavaScript 1st Edition, Kindle Edition by Nicholas C. Zakas
+
+## Some Basic Concepts
 
 ## Data Types
 
