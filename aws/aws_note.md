@@ -282,23 +282,40 @@ Online Transaction Processing (OLTP) differs from Online Analytics Processing (O
 
 -----
 
-## Elasticache (for read-heavy applications)
+## Elasticache
 
-Scenarios:
+* Elasticache: in-memory cache in the cloud
+* In general, Elasticache is for RDS and DAX is for DynamoDB
+
+### 2 types of Elasticache
 
 * Memcached
-  * object caching is your primary goal
+  * **object caching**
   * keep things as simple as possible
   * running large cache nodes
   * multithreaded/ multiple cores
   * horizontally scale your cache
+  * Not Multi-AZ
 
 * Redis
-  * more advanced data types (list, hash, set)
+  * **key-value store** and more complicated data structures like set and list
   * sorting and ranking
   * data persistent
   * Multi-AZ
+  * supports Master/Slace application
   * pub/sub capailities are needed
+
+### 2 caching strategies available
+
+* Lazy Loading
+  * loads the data into cache only when necessary
+  * returns null if the result is not in the cache, then fetch it from database for the next query
+  * Problem - Stale data (data in cache won't be updated while the data in database is updated)
+    * Solution - add TTL (Time To Live) to data
+    * Specify the number of seconds until the key expires to avoid keeping stale data in cache
+
+* Write-Through
+  * adds or updates data to the cache whenever data is written to the database
 
 -----
 
@@ -609,3 +626,72 @@ DynamoDB is a low-latency NoSQL database service which supports both document an
   2. Global Secondary Index
       * can be created and modified anytime
       * different partition key and sort key
+
+### Scan & Query API call
+
+* A Query operation finds items in a table using only the Primary Key attribute
+
+* Query results are always sorted ascendingly by Sort Key if there is one (You can set ScanIndexForward parameter to false to reverse the order for Query)
+
+* Query is generally more efficient than Scan: Scan dumps the entire table and applies filters on it (removes unwanted data -> extra step), so as the table grows, the Scan operation takes longer
+
+* By default, a Scan operation processes data sequentially in returning 1 MB increment before moving to the next 1 MB of data. It can only scan 1 partition at a time
+
+* When using Query, or Scan, DynamoDB returns all of the item attributes by default. To get just some, rather than all of the attributes, use a **Projection Expression**.
+
+* Improve performance
+  * Set a smaller page size
+  * Larger number of smaller operations
+  * Avoid using Scan when you can use Query
+  * Use parallel Scan (but best to avoid it if your table/index has a heavy read/write load)
+
+### DynamoDB Provisioned Throughput
+
+* DynamoDB Provisioned Throughput is measured in capacity units
+  * 1 write capacity unit = 1 KB write/s
+  * 1 read capacity unit = 1 strong consistent read of 4 KB/s or 2 eventually consistent read of 4 KB/s (default)
+  * Calculation: item size / 4 (KB) -> 無條件進位
+
+* DynamoDB On-Demand Capacity
+  * Except for Provisioned Throughput, you can use DynamoDB On-Demand Capacity for unpredictable workloads as you don't have to specify your read/write requirements
+  * Price model: pay per request
+
+#### ProvisionedThroughputExceededException
+
+* It happens when your request rate is too high for the read/write capacity provisioned on the DynamoDB table
+* SDK will automatically retries the requests until successful
+* If you are not using the SDK you can:
+  * Reduce request frequency
+  * Use Exponential Backoff (progressively longer waits between consecutive retries, e.g. 50ms, 100ms, 200ms... for improving flow control)
+* Exponential Backoff is a feature of every AWS SDK and applies to many AWS services
+
+### DynamoDB Accelerator (DAX)
+
+* DAX is a fully managed, clustered in-memory cache for DynamoDB (only for read performance)
+* Delivers up to a 10x read performance improvement
+* Ideal for read-heavy wordloads (e.g. auction, gaming, retail sites during promotion)
+
+* If the item is not available, then DAX performs a **evetually consistent GetItem** operation against DynamoDB
+
+* DAX is not suitable for
+  * applications that require strongly consistent reads
+  * write intensive applications
+  * applications that do not perform many read operations
+  * applications that do not require microsecond response time
+
+### DynamoDB Transactions
+
+* ACID Transactions (Atomic, Consistent, Isolated and Durable)
+* Read/Write multiple items across multiple tables as an all or nothing operation
+* Check for pre-requisite condition before writing to a table
+
+### DynamoDB Streams
+
+* Time-ordered sequence of item-level modifications (insert, update, delete) to your DynamoDB table
+* Logs are encrypted at rest and stored for 24 hrs
+* Accessed using a dedicated endpoint
+* By default the PK is recorded
+* Before and after images can be captured
+* Lambda can poll DynamoDb Stream and execute code based on the event
+
+![DynamoDB Streams](./img/dynamodb-streams.png)
