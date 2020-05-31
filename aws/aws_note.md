@@ -5,11 +5,16 @@
 * Lab
   * CORS
   * Make an Alexa Skill Lab
-* Review lecture PDF and notes
-* Review Guru comments
+
+* To Read
+  * [Choosing the Right DynamoDB Partition Key](https://aws.amazon.com/tw/blogs/database/choosing-the-right-dynamodb-partition-key/)
+
 * Review AWS FAQs
   * [Lambda](https://aws.amazon.com/lambda/faqs/?nc1=h_ls)
   * [S3 FAQs](https://aws.amazon.com/tw/s3/faqs/)
+
+* Review lecture PDF and notes
+* Review Guru comments
 * Mock exam
 
 * Suggestions
