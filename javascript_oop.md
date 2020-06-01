@@ -1,7 +1,5 @@
 # JavaScript OOP
 
-Progress: p.3
-
 ## References
 
 * [Callbacks, Promises and Async/Await](https://medium.com/@Esakkimuthu/callbacks-promises-and-async-await-881b20a1666)
@@ -11,7 +9,7 @@ Progress: p.3
 
 ## Some Basic Concepts
 
-## Data Types
+### Data Types
 
 * JavaScript uses two kinds of types: primitive and reference. Primitive types are stored as simple data types. Reference types are stored as objects, which are really just references to locations in memory. The tricky thing is that JavaScript lets you treat primitive types like reference types in order to make the language more consistent for the developer.
 * 5 primitive types in JavaScript:
@@ -20,6 +18,53 @@ Progress: p.3
   3. String (string or char)
   4. Null
   5. Undefined
+
+### Asynchronous
+
+Javscript is single-threaded. Each browser window has only one Javascript thread running inside them. If javascript engine is excuting some function at that time user interacts with web page, click event fires because of the interaction and the javascript engine is busy doing some other works, this event would be queued in the Event Queue.
+
+If someone says that Javascript is multi-threaded, means that you can manipulate JavaScript to behave in an asynchronous way. Here are a ways that Javascript achive asynchronous:
+
+1. Callbacks
+
+    Callback function is a function which will get called after execution of the first function and it will run as the second function. You can handle errors in the callback. However there's a scenario called **callback hell** or **pyramid of doom** that you absolutely want to avoid.
+
+        function loadImage(src, callback) { 
+          let img = document.createElement('img');
+          img.src = src;
+          img.onload = () => callback(img);
+          document.body.appendChild(img);
+        }
+
+        loadImage('first-image.png', (img, error) => {
+          if (error) {
+              // handle error
+          } else { 
+              console.log('image is loaded');
+          }   
+        })
+
+2. Promises
+
+    Promise object represents the eventual status (completion or failure) of an asynchronous operation and the resulting value.
+
+    Promise objectwill be in of the 3 possible states:
+    * Fulfilled: Action related to promise is succeded. ie. resolve() was called.
+    * Rejected: Action related to promise is failed. ie. reject() was called.
+    * Pending: Promise is still pending. ie. promise is not fulfilled or rejected yet.
+
+3. Async/Await
+
+    **await** is a new operator used to wait for a promise to resolve or reject. It can only be used inside **async function**.
+
+        async function myFunction() {
+          try {
+              const fulfilledvalue = await Promise;
+          }
+          catch(rejectValue){
+              //...
+          }
+        }
 
 ## Object, property, and method
 
