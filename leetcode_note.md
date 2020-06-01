@@ -35,6 +35,10 @@
       // method 3: using push
       console.log(arr1.push(...arr2));
 
+* Create an array with elements from 1 to n
+
+      const nums = Array.from({length: n}, (v, i) => i+1);
+
 ## Easy Problems
 
 1\. Two Sum  
@@ -208,6 +212,9 @@
 415\. Add Strings  
 434\. Number of Segments in a String  
 437\. Path Sum III  
+441\. Arranging Coins  
+448\. Find All Numbers Disappeared in an Array  
+455\. Assign Cookies  
 476\. Number Complement (same as 1009.Complement of Base 10 Integer) (binary !!!)
 
     const findComplement = function(num) {
@@ -255,6 +262,7 @@
       return maxArea;
     };
 
+12\. Integer to Roman  
 15\. 3Sum  
 17\. Letter Combinations of a Phone Number (To be improved)  
 19\. Remove Nth Node From End of List  
@@ -310,6 +318,9 @@
 
 49\. Group Anagrams  
 50\. Pow(x, n) **(Review: recursive)**  
+55\. Jump Game  
+56\. Merge Intervals  
+61\. Rotate List  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
