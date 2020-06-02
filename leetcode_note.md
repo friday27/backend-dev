@@ -215,6 +215,14 @@
 441\. Arranging Coins  
 448\. Find All Numbers Disappeared in an Array  
 455\. Assign Cookies  
+459\. Repeated Substring Pattern  
+461\. Hamming Distance  
+
+    // By default JavaScript will only replace the first matching value it finds
+    // Use /g to replace all matching characters
+    str.replace(/0/g, '');
+
+463\. Island Perimeter  
 476\. Number Complement (same as 1009.Complement of Base 10 Integer) (binary !!!)
 
     const findComplement = function(num) {
@@ -321,6 +329,7 @@
 55\. Jump Game  
 56\. Merge Intervals  
 61\. Rotate List  
+62\. Unique Paths **(Review!)**  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
