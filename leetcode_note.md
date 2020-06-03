@@ -190,6 +190,8 @@
 342\. Power of Four  
 344\. Reverse String  
 345\. Reverse Vowels of a String  
+349\. Intersection of Two Arrays  
+350\. Intersection of Two Arrays II  
 389\. Find the Difference (XOR operation)  
 392\. Is Subsequence  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
@@ -234,10 +236,12 @@
       return parseInt(complement, 2);
     };
 
+482\. License Key Formatting  
 733\. Flood Fill  
 771\. Jewels and Stones  
 993\. Cousins in Binary Tree  
 997\. Find the Town Judge  
+1029\. Two City Scheduling  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 
 ## Medium Problems
@@ -330,6 +334,7 @@
 56\. Merge Intervals  
 61\. Rotate List  
 62\. Unique Paths **(Review!)**  
+64\. Minimum Path Sum  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
