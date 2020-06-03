@@ -700,3 +700,29 @@ DynamoDB is a low-latency NoSQL database service which supports both document an
 * Lambda can poll DynamoDb Stream and execute code based on the event
 
 ![DynamoDB Streams](./img/dynamodb-streams.png)
+
+-----
+
+## KMS, Key Management Service
+
+An AWS service to create and control the encryption keys used to encrypt your data
+
+* Encryption keys are regional
+* KMS is multi-tenant
+
+* The Customer Master Key (CMK)
+  * can never be exported
+  * the key material can be either customer provided or AWS provided
+
+* KMS API Calls
+  * `aws kms encrypt`
+  * `aws kms decrypt`
+  * `aws kms re-encrypt`
+  * `aws kms enable-key-rotation`
+
+* Envelope Encrytion
+  * CMK (Customer Master Key or Master Key) is used to decrypt the data key (envelope key)
+  * Envelope Key is used to decrypt the data/plain text files
+
+    ![Envelope Encrytion](./img/envelope-encrytion.png)
+    ![Decryption](./img/decryption.png)
