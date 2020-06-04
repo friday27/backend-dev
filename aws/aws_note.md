@@ -726,3 +726,110 @@ An AWS service to create and control the encryption keys used to encrypt your da
 
     ![Envelope Encrytion](./img/envelope-encrytion.png)
     ![Decryption](./img/decryption.png)
+
+-----
+
+## SQS, Simple Queue Service
+
+Amazon SQS is a distributed queue system that enables web service applications to queue messages that one component in the application generates to be consumed by another component. A queue is a temporary repository for messages that are waiting processing.
+
+* SQS is a **pull-based** system (looking for a job to do)
+* Messages can contain up to 256 KB of text in any format
+* Messages can be kept in the queue from 1 minute to 14 days (default: 4 days)
+* SQS guarantees that your message will be processed at least once
+
+### 2 Types of Queue
+
+1. Standard Queues (default)
+    * nearly unlimited transactions
+    * output order might be different from input order
+
+2. FIFO Queues
+    * limited to 300 transaction per second (TPS)
+    * input/output orders are the same
+
+### SQS Visibility Timeout
+
+* The Visibility Timeout is the amount of time that the message is invisible in the SQS queue after a reader picks up the message
+* If the message is process before expired, the message will be deleted from the queue
+* Else it will be visible again and another reader will process it
+
+* Default: 30 seconds
+* Increase it if your task > 30 seconds
+* Maximum is 12 hours
+
+-----
+
+## SNS, Simple Notification Service (Synchronous)
+
+* Push-based delivery
+* Supported message format: SMS text message, email, SQS queue, HTTP endpoint
+* **Pub-sub (Publish-Substribe) model** whereby users subscribe to topics
+
+-----
+
+## SES, Simple Email Service (Asynchronous)
+
+* Suitable for automated emails
+* Can also be used to receive emails - incoming mails can be delivered automatically to an S3 bucket
+* incoming emails can also be used to trigger Lambda functions and SNS notifications
+
+-----
+
+## Kinesis
+
+* Streaming data - generated continously by thousands of data sources (e.g. purchases from online stores, stock prices, game data, social network data, geospatial data, iOT sensor data)
+
+* Kinesis is a platform to send your streaming data. There are 3 core Kinesis services:
+
+1. Kinesis Streams
+    * 24 hours to 7 days retention
+    * data are stored in **shards**
+    * Read - 5 transactions per second (up to 2 MB per second)
+    * write - up to 1000 records per second/ 1 MB per second
+    * The total capacity of the stream is the sum of capacities of its shards
+
+2. Kinesis Firehose
+    * Data will be analyze automatically (optional), then directly send to S3 or other storages (e.g. Redshift, Elasticsearch cluster)
+
+3. Kinesis Analytics
+    * allows you to run SQL queries on Kinesis Streams and Kinesis Firehose then store the result in S3/Redshift/Elasticsearch cluter
+
+-----
+
+## Elastic Beanstalk (EBS)
+
+* Elastic Beanstalk is a service for deploying and scailing web applications onto application server platforms like Apache Tomcat, Nginx, Passenger, Puma and IIS
+* Supported languages: Java, PHP, Python, Ruby, Go, Docker, .NET, Node.js
+* You can customize your Elastic Beanstalk environment using Elastic Beanstalk configuration files, which are
+  * writting in YAML or JSON format
+  * must have a .config extension
+  * be saved inside a top-level directory called .ebextensions
+
+### EBS Deployment Policies
+
+EBS supports several options for processing deployments:
+
+* All at once
+  * Deploys the new version to all instances simultaneously
+  * Instances will be out of service during deploying (not ideal for mission-critical production systems)
+  * If the update fails, you need to roll back the changes by re-deploying the original version to all instances
+
+* Rolling
+  * Deploys the new version in batches
+  * Out of service during deploying
+  * Not ideal for performance sensitive systems
+  * If the update fails, you need to perform an additional rolling update to roll back the changes
+
+* Rolling with additional batch
+  * Launches an additional batch of instances
+  * Deploys the new version in batches
+  * Maintains full capacity during the deployment process
+  * If the update fails, you need to perform an additional rolling update to roll back the changes
+
+* Immutable
+  * Deploys the new version to a fresh group of instances in their own new auto-scaling group
+  * When the new instances pass their health checks, they are moved to your existing auto scaling group, and the old instances are terminated
+  * Maintains full capacity during the deployment process
+  * The rollback process requires only terminating the new auto-scaling group
+  * Preferred option for mission critical production systems
