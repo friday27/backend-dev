@@ -6,6 +6,7 @@
 * in v.c. includes
 * The meaning of ^ operator (136. Single Number)
 * bit manipulation
+* JS regex matching
 
 * Study + Review + Complexity
 
@@ -237,6 +238,9 @@
     };
 
 482\. License Key Formatting  
+485\. Max Consecutive Ones  
+496\. Next Greater Element I  
+500\. Keyboard Row  
 733\. Flood Fill  
 771\. Jewels and Stones  
 993\. Cousins in Binary Tree  
@@ -335,6 +339,8 @@
 61\. Rotate List  
 62\. Unique Paths **(Review!)**  
 64\. Minimum Path Sum  
+71\. Simplify Path  
+73\. Set Matrix Zeroes  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
