@@ -758,6 +758,8 @@ Amazon SQS is a distributed queue system that enables web service applications t
 * Increase it if your task > 30 seconds
 * Maximum is 12 hours
 
+* The maximum long poll time out: 20 seconds
+
 -----
 
 ## SNS, Simple Notification Service (Synchronous)
@@ -765,6 +767,7 @@ Amazon SQS is a distributed queue system that enables web service applications t
 * Push-based delivery
 * Supported message format: SMS text message, email, SQS queue, HTTP endpoint
 * **Pub-sub (Publish-Substribe) model** whereby users subscribe to topics
+* SNS can be used with SQS to **fan out** SQS messages (or a single message) to multiple queues
 
 -----
 
@@ -833,3 +836,15 @@ EBS supports several options for processing deployments:
   * Maintains full capacity during the deployment process
   * The rollback process requires only terminating the new auto-scaling group
   * Preferred option for mission critical production systems
+
+### RDS & EBS
+
+2 different options for launching your RDS instance:
+
+1. Launch with Elastic Beanstalk
+    * When you terminate the EBS env, the database will also be terminated
+    * Suitable for Dev and Test env only
+
+2. Launch outside Elastic Beanstalk
+    * Require security group and connection information
+    * Suitable for Prod env, more flexible
