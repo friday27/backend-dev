@@ -848,3 +848,47 @@ EBS supports several options for processing deployments:
 2. Launch outside Elastic Beanstalk
     * Require security group and connection information
     * Suitable for Prod env, more flexible
+
+-----
+
+## CI/CD
+
+* CI (Continous Integration) - Integrating or merging code changes frequently, at least once per day (CodeCommit)
+
+* CD (Continous Delivery/Development) - Automating the build, test and deployment functions
+  * Continous Delivery - Manual decision (CodeCommit, CodeDeploy)
+  * Continous Development - fully automated (CodePipeline)
+
+### CodeCommit
+
+CodeCommit is a centralized code repository based on Git
+
+### CodeBuild
+
+### CodeDeploy
+
+2 CodeBuild Deployment Approaches
+
+1. In-Place Deployment
+    * the application is stopped on each instance and the new release is installed (Revision). aka a **Rolling Update**
+    * The instance will be out of service during the deployment, so the capacity is reduced. You should configure your Elastic Load Balancer to stop sending requests to the instance
+    * Roll back: Re-deploy the previous version which can be time consuming
+
+2. Blue/Green Deployment (the safest option)
+    * new instances are provisioned and the new release is installed on the new instances
+    * blue presents the active deployment, green is the new release
+    * Roll back: Set the Load Balancer to direct the traffic back to the original environment
+
+![2 CodeBuild Deployment Approaches](./img/codedeploy-diff.png)
+
+* Configuration files (AppSpec)
+  * For EC2 and on-premises systems: YAML only
+  * For Lambda, YAML and JSON are supported
+
+* Typical folder setup:
+  * appspec.yml (must be put in the root dir)
+  * Scripts/
+  * Config/
+  * Source/
+
+### CodePipeline
