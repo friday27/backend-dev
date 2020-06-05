@@ -40,6 +40,10 @@
 
       const nums = Array.from({length: n}, (v, i) => i+1);
 
+* Deep copy an array
+
+      const nums2 = nums.slice();
+
 ## Easy Problems
 
 1\. Two Sum  
@@ -241,6 +245,9 @@
 485\. Max Consecutive Ones  
 496\. Next Greater Element I  
 500\. Keyboard Row  
+501\. Find Mode in Binary Search Tree (To Be Improved)  
+504\. Base 7  
+506\. Relative Ranks  
 733\. Flood Fill  
 771\. Jewels and Stones  
 993\. Cousins in Binary Tree  
@@ -338,6 +345,7 @@
 56\. Merge Intervals  
 61\. Rotate List  
 62\. Unique Paths **(Review!)**  
+63\. Unique Paths II  
 64\. Minimum Path Sum  
 71\. Simplify Path  
 73\. Set Matrix Zeroes  
@@ -382,6 +390,7 @@
     result += char.repeat(hmap[char])
 
 525\. Contiguous Array **(Review)**  
+528\. Random Pick with Weight  
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
 567\. Permutation in String (sliding window) **(To be improved from O(n) to O(log n))**  
 886\. Possible Bipartition **(Study!)**  
