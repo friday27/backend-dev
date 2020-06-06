@@ -44,6 +44,10 @@
 
       const nums2 = nums.slice();
 
+* One-line swap
+
+      [nums[i], nums[j]] = [nums[j], nums[i]];
+
 ## Easy Problems
 
 1\. Two Sum  
@@ -248,6 +252,9 @@
 501\. Find Mode in Binary Search Tree (To Be Improved)  
 504\. Base 7  
 506\. Relative Ranks  
+507\. Perfect Number  
+509\. Fibonacci Number  
+520\. Detect Capital  
 733\. Flood Fill  
 771\. Jewels and Stones  
 993\. Cousins in Binary Tree  
@@ -349,6 +356,8 @@
 64\. Minimum Path Sum  
 71\. Simplify Path  
 73\. Set Matrix Zeroes  
+74\. Search a 2D Matrix  
+75\. Sort Colors  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
@@ -380,6 +389,7 @@
       return stack.length? stack.join(''): '0';
     };
 
+406\. Queue Reconstruction by Height **(Study)**  
 438\. Find All Anagrams in a String (sliding window)  
 451\. Sort Characters By Frequency  
 
