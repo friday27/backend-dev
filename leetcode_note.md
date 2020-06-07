@@ -399,6 +399,7 @@
     // repeat char
     result += char.repeat(hmap[char])
 
+518\. Coin Change 2 **(Study)**  
 525\. Contiguous Array **(Review)**  
 528\. Random Pick with Weight  
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
