@@ -2,12 +2,10 @@
 
 ## TODOs
 
-* Lab
-  * CORS
-  * Make an Alexa Skill Lab
-
 * To Read
   * [Choosing the Right DynamoDB Partition Key](https://aws.amazon.com/tw/blogs/database/choosing-the-right-dynamodb-partition-key/)
+  * [淺析 serverless 架構與實作](https://denny.qollie.com/2016/05/22/serverless-simple-crud/)
+  * [What is memory caching?](https://hazelcast.com/glossary/memory-caching/)
 
 * Review AWS FAQs
   * [Lambda](https://aws.amazon.com/lambda/faqs/?nc1=h_ls)
@@ -16,6 +14,7 @@
 * Review lecture PDF and notes
 * Review Guru comments
 * Mock exam
+* Labs
 
 * Suggestions
   * Share Lecture PDF
@@ -853,17 +852,22 @@ EBS supports several options for processing deployments:
 
 ## CI/CD
 
-* CI (Continous Integration) - Integrating or merging code changes frequently, at least once per day (CodeCommit)
+* CI (Continous Integration) - Integrating or merging code changes frequently, at least once per day **(CodeCommit)**
 
 * CD (Continous Delivery/Development) - Automating the build, test and deployment functions
-  * Continous Delivery - Manual decision (CodeCommit, CodeDeploy)
-  * Continous Development - fully automated (CodePipeline)
+  * Continous Delivery - Manual decision **(CodeCommit, CodeDeploy)**
+  * Continous Development - fully automated **(CodePipeline)**
 
 ### CodeCommit
 
 CodeCommit is a centralized code repository based on Git
 
+* If you want to get emails for every commit, you can configure Notifications in the console, this will create a CloudWatch Events rule to send a notification to an SNS topic which will trigger an email to be sent to the user
+
 ### CodeBuild
+
+* buildspec.yml
+  * Define the build commands and settings used by CodeBuild to run your build
 
 ### CodeDeploy
 
@@ -873,6 +877,7 @@ CodeCommit is a centralized code repository based on Git
     * the application is stopped on each instance and the new release is installed (Revision). aka a **Rolling Update**
     * The instance will be out of service during the deployment, so the capacity is reduced. You should configure your Elastic Load Balancer to stop sending requests to the instance
     * Roll back: Re-deploy the previous version which can be time consuming
+    * Lambda is not supported
 
 2. Blue/Green Deployment (the safest option)
     * new instances are provisioned and the new release is installed on the new instances
@@ -891,4 +896,44 @@ CodeCommit is a centralized code repository based on Git
   * Config/
   * Source/
 
+* Lifecycle event hooks are run in a specific order known as the Run Order
+
+* CodeDeploy uses tag to find the EC2 instance, so you need to create AppName tag while creating EC2 instance
+
 ### CodePipeline
+
+### Elastic Container Service (ECS)
+
+* ECS: runs your containers on clusters of virtual machines. (more control)
+* Fargate: (serverless) don't need to worry about the underlying EC2 instances
+* ECR: where you can store your container images (Docker or Windows Container)
+
+### CloudFormation
+
+* CloudFormation is a service that allows you to manage, configure and provision your AWS infrastructure as code
+
+* Supports YAML or JSON
+
+* The resulting resources are called a Stack
+
+* Main sections in the CloudFormation template:
+  * Parameters - input custom values
+  * Conditions (e.g. provision resources based on environment)
+  * Resources - (mandatory) the AWS resources to create
+  * Mappings - create custom mappings like Region: AMI
+  * Tranforms - used to **reference** code located in S3 and also for specifying the use of the Serverless Application Model (SAM) for Lambda deployments
+  * Outputs - used to output user defined data relating to the resources you have built and can also used as input to another CloudFormation stack
+
+* CloudFormation Nested Stacks allow re-use of CloudFormation code for common use cases
+  * Useful for frequently used configurations (e.g. load balancers, web or application servers)
+  * Simply create a CloudFormation template, store it in S3 and you can reference it in the Resources section of any CloudFormation template using the Stack resource type
+
+* If a part of your CloudFormation deployment fails due to a mis-configuration, by default, CloudFormation will rollback the entire stack
+
+* To prevent CloudFormation from deleting your entire stack on failure, you can:
+  1. Use the --disable-rollback flag with the AWS CLI
+  2. Set the 'Rollback on failure' radio button to No in the CloudFormation console
+
+### Serverless Application Model (SAM)
+
+* SAM is an extension to CloudFormation used to define serverless applications
