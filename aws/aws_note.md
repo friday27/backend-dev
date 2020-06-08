@@ -36,12 +36,47 @@ IAM allows you to manage users and their levels of access to AWS console
 * IAM role: a secure way to grant permissions to entities (users, groups or services) that you trust
 * IAM policy: a JSON document which defines one or more permissions
 
-* IAM Federation - Enterprises integrate their own repository of users with IAM using SAML standard (Active Directory)
 * MFA (Multi Factor Authentication) can be setup (e.g. Google Authenticator app)
 * **Least Privilege Principle**: It's best to give users the minimal amount of permissions they need to perform their jobs
 * Always create groups then assign your users to that group
 * Basic rule: 1 IAM user for 1 person; 1 IAM role for 1 application
 * Security group: virtual firewall to allow traffic in and out to your instance
+
+* IAM Federation - Enterprises integrate their own repository of users with IAM using SAML standard (Active Directory)
+
+### IAM policy
+
+There are 3 types of IAM policies available:
+
+1. Managed Policies
+    * created and administered by AWS
+    * for common use cases based on job functions (e.g. AmazonDynamoDBFullAccess)
+    * you cannot change the permissions defined in an AWS Managed Policy
+
+2. Customer Managed Policies
+    * a standalone policy that you create and administer inside your AWS account only
+    * you can copy Managed Policies and update it
+
+3. Inline Policies
+    * embedded within the user, group or role
+    * strict 1:1 relationship between the entity and the policy (i.e. Inline Policy cannot be attached to multiple entities)
+
+### Amazon Cognito
+
+* Web Identity Federation lets you give your users access to AWS resources after they have authenticated with a web-based identify provider like **Amazon, Facebook or Google**
+
+* The user authenticates first with the Web ID Provider and receives an authentication token, which is exchanged for temporary AWS credentials allowing them to assume an IAM role (A user authenticates with Facebook first. They are then given an ID token by Facebook, which they can then trade for temporary security credentials.)
+
+* Cognito provides Web Identity Federation with the following features:
+  * Sign-up and sign-in to your apps
+  * Access for guest users
+  * Synchronizes user data for multiple devices
+  * Recommended for all mobile applications
+
+* **User Pools** are user directories used to manage sign-up and sign-in functionality for mobile and web applications
+* **Identity Pools** enable you to create unique identities for your users and authenticate them with identity providers. With and identity, you can obtain temporary, limited-priviledge AWS credentials to access other AWS services
+
+* **Push Synchornization**: In order to provide a **seamless user experience** for your application, Cognito used Push Synchornization to push updates and synchornize user data across multiple devices
 
 -----
 
