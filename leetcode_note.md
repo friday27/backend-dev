@@ -255,6 +255,9 @@
 507\. Perfect Number  
 509\. Fibonacci Number  
 520\. Detect Capital  
+532\. K-diff Pairs in an Array (Review)  
+538\. Convert BST to Greater Tree **(Study)**  
+543\. Diameter of Binary Tree **(Review)**  
 733\. Flood Fill  
 771\. Jewels and Stones  
 993\. Cousins in Binary Tree  
@@ -358,6 +361,12 @@
 73\. Set Matrix Zeroes  
 74\. Search a 2D Matrix  
 75\. Sort Colors  
+77\. Combinations  
+78\. Subsets  
+
+    // append new element to the reference variable
+    arr.concat(nums[i])
+
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
