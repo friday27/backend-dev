@@ -11,9 +11,9 @@
   * [Lambda](https://aws.amazon.com/lambda/faqs/?nc1=h_ls)
   * [S3 FAQs](https://aws.amazon.com/tw/s3/faqs/)
 
-* Review lecture PDF and notes
-* Review Guru comments
-* Mock exam
+* Review Guru notes
+* Review Udemy pdf
+* Guru Mock exam
 * Labs
 
 * Suggestions

@@ -258,6 +258,10 @@
 532\. K-diff Pairs in an Array (Review)  
 538\. Convert BST to Greater Tree **(Study)**  
 543\. Diameter of Binary Tree **(Review)**  
+551\. Student Attendance Record I  
+557\. Reverse Words in a String III  
+559\. Maximum Depth of N-ary Tree  
+561\. Array Partition I  
 733\. Flood Fill  
 771\. Jewels and Stones  
 993\. Cousins in Binary Tree  
@@ -367,6 +371,8 @@
     // append new element to the reference variable
     arr.concat(nums[i])
 
+79\. Word Search **(Study!)**  
+80\. Remove Duplicates from Sorted Array II (To Be Improved)  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 230\. Kth Smallest Element in a BST  
 328\. Odd Even Linked List  
