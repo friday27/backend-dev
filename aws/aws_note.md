@@ -44,6 +44,8 @@ IAM allows you to manage users and their levels of access to AWS console
 
 * IAM Federation - Enterprises integrate their own repository of users with IAM using SAML standard (Active Directory)
 
+* IAM Policy Simulator allows you to test the effects of IAM policies before committing them to production
+
 ### IAM policy
 
 There are 3 types of IAM policies available:
@@ -368,6 +370,16 @@ Route53 allows you to:
 
 -----
 
+## AWS CLI Pagination
+
+* You can control the number of items included in the output when you run a CLI command
+
+* By default, the AWS CLI uses a page size of 1000 (i.e. 2500 objects -> CLI will make 3 API calls and display the entire output in one go)
+
+* To solve "time out" error, you can use `--page-size` option to have the CLI request a smaller number of items from each API call
+
+-----
+
 ## S3, Simple Storage Service
 
 [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/index.html)
@@ -503,6 +515,14 @@ AWS Lambda is an event-driven compute service where you can upload your code and
 ### Step Functions
 
 Step functions allow you to visualize and test your serverless applications
+
+### Lambda Concurrent Executions Limit
+
+* Safety feature to limit the number concurrent executions across all functions in a given region per account
+
+* Default: 1000 per region (429 - TooManyRequestException)
+
+* Reserved Concurrency can be set for critical functions which guarantees the number of concurrent executions are always available to the function (It would also be the maximum concurrent executions of the function)
 
 -----
 
@@ -772,6 +792,11 @@ Amazon SQS is a distributed queue system that enables web service applications t
 * Messages can be kept in the queue from 1 minute to 14 days (default: 4 days)
 * SQS guarantees that your message will be processed at least once
 
+* Managing large messages in S3. To store large SQS messages (256 KB to 2 GB), you'll need:
+  * S3 bucket
+  * AWS SDK for Java
+  * Amazon SQS Extended Client Library for Java
+
 ### 2 Types of Queue
 
 1. Standard Queues (default)
@@ -793,6 +818,12 @@ Amazon SQS is a distributed queue system that enables web service applications t
 * Maximum is 12 hours
 
 * The maximum long poll time out: 20 seconds
+
+### SQS Delay Queues
+
+* Postpone delivery of new messages to a queue for a number of seconds
+* Messaged sent to the Delay Queue remain invisible to customers for the duration of the deply period
+* Default delay is 0 second, maximum is 900
 
 -----
 
@@ -822,15 +853,24 @@ Amazon SQS is a distributed queue system that enables web service applications t
 1. Kinesis Streams
     * 24 hours to 7 days retention
     * data are stored in **shards**
-    * Read - 5 transactions per second (up to 2 MB per second)
-    * write - up to 1000 records per second/ 1 MB per second
+    * Read - 5 transactions per second, up to 2 MB per second
+    * write - 1000 records per second, up to 1 MB per second
     * The total capacity of the stream is the sum of capacities of its shards
+    * As your data rate increases, you increase the number of shards (known as resharding)
 
 2. Kinesis Firehose
     * Data will be analyze automatically (optional), then directly send to S3 or other storages (e.g. Redshift, Elasticsearch cluster)
 
 3. Kinesis Analytics
     * allows you to run SQL queries on Kinesis Streams and Kinesis Firehose then store the result in S3/Redshift/Elasticsearch cluter
+
+* Kinesis Client Library (KCL)
+  * runs on the customer instances (e.g. EC2 instances)
+  * tracks the number of shards in your stream
+  * discovers new shards when you reshard
+  * manages the number of record processors relative to the number of shards and consumers
+
+![Kinesis Client Library](./img/kinesis-client-library.png)
 
 -----
 
@@ -972,3 +1012,25 @@ CodeCommit is a centralized code repository based on Git
 ### Serverless Application Model (SAM)
 
 * SAM is an extension to CloudFormation used to define serverless applications
+
+-----
+
+## Monitoring
+
+* CloudWatch monitors performance
+* CloudTrail monitors API calls in the AWS platform
+* AWS Config records the state of your AWS environment and can notify you of changes
+
+### CloudWatch
+
+* You can store your log data in CloudWatch logs for as long as you want
+
+* Default interval: 3 or 5 minutes (detailed monitoring: 1 minute)
+
+* By default, the host level metrics of CloudWatch and EC2 are:
+  * CPU
+  * Network
+  * Disk
+  * Status Check
+
+* RAM Utilization is a custom metric
