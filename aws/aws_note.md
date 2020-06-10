@@ -13,7 +13,7 @@
 
 * Review Guru notes
 * Review Udemy pdf
-* Guru Mock exam
+* Guru Mock exam before 6/14
 * Labs
 
 * Suggestions
@@ -487,12 +487,6 @@ IAM roles allow you not to user Access Key IDs and Secret Access Keys
 
 -----
 
-## VPC
-
-Virtual cloud data center
-
------
-
 ## Lambda
 
 AWS Lambda is an event-driven compute service where you can upload your code and create a Lambda function. AWS Lambda takes care of provisioning and managig servers that you use to run the code
@@ -523,6 +517,12 @@ Step functions allow you to visualize and test your serverless applications
 * Default: 1000 per region (429 - TooManyRequestException)
 
 * Reserved Concurrency can be set for critical functions which guarantees the number of concurrent executions are always available to the function (It would also be the maximum concurrent executions of the function)
+
+### Lambda and VPCs (Virtual Private Cloud)
+
+* Lambda needs the following VPC configuration information so that it can connect to the VPC:
+  * private subnet ID (where your resources are located)
+  * security group ID
 
 -----
 
