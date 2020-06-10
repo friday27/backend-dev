@@ -48,11 +48,41 @@
 
       [nums[i], nums[j]] = [nums[j], nums[i]];
 
-## Easy Problems
+## Data Structures and Algorithms Problems
 
 1\. Two Sum  
+2\. Add Two Numbers  
+3\. **Longest Substring Without Repeating Characters (TBR !!!)**  
+4\. Median of Two Sorted Arrays  
+6\. [ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/discuss/614271/JavaScript-Solution)
+
+    const mat = Array(3).fill('');
+    // ['', '', '']
+
+    let range = [...Array(5).keys()];
+    // [0, 1, 2, 3, 4]
+
+    let range2 = [...Array(5).keys].slice(1, 4).reverse();
+    // [3, 2, 1]
+
 7\. Reverse Integer  
+8\. String to Integer (atoi)  
 9\. Palindrome Number  
+11\. **Container With Most Water (TBR !!!)**
+
+    var maxArea = function(height) {
+      let maxArea = 0;
+      let head = 0, tail = height.length - 1;
+      while (head < tail) {
+        const area = Math.min(height[head], height[tail]) * (tail-head);
+        if (area > maxArea) maxArea = area;
+        if (height[head] > height[tail]) tail--;
+        else head++;
+      }
+      return maxArea;
+    };
+
+12\. Integer to Roman  
 13\. Roman to Integer  
 14\. Longest Common Prefix **(reduce !!!)**
 
@@ -65,13 +95,68 @@
       });
     };
 
+15\. 3Sum  
+17\. Letter Combinations of a Phone Number (To be improved)  
+19\. Remove Nth Node From End of List  
 20\. Valid Parentheses  
-21\. Merge Two Sorted Lists (do not use condition to check null, use !variable instead)  
+21\. Merge Two Sorted Lists (do not use condition to check null, use !variable instead) 
+22\. Generate Parentheses
+
+    var generateParenthesis = function(n) {
+      const res = [];
+
+      function generate(left, right, str) {
+        if (left > right) return;
+        if (left === 0 && right === 0) {
+          res.push(str);
+          return;
+        }
+        if (left > 0) generate(left-1, right, str+'(');
+        if (right > 0) generate(left, right-1, str+')');
+      };
+
+      generate(n, n, '');
+      return res;
+    };
+
+24\. Swap Nodes in Pairs (time: O(n))
+
+    var swapPairs = function(head) {
+      if (!head || !head.next) return head;
+      const p1 = head, p2 = head.next, p3 = p2.next;
+      p2.next = p1;
+      p1.next = swapPairs(p3);
+      return p2;
+    };
+
 26\. Remove Duplicates from Sorted Array  
 27\. Remove Element  
 28\. Implement strStr()  
+29\. Divide Two Integers **[Read](https://leetcode.com/problems/divide-two-integers/discuss/13516/JavaScript-solution-with-O(logN)-time-and-O(logN)-stack-space)**  
+33\. Search in Rotated Sorted Array **(Review)**  
+34\. Find First and Last Position of Element in Sorted Array **(To be improved from O(n) to O(log n))**  
 35\. Search Insert Position  
+36\. Valid Sudoku  **(Review)**  
 38\. Count and Say  
+39\. Combination Sum **(Study)**  
+40\. Combination Sum II (see 39)  
+43\. Multiply Strings **(Review)**  
+46\. Permutations  
+47\. Permutations II  
+
+    var rotate = function(matrix) {
+      matrix = matrix.reverse();
+      for (let i = 0; i < matrix.length; i++) {
+        for (let j = i+1; j < matrix.length; j++) {
+          const tmp = matrix[i][j];
+          matrix[i][j] = matrix[j][i];
+          matrix[j][i] = tmp;
+        }
+      }
+    };
+
+49\. Group Anagrams  
+50\. Pow(x, n) **(Review: recursive)**  
 53\. **Maximum Subarray (TBR !!! Math.max())**
 
     var maxSubArray = function(nums) {
@@ -81,17 +166,32 @@
       return Math.max(...nums);
     };
 
+55\. Jump Game  
+56\. Merge Intervals  
 58\. Length of Last Word  
+61\. Rotate List  
+62\. Unique Paths **(Review!)**  
+63\. Unique Paths II  
+64\. Minimum Path Sum  
 66\. Plus One  
-67\. Add Binary  
-
-    var addBinary = function(a, b) {
-      return (BigInt('0b'+a) + BigInt('0b'+b)).toString(2);
-    };
-
 69\. Sqrt(x) **Solve it without built-in methods !!!**  
 70\. Climbing Stairs  
+71\. Simplify Path  
+73\. Set Matrix Zeroes  
+74\. Search a 2D Matrix  
+75\. Sort Colors  
+77\. Combinations  
+78\. Subsets  
+
+    // append new element to the reference variable
+    arr.concat(nums[i])
+
+79\. Word Search **(Study!)**  
+80\. Remove Duplicates from Sorted Array II (To Be Improved)  
+81\. Search in Rotated Sorted Array II (To Be Improved)  
+82\. Remove Duplicates from Sorted List II  
 83\. Remove Duplicates from Sorted List **+1**  
+86\. Partition List  
 88\. Merge Sorted Array **(Note: start from the end)**  
 100\. Same Tree  
 101\. Symmetric Tree  
@@ -166,11 +266,13 @@
 
 205\. Isomorphic Strings **(Study!)**  
 206\. Reverse Linked List  
+208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 217\. Contains Duplicate  
 278\. First Bad Version  
 219\. Contains Duplicate II  
 225\. Implement Stack using Queues  
 226\. Invert Binary Tree  
+230\. Kth Smallest Element in a BST  
 231\. Power of Two  
 
     // (n & (n-1)) 消除到剩 1 or 0
@@ -196,6 +298,8 @@
 299\. Bulls and Cows  
 303\. Range Sum Query - Immutable  
 326\. Power of Three **(Review)**  
+328\. Odd Even Linked List  
+338\. Counting Bits  
 342\. Power of Four  
 344\. Reverse String  
 345\. Reverse Vowels of a String  
@@ -215,16 +319,53 @@
       return -1;
     };
 
+402\. Remove K Digits (time: O(n))
+
+    var removeKdigits = function(num, k) {
+      if (k >= num.length) return '0';
+
+      let remove = 0;
+      const stack = [];
+      for (let n of num) {
+        while (stack.length && n < stack[stack.length-1] && remove < k) {
+          stack.pop();
+          remove++;
+        }
+        stack.push(n);
+      }
+
+      while (remove < k) {
+        stack.pop();
+        remove++;
+      }
+
+      while (stack.length && stack[0] === '0') {
+        stack.shift();
+      }
+
+      return stack.length? stack.join(''): '0';
+    };
+
 404\. Sum of Left Leaves  
 405\. Convert a Number to Hexadecimal  
+406\. Queue Reconstruction by Height **(Study)**  
 409\. Longest Palindrome  
 412\. Fizz Buzz  
 414\. Third Maximum Number  
 415\. Add Strings  
 434\. Number of Segments in a String  
 437\. Path Sum III  
+438\. Find All Anagrams in a String (sliding window)  
 441\. Arranging Coins  
 448\. Find All Numbers Disappeared in an Array  
+451\. Sort Characters By Frequency  
+
+    // sort dict by values
+    const sorted = Object.keys(hmap).sort((a, b) => hmap[b] - hmap[a])
+
+    // repeat char
+    result += char.repeat(hmap[char])
+
 455\. Assign Cookies  
 459\. Repeated Substring Pattern  
 461\. Hamming Distance  
@@ -254,181 +395,38 @@
 506\. Relative Ranks  
 507\. Perfect Number  
 509\. Fibonacci Number  
+518\. Coin Change 2 **(Study)**  
 520\. Detect Capital  
+525\. Contiguous Array **(Review)**  
+528\. Random Pick with Weight  
 532\. K-diff Pairs in an Array (Review)  
 538\. Convert BST to Greater Tree **(Study)**  
+540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
 543\. Diameter of Binary Tree **(Review)**  
 551\. Student Attendance Record I  
 557\. Reverse Words in a String III  
 559\. Maximum Depth of N-ary Tree  
 561\. Array Partition I  
+563\. Binary Tree Tilt  
+566\. Reshape the Matrix  
+567\. Permutation in String (sliding window) **(To be improved from O(n) to O(log n))**  
+572\. Subtree of Another Tree  
 733\. Flood Fill  
 771\. Jewels and Stones  
-993\. Cousins in Binary Tree  
-997\. Find the Town Judge  
-1029\. Two City Scheduling  
-1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
-
-## Medium Problems
-
-2\. Add Two Numbers  
-3\. **Longest Substring Without Repeating Characters (TBR !!!)**  
-6\. [ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/discuss/614271/JavaScript-Solution)
-
-    const mat = Array(3).fill('');
-    // ['', '', '']
-
-    let range = [...Array(5).keys()];
-    // [0, 1, 2, 3, 4]
-
-    let range2 = [...Array(5).keys].slice(1, 4).reverse();
-    // [3, 2, 1]
-
-8\. String to Integer (atoi)  
-11\. **Container With Most Water (TBR !!!)**
-
-    var maxArea = function(height) {
-      let maxArea = 0;
-      let head = 0, tail = height.length - 1;
-      while (head < tail) {
-        const area = Math.min(height[head], height[tail]) * (tail-head);
-        if (area > maxArea) maxArea = area;
-        if (height[head] > height[tail]) tail--;
-        else head++;
-      }
-      return maxArea;
-    };
-
-12\. Integer to Roman  
-15\. 3Sum  
-17\. Letter Combinations of a Phone Number (To be improved)  
-19\. Remove Nth Node From End of List  
-22\. Generate Parentheses
-
-    var generateParenthesis = function(n) {
-      const res = [];
-
-      function generate(left, right, str) {
-        if (left > right) return;
-        if (left === 0 && right === 0) {
-          res.push(str);
-          return;
-        }
-        if (left > 0) generate(left-1, right, str+'(');
-        if (right > 0) generate(left, right-1, str+')');
-      };
-
-      generate(n, n, '');
-      return res;
-    };
-
-24\. Swap Nodes in Pairs (time: O(n))
-
-    var swapPairs = function(head) {
-      if (!head || !head.next) return head;
-      const p1 = head, p2 = head.next, p3 = p2.next;
-      p2.next = p1;
-      p1.next = swapPairs(p3);
-      return p2;
-    };
-
-29\. Divide Two Integers **[Read](https://leetcode.com/problems/divide-two-integers/discuss/13516/JavaScript-solution-with-O(logN)-time-and-O(logN)-stack-space)**  
-33\. Search in Rotated Sorted Array **(Review)**  
-34\. Find First and Last Position of Element in Sorted Array **(To be improved from O(n) to O(log n))**  
-36\. Valid Sudoku  **(Review)**  
-39\. Combination Sum **(Study)**  
-40\. Combination Sum II (see 39)  
-43\. Multiply Strings **(Review)**  
-46\. Permutations  
-47\. Permutations II  
-
-    var rotate = function(matrix) {
-      matrix = matrix.reverse();
-      for (let i = 0; i < matrix.length; i++) {
-        for (let j = i+1; j < matrix.length; j++) {
-          const tmp = matrix[i][j];
-          matrix[i][j] = matrix[j][i];
-          matrix[j][i] = tmp;
-        }
-      }
-    };
-
-49\. Group Anagrams  
-50\. Pow(x, n) **(Review: recursive)**  
-55\. Jump Game  
-56\. Merge Intervals  
-61\. Rotate List  
-62\. Unique Paths **(Review!)**  
-63\. Unique Paths II  
-64\. Minimum Path Sum  
-71\. Simplify Path  
-73\. Set Matrix Zeroes  
-74\. Search a 2D Matrix  
-75\. Sort Colors  
-77\. Combinations  
-78\. Subsets  
-
-    // append new element to the reference variable
-    arr.concat(nums[i])
-
-79\. Word Search **(Study!)**  
-80\. Remove Duplicates from Sorted Array II (To Be Improved)  
-208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
-230\. Kth Smallest Element in a BST  
-328\. Odd Even Linked List  
-338\. Counting Bits  
-402\. Remove K Digits (time: O(n))
-
-    var removeKdigits = function(num, k) {
-      if (k >= num.length) return '0';
-
-      let remove = 0;
-      const stack = [];
-      for (let n of num) {
-        while (stack.length && n < stack[stack.length-1] && remove < k) {
-          stack.pop();
-          remove++;
-        }
-        stack.push(n);
-      }
-
-      while (remove < k) {
-        stack.pop();
-        remove++;
-      }
-
-      while (stack.length && stack[0] === '0') {
-        stack.shift();
-      }
-
-      return stack.length? stack.join(''): '0';
-    };
-
-406\. Queue Reconstruction by Height **(Study)**  
-438\. Find All Anagrams in a String (sliding window)  
-451\. Sort Characters By Frequency  
-
-    // sort dict by values
-    const sorted = Object.keys(hmap).sort((a, b) => hmap[b] - hmap[a])
-
-    // repeat char
-    result += char.repeat(hmap[char])
-
-518\. Coin Change 2 **(Study)**  
-525\. Contiguous Array **(Review)**  
-528\. Random Pick with Weight  
-540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
-567\. Permutation in String (sliding window) **(To be improved from O(n) to O(log n))**  
 886\. Possible Bipartition **(Study!)**  
 901\. Online Stock Span **(Review)**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
 973\. K Closest Points to Origin  
 986\. Interval List Intersections **(Review)**  
+993\. Cousins in Binary Tree  
+997\. Find the Town Judge  
 1008\. Construct Binary Search Tree from Preorder Traversal  
+1029\. Two City Scheduling  
 1035\. Uncrossed Lines **(Study: DP!)**  
+1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 1277\. Count Square Submatrices with All Ones **(Review)**  
 
-## SQL
+## SQL Problems
 
 175\. Combine Two Tables  
 176\. Second Highest Salary
