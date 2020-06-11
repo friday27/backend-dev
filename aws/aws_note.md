@@ -7,19 +7,32 @@
   * [淺析 serverless 架構與實作](https://denny.qollie.com/2016/05/22/serverless-simple-crud/)
   * [What is memory caching?](https://hazelcast.com/glossary/memory-caching/)
 
-* Review AWS FAQs
-  * [Lambda](https://aws.amazon.com/lambda/faqs/?nc1=h_ls)
-  * [S3 FAQs](https://aws.amazon.com/tw/s3/faqs/)
-
 * Review Guru notes
 * Review Udemy pdf
 * Guru Mock exam before 6/14
 * Labs
 
-* Suggestions
-  * Share Lecture PDF
-  * Lab
-    * Tell the users in the beginning that if the following lab will cost them any amount of money
+![AWS FAQs](./faqs.png)
+
+* Additional Resources
+  * [AWS FAQs](https://aws.amazon.com/tw/faqs/)
+  * AWS Whitepapers
+    * [Practicing CI/CD on AWS](https://d1.awsstatic.com/whitepapers/DevOps/practicing-continuous-integration-continuous-delivery-on-AWS.pdf?did=wp_card&trk=wp_card)
+    * [Blue/Green Deployments on AWS](https://d1.awsstatic.com/whitepapers/AWS_Blue_Green_Deployments.pdf?did=wp_card&trk=wp_card)
+    * [Serverless Architectures with AWS Lambda](https://d1.awsstatic.com/whitepapers/serverless-architectures-with-aws-lambda.pdf?did=wp_card&trk=wp_card)
+    * [Docker on AWS](https://d1.awsstatic.com/whitepapers/docker-on-aws.pdf)
+    * [Introduction to DevOps on AWS](https://docs.aws.amazon.com/whitepapers/latest/introduction-devops-aws/welcome.html)
+    * [Running Containerized Microservices on AWS](https://d1.awsstatic.com/whitepapers/DevOps/running-containerized-microservices-on-aws.pdf)
+    * [Optimizing Enterprise Economics with Serverless Architectures](https://d1.awsstatic.com/whitepapers/optimizing-enterprise-economics-serverless-architectures.pdf)
+    * [AWS Security Best Practices](https://d1.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf)
+
+  * Videos
+    * [Become an IAM Policy Master in 60 Minutes or Less](https://www.youtube.com/watch?v=YQsK4MtsELU&t=2s)
+    * [Continuous Integration Best Practices](https://www.youtube.com/watch?v=77HvSGyBVdU&t=2638s)
+    * [Moving to DevOps the Amazon Way](https://www.youtube.com/watch?v=Pvb74TlV8SA&t=3075s)
+    * [Getting Started with Docker on AWS](https://www.youtube.com/watch?v=mUzsYt3Bj08)
+    * [Serverless Architectural Patterns and Best Practices](https://www.youtube.com/watch?v=Xi_WrinvTnM)
+    * [VPC Fundamentals and Connectivity Options](https://www.youtube.com/watch?v=jZAvKgqlrjY)
 
 ## Basics
 
