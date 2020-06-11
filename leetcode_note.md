@@ -2,6 +2,7 @@
 
 ## TODOs
 
+* Clean up problems
 * Pass by value and pass by reference in JS
 * in v.c. includes
 * The meaning of ^ operator (136. Single Number)
@@ -193,6 +194,8 @@
 83\. Remove Duplicates from Sorted List **+1**  
 86\. Partition List  
 88\. Merge Sorted Array **(Note: start from the end)**  
+91\. Decode Ways **(Study - DP)**  
+92\. Reverse Linked List II  
 100\. Same Tree  
 101\. Symmetric Tree  
 104\. Maximum Depth of Binary Tree  
@@ -411,6 +414,9 @@
 566\. Reshape the Matrix  
 567\. Permutation in String (sliding window) **(To be improved from O(n) to O(log n))**  
 572\. Subtree of Another Tree  
+581\. Shortest Unsorted Continuous Subarray **(Study)**  
+589\. N-ary Tree Preorder Traversal  
+590\. N-ary Tree Postorder Traversal (Try queue)  
 733\. Flood Fill  
 771\. Jewels and Stones  
 886\. Possible Bipartition **(Study!)**  
