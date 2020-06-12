@@ -49,6 +49,11 @@
 
       [nums[i], nums[j]] = [nums[j], nums[i]];
 
+* Generate random int
+
+      const idx = Math.floor(Math.random() * max);
+      // max is not included
+
 ## Data Structures and Algorithms Problems
 
 1\. Two Sum  
@@ -196,6 +201,8 @@
 88\. Merge Sorted Array **(Note: start from the end)**  
 91\. Decode Ways **(Study - DP)**  
 92\. Reverse Linked List II  
+93\. Restore IP Addresses  
+94\. Binary Tree Inorder Traversal **(Review: iterative)**  
 100\. Same Tree  
 101\. Symmetric Tree  
 104\. Maximum Depth of Binary Tree  
@@ -300,6 +307,7 @@
 
 299\. Bulls and Cows  
 303\. Range Sum Query - Immutable  
+380\. Insert Delete GetRandom O(1)  
 326\. Power of Three **(Review)**  
 328\. Odd Even Linked List  
 338\. Counting Bits  
@@ -417,6 +425,9 @@
 581\. Shortest Unsorted Continuous Subarray **(Study)**  
 589\. N-ary Tree Preorder Traversal  
 590\. N-ary Tree Postorder Traversal (Try queue)  
+594\. Longest Harmonious Subsequence  
+599\. Minimum Index Sum of Two Lists  
+605\. Can Place Flowers  
 733\. Flood Fill  
 771\. Jewels and Stones  
 886\. Possible Bipartition **(Study!)**  
@@ -465,3 +476,10 @@
     FROM Weather a, Weather b
     WHERE DATEDIFF(a.RecordDate, b.RecordDate)=1 
     AND a.Temperature > b.Temperature;
+
+595\. Big Countries  
+
+    SELECT class
+    FROM courses
+    GROUP BY class
+    HAVING COUNT(DISTINCT student) >= 5;
