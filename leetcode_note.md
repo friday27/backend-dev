@@ -54,6 +54,8 @@
       const idx = Math.floor(Math.random() * max);
       // max is not included
 
+* Find element in an array with `arr.includes(elem)` since the runtime is shorter than arr.indexOf(elem)
+
 ## Data Structures and Algorithms Problems
 
 1\. Two Sum  
@@ -203,8 +205,11 @@
 92\. Reverse Linked List II  
 93\. Restore IP Addresses  
 94\. Binary Tree Inorder Traversal **(Review: iterative)**  
+98\. Validate Binary Search Tree  
 100\. Same Tree  
 101\. Symmetric Tree  
+102\. Binary Tree Level Order Traversal  
+103\. Binary Tree Zigzag Level Order Traversal  
 104\. Maximum Depth of Binary Tree  
 
     // if the node does not exist, simply return 0. Otherwise, return the 1+the longer distance of its subtree.
@@ -215,9 +220,13 @@
 
 107\. Binary Tree Level Order Traversal II  
 108\. Convert Sorted Array to Binary Search Tree **(To Be Improved)**  
+109\. Convert Sorted List to Binary Search Tree  
 110\. Balanced Binary Tree  
 111\. Minimum Depth of Binary Tree (time: O(n), space: O(n) for BFS)  
 112\. Path Sum (time: O(n)  for DFS)  
+113\. Path Sum II  
+114\. Flatten Binary Tree to Linked List  
+116\. Populating Next Right Pointers in Each Node  
 118\. Pascal's Triangle  
 119\. Pascal's Triangle II  
 121\. Best Time to Buy and Sell Stock  
@@ -432,6 +441,10 @@
 605\. Can Place Flowers  
 606\. Construct String from Binary Tree  
 617\. Merge Two Binary Trees **(Stude: iterative)**  
+628\. Maximum Product of Three Numbers  
+633\. Sum of Square Numbers  
+637\. Average of Levels in Binary Tree  
+700\. Search in a Binary Search Tree  
 733\. Flood Fill  
 771\. Jewels and Stones  
 787\. Cheapest Flights Within K Stops **(Study: [Dijkstra's algorithm](http://nthucad.cs.nthu.edu.tw/~yyliu/personal/nou/04ds/dijkstra.html))**  
@@ -490,3 +503,8 @@
     HAVING COUNT(DISTINCT student) >= 5;
 
 620\. Not Boring Movies  
+627\. Swap Salary  
+
+    UPDATE salary
+    SET sex = CASE WHEN sex = 'm' THEN 'f'
+                   ELSE 'm' END;
