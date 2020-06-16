@@ -227,6 +227,7 @@
 113\. Path Sum II  
 114\. Flatten Binary Tree to Linked List  
 116\. Populating Next Right Pointers in Each Node  
+117\. Populating Next Right Pointers in Each Node II  
 118\. Pascal's Triangle  
 119\. Pascal's Triangle II  
 121\. Best Time to Buy and Sell Stock  
@@ -396,6 +397,7 @@
     str.replace(/0/g, '');
 
 463\. Island Perimeter  
+468\. Validate IP Address **(Study: regex)**  
 476\. Number Complement (same as 1009.Complement of Base 10 Integer) (binary !!!)
 
     const findComplement = function(num) {
@@ -444,6 +446,9 @@
 628\. Maximum Product of Three Numbers  
 633\. Sum of Square Numbers  
 637\. Average of Levels in Binary Tree  
+643\. Maximum Average Subarray I  
+645\. Set Mismatch  
+653\. Two Sum IV - Input is a BST  
 700\. Search in a Binary Search Tree  
 733\. Flood Fill  
 771\. Jewels and Stones  
