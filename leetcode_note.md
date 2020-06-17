@@ -237,6 +237,7 @@
     // replace other than alphanumeric
     const strippedString = s.replace(/\W/g, '');
 
+130\. Surrounded Regions  
 136\. Single Number
 
     var singleNumber = function(nums) {
@@ -449,6 +450,9 @@
 643\. Maximum Average Subarray I  
 645\. Set Mismatch  
 653\. Two Sum IV - Input is a BST  
+657\. Robot Return to Origin  
+661\. Image Smoother  
+669\. Trim a Binary Search Tree  
 700\. Search in a Binary Search Tree  
 733\. Flood Fill  
 771\. Jewels and Stones  
