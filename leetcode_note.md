@@ -237,6 +237,7 @@
     // replace other than alphanumeric
     const strippedString = s.replace(/\W/g, '');
 
+129\. Sum Root to Leaf Numbers  
 130\. Surrounded Regions  
 136\. Single Number
 
@@ -310,6 +311,8 @@
 258\. Add Digits  
 263\. Ugly Number  
 268\. Missing Number  
+274\. H-Index  
+275\. H-Index II  
 283\. Move Zeroes  
 290\. Word Pattern  
 292\. Nim Game
@@ -453,6 +456,9 @@
 657\. Robot Return to Origin  
 661\. Image Smoother  
 669\. Trim a Binary Search Tree  
+671\. Second Minimum Node In a Binary Tree  
+674\. Longest Continuous Increasing Subsequence  
+682\. Baseball Game  
 700\. Search in a Binary Search Tree  
 733\. Flood Fill  
 771\. Jewels and Stones  
