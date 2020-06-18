@@ -2,17 +2,12 @@
 
 ## TODOs
 
-* To Read
-  * [Choosing the Right DynamoDB Partition Key](https://aws.amazon.com/tw/blogs/database/choosing-the-right-dynamodb-partition-key/)
-  * [淺析 serverless 架構與實作](https://denny.qollie.com/2016/05/22/serverless-simple-crud/)
-  * [What is memory caching?](https://hazelcast.com/glossary/memory-caching/)
-
-* Review Guru notes
+* Guru Mock exam review
 * Review Udemy pdf
-* Guru Mock exam before 6/14
 * Labs
+* Udemy mock exam
 
-![AWS FAQs](./faqs.png)
+![AWS FAQs](./img/faqs.png)
 
 * Additional Resources
   * [AWS FAQs](https://aws.amazon.com/tw/faqs/)
@@ -131,6 +126,7 @@ EC2 is a web service that provides resizable compute capacity in the cloud (virt
 ![EC2 Instance Types](./img/ec2-instance-types.png)
 
 How to remember it? -> Fight Dr McPX
+
 F - FPGA  
 I - IOPS  
 G - Graphics  
@@ -307,7 +303,7 @@ Online Transaction Processing (OLTP) differs from Online Analytics Processing (O
   * Read replicas allow you to have a read-only copy of the production database
   * Using asynchronous replication from the primary RDS instance to the read replica
   * You can have up to 5 read replicas of any database
-  * You can have a read replicain another region
+  * You can have a read replicain in another region
   * You can promote read replicas to databases (the replication will be broken)
 
 ### RDS Lab
@@ -411,8 +407,8 @@ Route53 allows you to:
 * S3 is a universal namespace
 
 * Data consistency model for S3
-  1. PUTS of new Objects: Read after Write consistency (immediately)
-  2. Overwrite PUTS and DELETES: eventual consistency (take some time)
+  1. PUTs of new Objects: Read after Write consistency (immediately)
+  2. Overwrite PUTs and DELETEs: eventual consistency (take some time)
 
 ### S3 Storage Tiers/ Classes
 
@@ -551,7 +547,7 @@ An API is an Application Programming Interface (e.g. waiter in a restaurant, Exp
     * Uses XML
 
 * What can API Gateway do?
-  * Expose HTTPS endpoints to define a RESTful API
+  * **Expose HTTPS endpoints to define a RESTful API**
   * Serverless-ly connect to servers like Lambda & DynamoDB
   * Send each API endpoint to a different target
   * Run efficiently with low cost
@@ -764,7 +760,7 @@ DynamoDB is a low-latency NoSQL database service which supports both document an
 * Accessed using a dedicated endpoint
 * By default the PK is recorded
 * Before and after images can be captured
-* Lambda can poll DynamoDb Stream and execute code based on the event
+* Lambda can poll DynamoDB Stream and execute code based on the event
 
 ![DynamoDB Streams](./img/dynamodb-streams.png)
 
@@ -823,8 +819,7 @@ Amazon SQS is a distributed queue system that enables web service applications t
 ### SQS Visibility Timeout
 
 * The Visibility Timeout is the amount of time that the message is invisible in the SQS queue after a reader picks up the message
-* If the message is process before expired, the message will be deleted from the queue
-* Else it will be visible again and another reader will process it
+* If the message is processed before expired, the message will be deleted from the queue, else it will be visible again and another reader will process it
 
 * Default: 30 seconds
 * Increase it if your task > 30 seconds
@@ -1014,7 +1009,7 @@ CodeCommit is a centralized code repository based on Git
 
 * CloudFormation Nested Stacks allow re-use of CloudFormation code for common use cases
   * Useful for frequently used configurations (e.g. load balancers, web or application servers)
-  * Simply create a CloudFormation template, store it in S3 and you can reference it in the Resources section of any CloudFormation template using the Stack resource type
+  * Simply create a CloudFormation template, **store it in S3** and you can reference it in the Resources section of any CloudFormation template using the Stack resource type
 
 * If a part of your CloudFormation deployment fails due to a mis-configuration, by default, CloudFormation will rollback the entire stack
 
