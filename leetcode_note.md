@@ -459,7 +459,12 @@
 671\. Second Minimum Node In a Binary Tree  
 674\. Longest Continuous Increasing Subsequence  
 682\. Baseball Game  
+690\. Employee Importance  
 700\. Search in a Binary Search Tree  
+704\. Binary Search  
+706\. Design HashMap  
+720\. Longest Word in Dictionary  
+728\. Self Dividing Numbers  
 733\. Flood Fill  
 771\. Jewels and Stones  
 787\. Cheapest Flights Within K Stops **(Study: [Dijkstra's algorithm](http://nthucad.cs.nthu.edu.tw/~yyliu/personal/nou/04ds/dijkstra.html))**  
