@@ -245,7 +245,9 @@
       return nums.reduce((prev, curr) => prev^curr, 0);
     };
 
+137\. Single Number II  
 141\. Linked List Cycle  
+144\. Binary Tree Preorder Traversal  
 155\. Min Stack  
 160\. Intersection of Two Linked Lists  
 167\. Two Sum II - Input array is sorted  
@@ -463,9 +465,12 @@
 700\. Search in a Binary Search Tree  
 704\. Binary Search  
 706\. Design HashMap  
+709\. To Lower Case  
 720\. Longest Word in Dictionary  
+724\. Find Pivot Index  
 728\. Self Dividing Numbers  
 733\. Flood Fill  
+744\. Find Smallest Letter Greater Than Target  
 771\. Jewels and Stones  
 787\. Cheapest Flights Within K Stops **(Study: [Dijkstra's algorithm](http://nthucad.cs.nthu.edu.tw/~yyliu/personal/nou/04ds/dijkstra.html))**  
 886\. Possible Bipartition **(Study!)**  
