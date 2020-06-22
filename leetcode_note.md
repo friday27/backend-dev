@@ -56,6 +56,8 @@
 
 * Find element in an array with `arr.includes(elem)` since the runtime is shorter than arr.indexOf(elem)
 
+* Use `Array.from(set)` rather than [...set]
+
 ## Data Structures and Algorithms Problems
 
 1\. Two Sum  
@@ -127,6 +129,7 @@
       return res;
     };
 
+23\. Merge k Sorted Lists  
 24\. Swap Nodes in Pairs (time: O(n))
 
     var swapPairs = function(head) {
@@ -263,9 +266,14 @@
 
 171\. Excel Sheet Column Number  
 172\. Factorial Trailing Zeroes **(Review - recursive)**  
+173\. Binary Search Tree Iterator  
+179\. Largest Number (Review)  
+187\. Repeated DNA Sequences  
 189\. Rotate Array  
 191\. Number of 1 Bits  
 198\. House Robber **(Review)**  
+199\. Binary Tree Right Side View  
+200\. Number of Islands (tip: set visited cell to 0)  
 202\. Happy Number  
 203\. Remove Linked List Elements  
 204\. Count Primes
@@ -464,6 +472,7 @@
 690\. Employee Importance  
 700\. Search in a Binary Search Tree  
 704\. Binary Search  
+705\. Design HashSet  
 706\. Design HashMap  
 709\. To Lower Case  
 720\. Longest Word in Dictionary  
@@ -471,6 +480,8 @@
 728\. Self Dividing Numbers  
 733\. Flood Fill  
 744\. Find Smallest Letter Greater Than Target  
+746\. Min Cost Climbing Stairs **(Study: DP)**  
+747\. Largest Number At Least Twice of Others  
 771\. Jewels and Stones  
 787\. Cheapest Flights Within K Stops **(Study: [Dijkstra's algorithm](http://nthucad.cs.nthu.edu.tw/~yyliu/personal/nou/04ds/dijkstra.html))**  
 886\. Possible Bipartition **(Study!)**  
