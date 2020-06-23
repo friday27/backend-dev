@@ -151,6 +151,7 @@
 38\. Count and Say  
 39\. Combination Sum **(Study)**  
 40\. Combination Sum II (see 39)  
+41\. First Missing Positive  
 43\. Multiply Strings **(Review)**  
 46\. Permutations  
 47\. Permutations II  
@@ -300,7 +301,7 @@
 206\. Reverse Linked List  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 217\. Contains Duplicate  
-278\. First Bad Version  
+222\. Count Complete Tree Nodes  
 219\. Contains Duplicate II  
 225\. Implement Stack using Queues  
 226\. Invert Binary Tree  
@@ -323,7 +324,9 @@
 268\. Missing Number  
 274\. H-Index  
 275\. H-Index II  
+278\. First Bad Version  
 283\. Move Zeroes  
+289\. Game of Life  
 290\. Word Pattern  
 292\. Nim Game
 
@@ -482,11 +485,16 @@
 744\. Find Smallest Letter Greater Than Target  
 746\. Min Cost Climbing Stairs **(Study: DP)**  
 747\. Largest Number At Least Twice of Others  
+766\. Toeplitz Matrix  
 771\. Jewels and Stones  
+783\. Minimum Distance Between BST Nodes  
+784\. Letter Case Permutation  
 787\. Cheapest Flights Within K Stops **(Study: [Dijkstra's algorithm](http://nthucad.cs.nthu.edu.tw/~yyliu/personal/nou/04ds/dijkstra.html))**  
+804\. Unique Morse Code Words  
 886\. Possible Bipartition **(Study!)**  
 901\. Online Stock Span **(Review)**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
+938\. Range Sum of BST  
 973\. K Closest Points to Origin  
 986\. Interval List Intersections **(Review)**  
 993\. Cousins in Binary Tree  
@@ -496,6 +504,13 @@
 1035\. Uncrossed Lines **(Study: DP!)**  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 1277\. Count Square Submatrices with All Ones **(Review)**  
+1448\. Count Good Nodes in Binary Tree  
+1464\. Maximum Product of Two Elements in an Array  
+1470\. Shuffle the Array  
+1472\. Design Browser History  
+1475\. Final Prices With a Special Discount in a Shop  
+1476\. Subrectangle Queries  
+1480\. Running Sum of 1d Array  
 
 ## SQL Problems
 
