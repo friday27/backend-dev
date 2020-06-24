@@ -209,6 +209,7 @@
 92\. Reverse Linked List II  
 93\. Restore IP Addresses  
 94\. Binary Tree Inorder Traversal **(Review: iterative)**  
+96\. Unique Binary Search Trees  
 98\. Validate Binary Search Tree  
 100\. Same Tree  
 101\. Symmetric Tree  
@@ -254,6 +255,7 @@
 144\. Binary Tree Preorder Traversal  
 155\. Min Stack  
 160\. Intersection of Two Linked Lists  
+162\. Find Peak Element  
 167\. Two Sum II - Input array is sorted  
 168\. Excel Sheet Column Title **(Review - recursive)**  
 169\. Majority Element
@@ -305,6 +307,7 @@
 219\. Contains Duplicate II  
 225\. Implement Stack using Queues  
 226\. Invert Binary Tree  
+228\. Summary Ranges  
 230\. Kth Smallest Element in a BST  
 231\. Power of Two  
 
@@ -317,6 +320,7 @@
 234\. Palindrome Linked List  
 235\. Lowest Common Ancestor of a Binary Search Tree  
 237\. Delete Node in a Linked List  
+238\. Product of Array Except Self (To be improved)  
 242\. Valid Anagram  
 257\. Binary Tree Paths  
 258\. Add Digits  
@@ -504,8 +508,13 @@
 1035\. Uncrossed Lines **(Study: DP!)**  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 1277\. Count Square Submatrices with All Ones **(Review)**  
+1394\. Find Lucky Integer in an Array (To be improved)  
+1436\. Destination City  
 1448\. Count Good Nodes in Binary Tree  
+1441\. Build an Array With Stack Operations  
+1450\. Number of Students Doing Homework at a Given Time  
 1464\. Maximum Product of Two Elements in an Array  
+1466\. Reorder Routes to Make All Paths Lead to the City Zero (To be improved)  
 1470\. Shuffle the Array  
 1472\. Design Browser History  
 1475\. Final Prices With a Special Discount in a Shop  
