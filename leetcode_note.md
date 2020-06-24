@@ -58,6 +58,8 @@
 
 * Use `Array.from(set)` rather than [...set]
 
+* Replace characters `str.replace(/[!?',;.]/g, '')`
+
 ## Data Structures and Algorithms Problems
 
 1\. Two Sum  
@@ -494,16 +496,23 @@
 783\. Minimum Distance Between BST Nodes  
 784\. Letter Case Permutation  
 787\. Cheapest Flights Within K Stops **(Study: [Dijkstra's algorithm](http://nthucad.cs.nthu.edu.tw/~yyliu/personal/nou/04ds/dijkstra.html))**  
+796\. Rotate String  
 804\. Unique Morse Code Words  
+811\. Subdomain Visit Count  
+819\. Most Common Word  
+876\. Middle of the Linked List  
+884\. Uncommon Words from Two Sentences  
 886\. Possible Bipartition **(Study!)**  
 901\. Online Stock Span **(Review)**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
+933\. Number of Recent Calls  
 938\. Range Sum of BST  
 973\. K Closest Points to Origin  
 986\. Interval List Intersections **(Review)**  
 993\. Cousins in Binary Tree  
 997\. Find the Town Judge  
 1008\. Construct Binary Search Tree from Preorder Traversal  
+1022\. Sum of Root To Leaf Binary Numbers  
 1029\. Two City Scheduling  
 1035\. Uncrossed Lines **(Study: DP!)**  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
