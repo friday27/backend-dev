@@ -304,6 +304,7 @@
 205\. Isomorphic Strings **(Study!)**  
 206\. Reverse Linked List  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
+216\. Combination Sum III  
 217\. Contains Duplicate  
 222\. Count Complete Tree Nodes  
 219\. Contains Duplicate II  
@@ -332,6 +333,7 @@
 275\. H-Index II  
 278\. First Bad Version  
 283\. Move Zeroes  
+287\. Find the Duplicate Number  
 289\. Game of Life  
 290\. Word Pattern  
 292\. Nim Game
@@ -500,6 +502,9 @@
 804\. Unique Morse Code Words  
 811\. Subdomain Visit Count  
 819\. Most Common Word  
+830\. Positions of Large Groups  
+860\. Lemonade Change  
+867\. Transpose Matrix  
 876\. Middle of the Linked List  
 884\. Uncommon Words from Two Sentences  
 886\. Possible Bipartition **(Study!)**  
