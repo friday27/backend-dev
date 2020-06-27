@@ -332,6 +332,7 @@
 274\. H-Index  
 275\. H-Index II  
 278\. First Bad Version  
+279\. Perfect Squares (To be improved)  
 283\. Move Zeroes  
 287\. Find the Duplicate Number  
 289\. Game of Life  
@@ -351,6 +352,7 @@
 345\. Reverse Vowels of a String  
 349\. Intersection of Two Arrays  
 350\. Intersection of Two Arrays II  
+355\. Design Twitter  
 368\. Largest Divisible Subset **(Study: DP)**  
 389\. Find the Difference (XOR operation)  
 392\. Is Subsequence  
@@ -505,13 +507,16 @@
 830\. Positions of Large Groups  
 860\. Lemonade Change  
 867\. Transpose Matrix  
+872\. Leaf-Similar Trees  
 876\. Middle of the Linked List  
 884\. Uncommon Words from Two Sentences  
 886\. Possible Bipartition **(Study!)**  
 901\. Online Stock Span **(Review)**  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
+929\. Unique Email Addresses  
 933\. Number of Recent Calls  
 938\. Range Sum of BST  
+965\. Univalued Binary Tree  
 973\. K Closest Points to Origin  
 986\. Interval List Intersections **(Review)**  
 993\. Cousins in Binary Tree  
