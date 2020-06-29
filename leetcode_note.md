@@ -346,6 +346,7 @@
 380\. Insert Delete GetRandom O(1)  
 326\. Power of Three **(Review)**  
 328\. Odd Even Linked List  
+332\. Reconstruct Itinerary **(Review !)**  
 338\. Counting Bits  
 342\. Power of Four  
 344\. Reverse String  
@@ -521,10 +522,15 @@
 986\. Interval List Intersections **(Review)**  
 993\. Cousins in Binary Tree  
 997\. Find the Town Judge  
+1002\. Find Common Characters  
 1008\. Construct Binary Search Tree from Preorder Traversal  
+1013\. Partition Array Into Three Parts With Equal Sum  
 1022\. Sum of Root To Leaf Binary Numbers  
 1029\. Two City Scheduling  
 1035\. Uncrossed Lines **(Study: DP!)**  
+1089\. Duplicate Zeros (To be improved)  
+1154\. Day of the Year  
+1184\. Distance Between Bus Stops  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 1277\. Count Square Submatrices with All Ones **(Review)**  
 1394\. Find Lucky Integer in an Array (To be improved)  
