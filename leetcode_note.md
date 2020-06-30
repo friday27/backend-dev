@@ -304,9 +304,11 @@
 205\. Isomorphic Strings **(Study!)**  
 206\. Reverse Linked List  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
+212\. Word Search II (To be improved)  
 216\. Combination Sum III  
 217\. Contains Duplicate  
 222\. Count Complete Tree Nodes  
+227\. Basic Calculator II  
 219\. Contains Duplicate II  
 225\. Implement Stack using Queues  
 226\. Invert Binary Tree  
@@ -533,6 +535,8 @@
 1184\. Distance Between Bus Stops  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 1277\. Count Square Submatrices with All Ones **(Review)**  
+1365\. How Many Numbers Are Smaller Than the Current Number  
+1380\. Lucky Numbers in a Matrix  
 1394\. Find Lucky Integer in an Array (To be improved)  
 1436\. Destination City  
 1448\. Count Good Nodes in Binary Tree  
@@ -545,6 +549,7 @@
 1475\. Final Prices With a Special Discount in a Shop  
 1476\. Subrectangle Queries  
 1480\. Running Sum of 1d Array  
+1496\. Path Crossing  
 
 ## SQL Problems
 
