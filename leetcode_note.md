@@ -407,6 +407,7 @@
 412\. Fizz Buzz  
 414\. Third Maximum Number  
 415\. Add Strings  
+429\. N-ary Tree Level Order Traversal  
 434\. Number of Segments in a String  
 437\. Path Sum III  
 438\. Find All Anagrams in a String (sliding window)  
@@ -519,12 +520,15 @@
 884\. Uncommon Words from Two Sentences  
 886\. Possible Bipartition **(Study!)**  
 901\. Online Stock Span **(Review)**  
+917\. Reverse Only Letters  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
 929\. Unique Email Addresses  
 933\. Number of Recent Calls  
 938\. Range Sum of BST  
 965\. Univalued Binary Tree  
+970\. Powerful Integers (To be improved)  
 973\. K Closest Points to Origin  
+977\. Squares of a Sorted Array  
 986\. Interval List Intersections **(Review)**  
 993\. Cousins in Binary Tree  
 997\. Find the Town Judge  
@@ -543,9 +547,10 @@
 1380\. Lucky Numbers in a Matrix  
 1394\. Find Lucky Integer in an Array (To be improved)  
 1436\. Destination City  
-1448\. Count Good Nodes in Binary Tree  
 1441\. Build an Array With Stack Operations  
+1448\. Count Good Nodes in Binary Tree  
 1450\. Number of Students Doing Homework at a Given Time  
+1451\. Rearrange Words in a Sentence  
 1464\. Maximum Product of Two Elements in an Array  
 1466\. Reorder Routes to Make All Paths Lead to the City Zero (To be improved)  
 1470\. Shuffle the Array  
