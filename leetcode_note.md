@@ -275,6 +275,7 @@
 179\. Largest Number (Review)  
 187\. Repeated DNA Sequences  
 189\. Rotate Array  
+190\. Reverse Bits  
 191\. Number of 1 Bits  
 198\. House Robber **(Review)**  
 199\. Binary Tree Right Side View  
@@ -306,7 +307,7 @@
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 212\. Word Search II (To be improved)  
 216\. Combination Sum III  
-217\. Contains Duplicate  
+217\. Contains Duplicate (To be improved)  
 222\. Count Complete Tree Nodes  
 227\. Basic Calculator II  
 219\. Contains Duplicate II  
@@ -324,6 +325,7 @@
 232\. Implement Queue using Stacks  
 234\. Palindrome Linked List  
 235\. Lowest Common Ancestor of a Binary Search Tree  
+236\. Lowest Common Ancestor of a Binary Tree (Review -> Iterative without parent pointers!)  
 237\. Delete Node in a Linked List  
 238\. Product of Array Except Self (To be improved)  
 242\. Valid Anagram  
@@ -418,6 +420,7 @@
     // repeat char
     result += char.repeat(hmap[char])
 
+453\. Minimum Moves to Equal Array Elements (smart!)  
 455\. Assign Cookies  
 459\. Repeated Substring Pattern  
 461\. Hamming Distance  
@@ -452,6 +455,7 @@
 520\. Detect Capital  
 525\. Contiguous Array **(Review)**  
 528\. Random Pick with Weight  
+530\. Minimum Absolute Difference in BST  
 532\. K-diff Pairs in an Array (Review)  
 538\. Convert BST to Greater Tree **(Study)**  
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
