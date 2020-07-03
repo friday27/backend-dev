@@ -525,6 +525,7 @@
 929\. Unique Email Addresses  
 933\. Number of Recent Calls  
 938\. Range Sum of BST  
+957\. Prison Cells After N Days (Study)  
 965\. Univalued Binary Tree  
 970\. Powerful Integers (To be improved)  
 973\. K Closest Points to Origin  
@@ -543,9 +544,15 @@
 1184\. Distance Between Bus Stops  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 1277\. Count Square Submatrices with All Ones **(Review)**  
+1323\. Maximum 69 Number  
+1342\. Number of Steps to Reduce a Number to Zero  
+1346\. Check If N and Its Double Exist (To be improved)  
+1351\. Count Negative Numbers in a Sorted Matrix (To be improved)  
+1356\. Sort Integers by The Number of 1 Bits  
 1365\. How Many Numbers Are Smaller Than the Current Number  
 1380\. Lucky Numbers in a Matrix  
 1394\. Find Lucky Integer in an Array (To be improved)  
+1396\. Design Underground System  
 1436\. Destination City  
 1441\. Build an Array With Stack Operations  
 1448\. Count Good Nodes in Binary Tree  
