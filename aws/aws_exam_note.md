@@ -1,223 +1,114 @@
 # AWS Notes for Exam
 
------
-
-## Security
-
-### IAM
-
-### Cognito
-
-### KMS
+* Elastic Beanstalk
+* CloudFormation
 
 -----
 
-## Compute
+## Identity
 
-### EC2
+* An IAM policy must contain:
+  * Resources
+  * Actions
+  * Effect
 
-* Security Groups
-  * SGs control inbound/outbound traffic of EC2 machines (think as "firewall")
-  * All inbound traffic is blocked by default
-  * All outbound traffic is authorised by default
-  * Errors
-    * timeout (not accessible) - sg issue
-    * connection refused - application error
+* AWS services (like Lambda) assumes a role and not policy. Then, you can attach policies on that role
 
-* EC2 Instance Types
-  1. On Demand Instance
-      * applications with short term, spiky or unpredictable workloads
-      * applications being developed or tested on EC2
-  2. Reserved Instance
-      * capacity reservation (1 or 3 year terms)
-      * application with steady state or predictable usage (e.g. web servers)
-  3. Spot Instance
-      * **bid** whatever price you want for instance capacity (less reliable)
-      * applications that have flexible start and end times
-      * users with an urgent need for large amount of addtional computing capacity
-  4. Dedicated Hosts
-      * an entire physical server dedicated for your use (BYOL, Bring Your Own License)
-      * useful for regulatory requirements that may not support multi-tenant virtualization or cloud deployments
+* build web identity federation in your applications: Cognito, STS
 
-* ELB
-  * CLB - v1, HTTP/HTTPS/TCP
-  * ALB - v2, HTTP/HTTPS/WebSocket
-    * The application servers don't see the IP of the client directly.
-    * The true IP of the client is inserted in the header **X-Forwarded-For**.
-    * We can also get Port (X-Forwarded-Port) and proto (X-Forwarded-Proto).
-  * NLB - v2, TCP/TLS (secure TCP)/UDP
+* Identity pools are the containers that Cognito Identity uses to keep your apps' federated identities organized
 
-* Load Balancer Stickiness (works for CLB and ALB)
-  * the same client is always redirected to the same instance behind a load balancer
-  * Use case: make sure the user doesn't lose his **session data**
-  * Enabling stickiness may bring imbalance to the load over the backend EC2 instances
+## EC2
 
-* Cross-Zone Load Balancing: each load balancer instance distributes evenly across all registered instances in all AZ, otherwise it's in the same AZ only
+* many idle EC2 instances: Auto Scailing Group
 
-* Auto Scailing Group
-  * Scaling policies can be on CPU, Network... and can even be on custom metrics or based on a schedule (if you know your visitors patterns)
-  * IAM roles attached to an ASG will get assigned to EC2 instances
-  * ASG can terminate instances marked as unhealthy by an LB (and hence replace them)
+## EBS
 
-* EBS
-  * An EBS (Elastic Block Store) Volume is a **network drive** you can attach
- to your instances while they run. It allows your instances to **persist data**
-  * It can be attached to only one instance at a time
-  * It’s locked to an Availability Zone. To move a volume across, you first need to snapshot it
+* to encrypt all data at rest on the EBS volumes on EC2 intances, you need to enable KMS ebcryption
 
-### Lambda
+## S3
 
-### Elastic Beanstalk
+* The S3 bucket storage is unlimited. However, the maximum size of a single object (file) is 5TB
 
------
+* To have AWS S3 encrypt an object after it is uploaded (PUT), you need to add a header to the HTTP request called "x-amz-server-side-encryption"
 
-## Database
+* Encryption types
+  * SSE-S3:  AWS manages both data key and master key
+  * SSE-KMS: AWS manages data key and you manage master key
+  * SSE-C:   You manage both data key and master key
+  * Client-Side Encryption
 
-### RDS
+## Elastic Beanstalk
 
-* RDS Backups
-  * Automated backups
-  * DB Snapshots
+* Elastic Beanstalk uses CloudFormation to provision resources
 
-* RDS Read Replicas
-  * Up to 5 Read Replicas
-  * Within AZ, Cross AZ Application or Cross Region
-  * Replication is ASYNC, so reads are eventually consistent
+* Using Elastic Beanstalk, one environment includes one and only one application version
 
-* RDS Multi AZ (Disaster Recovery)
-  * SYNC replication
-  * One DNS name – automatic app failover to standby
-  * Not used for scaling
+## Docker
 
-* RDS Security - Encryption
-  * At rest encryption
-    * Possibility to encrypt the master & read replicas with AWS KMS - AES-256 encryption
-    * Encryption has to be defined at launch time or use snapshot (see below)
-    * If the master is not encrypted, the read replicas cannot be encrypted
-  * In-flight encryption
-    * SSL certificates to encrypt data to RDS in flight
+* commands must you run to push an existing Docker image to ECR:
+  1. `$(aws ecr get-login --no-include-email)`
+  2. `docker push 000.dkr.ecr.eu-west-1.amazonaws.com/demo:latest`
 
-  * To encrypt an un-encrypted RDS database:
-    1. Create a snapshot of the un-encrypted database
-    2. Copy the snapshot and enable encryption for the snapshot
-    3. Restore the database from the encrypted snapshot
-    4. Migrate applications to the new database, and delete the old database
+## API Gateway
 
-### ElastiCache
+* Pattern: https://.execute-api..amazonaws.com//
 
-* Applications queries ElastiCache, if not available, get from RDS and store in ElastiCache
+* API Gateway terminology:
+  * Endpoint
+  * Resource
+  * Stage
 
-* Use cases:
-  * DB Cache
-  * User session store
+## SQS, SNS
 
-* Redis
-  * Multi AZ
-  * Read Replicas
-  * Backup and restore features
+* the maximum size of an SQS message: 256KB
+* default visibility timeout for a SQS message: 30 seconds
 
-* Memcached
-  * Multi-node for partitioning of data (sharding)
-  * Multi-threaded
-  * No backup and restore
+## DynamoDB
 
-* 2 Caching strategies
-  * Lazy Loading/Cache-Aside/Lazy Population
-  * Write Through
+* get one or more items from one or more DynamoDB tables: BatchGetItem
 
-* Cache Evictions
-  1. You delete the item explicitly in the cache
-  2. **LRU** - Item is evicted because the memory is full and it’s not recently used
-  3. **TTL** - You set an item time-to-live
+* NoSQL technology that can be managed and run locally: DynamoDB
 
-### DynamoDB
+### [Secondary Indexes](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html)
 
------
+* Global Secondary Index (GSI) lets you query over the entire table, across all partitions
 
-## Storage
+* The hash key of the Local Secondary Index (LSI) is the same as the hash key of the main table
 
-### S3
+## Kinesis
 
-* There’s no concept of “directories” within buckets. Just keys with very long names that contain slashes
+* Kinesis Streams requires manually provision to meet the needed capacity, while Kinesis Firehose scales out automatically
 
-* Max Object Size is 5 TB. If uploading more than 5GB, must use **multi-part upload**
+## CodeXXX
 
-* There are 4 methods of encrypting objects in S3
-  * SSE-S3
-    * Encryption using keys handled & managed by AWS
-    * Object is encrypted server side
-    * Must set header: **"x-amz-server-side-encryption": "AES256"**
-  * SSE-KMS
-    * Encryption using AWS KMS to manage and handle keys
-    * Object is encrypted server side
-    * Must set header: **"x-amz-server-side-encryption": ”aws:kms"**
-  * SSE-C
-    * Server-side encryption using data keys fully managed by the customer outside of AWS
-    * Amazon S3 does not store the encryption key you provide
-    * HTTPS must be used
-  * Client Side Encryption
-    * Clients must encrypt data themselves before sending to S3
-    * Customer fully manages the keys and encryption cycle
+* CodeCommit is a fully-managed source control service
 
-* CORS (Cross-Origin Resource Sharing)
-  * Web browser based mechanism to allow requests to other origins while visiting the main origin (Same origin: http://example.com/app1 & http://example.com/app2)
-  * If a client does a cross-origin request on our S3 bucket, we need to enable the correct CORS headers
+* deploy a static website to an S3 bucket: CodeBuild + CodePipeline
 
-* Consistency Model
-  * Read after write consistency for PUTS of new objects. Except if we did a GET before to see if the object existed. e.g. (GET 404 => PUT 200 => GET 404) – eventually consistent
-  * Eventual Consistency for DELETES and PUTS of existing objects
-  * There’s no way to request strong consistency
+* CodeBuild gets its build instructions from ./buildspec.yml
 
-* S3 Replication
-  * **Must enable versioning** in source and destination
-  * Buckets can be in different accounts
-  * Copying is asynchronous
-  * After activating replication, only new objects are replicated (not retroactive)
-  * CRR (Cross Region Replication) - compliance, lower latency access, replication across accounts
-  * SRR (Same Region Replication) - log aggregation, live replication between production and test accounts
+* CodeDeploy is only used to deploy to EC2 instances or Lambda functions
+* the proper order of events in CodeDeploy: Stop Application, Before Install, After Install, Start Application
 
------
+## CloudXXX
 
-## Networking
+* Resources is the only required section in every CloudFormation template
 
-![Typical 3 tier solution architecture](./img/typical-3-tier-solution-architecture.png)
+* CloudTrail is a web service that records AWS API calls for your AWS account and delivers log files to an Amazon S3 bucket. The recorded information includes:
+  * the identity of the user
+  * the start time of the AWS API call
+  * the source IP address
+  * the request parameters
+  * the response elements returned by the service
 
-### API Gateway
+## Throughput
 
------
+* 1 RCU for eventually consistent is 2 reads per second of 4 KB
+* 1 WCU = 1 KB/s
 
-## Development
+## Others
 
-### X-Ray
-
-### CodeCommit
-
-### CodeBuild
-
-### CodeDeploy
-
-### CodePipeline
-
------
-
-## Application Integration
-
-### SQS
-
-### SNS
-
------
-
-## Analytics
-
-### Kinesis
-
------
-
-## Management
-
-### CloudFormation
-
-### CloudWatch
-
-### CloudTrail
+* The State machines in AWS Step functions is written with JSON
+* Amazon Redshift is a fast, scalable data warehouse
+* ECR is fully-managed services that stores container images
