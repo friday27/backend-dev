@@ -332,6 +332,7 @@
 257\. Binary Tree Paths  
 258\. Add Digits  
 263\. Ugly Number  
+264\. Ugly Number II  
 268\. Missing Number  
 274\. H-Index  
 275\. H-Index II  
@@ -551,10 +552,12 @@
 1356\. Sort Integers by The Number of 1 Bits  
 1365\. How Many Numbers Are Smaller Than the Current Number  
 1380\. Lucky Numbers in a Matrix  
+1381\. Design a Stack With Increment Operation  
 1394\. Find Lucky Integer in an Array (To be improved)  
 1396\. Design Underground System  
 1436\. Destination City  
 1441\. Build an Array With Stack Operations  
+1446\. Consecutive Characters  
 1448\. Count Good Nodes in Binary Tree  
 1450\. Number of Students Doing Homework at a Given Time  
 1451\. Rearrange Words in a Sentence  
@@ -565,6 +568,8 @@
 1475\. Final Prices With a Special Discount in a Shop  
 1476\. Subrectangle Queries  
 1480\. Running Sum of 1d Array  
+1486\. XOR Operation in an Array  
+1491\. Average Salary Excluding the Minimum and Maximum Salary  
 1496\. Path Crossing  
 
 ## SQL Problems
