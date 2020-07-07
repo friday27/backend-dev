@@ -45,6 +45,16 @@
 
       const nums2 = nums.slice();
 
+* Array shuffle
+
+      function shuffle(a) {
+        for (let i = a.length-1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      }
+
 * One-line swap
 
       [nums[i], nums[j]] = [nums[j], nums[i]];
@@ -254,6 +264,7 @@
 
 137\. Single Number II  
 141\. Linked List Cycle  
+142\. Linked List Cycle II  
 144\. Binary Tree Preorder Traversal  
 155\. Min Stack  
 160\. Intersection of Two Linked Lists  
@@ -305,6 +316,7 @@
 205\. Isomorphic Strings **(Study!)**  
 206\. Reverse Linked List  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
+210\. Course Schedule II **[(Study!)](https://leetcode.com/problems/course-schedule-ii/discuss/146326/JavaScript-DFS)**  
 212\. Word Search II (To be improved)  
 216\. Combination Sum III  
 217\. Contains Duplicate (To be improved)  
@@ -332,7 +344,7 @@
 257\. Binary Tree Paths  
 258\. Add Digits  
 263\. Ugly Number  
-264\. Ugly Number II  
+264\. Ugly Number II [(Study!)](https://leetcode.com/problems/ugly-number-ii/discuss/69362/O(n)-Java-solution)  
 268\. Missing Number  
 274\. H-Index  
 275\. H-Index II  
@@ -348,6 +360,7 @@
 
 299\. Bulls and Cows  
 303\. Range Sum Query - Immutable  
+304\. Range Sum Query 2D - Immutable  
 380\. Insert Delete GetRandom O(1)  
 326\. Power of Three **(Review)**  
 328\. Odd Even Linked List  
@@ -356,6 +369,7 @@
 342\. Power of Four  
 344\. Reverse String  
 345\. Reverse Vowels of a String  
+347\. Top K Frequent Elements  
 349\. Intersection of Two Arrays  
 350\. Intersection of Two Arrays II  
 355\. Design Twitter  
@@ -364,7 +378,10 @@
 392\. Is Subsequence  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 374\. Guess Number Higher or Lower  
+377\. Combination Sum IV **[(Study)](https://leetcode.com/problems/combination-sum-iv/discuss/85036/1ms-Java-DP-Solution-with-Detailed-Explanation)**  
+378\. Kth Smallest Element in a Sorted Matrix  
 383\. Ransom Note  
+384\. Shuffle an Array  
 387\. First Unique Character in a String
 
     var firstUniqChar = function(s) {
@@ -374,6 +391,7 @@
       return -1;
     };
 
+398\. Random Pick Index  
 402\. Remove K Digits (time: O(n))
 
     var removeKdigits = function(num, k) {
@@ -408,6 +426,7 @@
 412\. Fizz Buzz  
 414\. Third Maximum Number  
 415\. Add Strings  
+419\. Battleships in a Board (To be improved)  
 429\. N-ary Tree Level Order Traversal  
 434\. Number of Segments in a String  
 437\. Path Sum III  
@@ -491,7 +510,9 @@
 671\. Second Minimum Node In a Binary Tree  
 674\. Longest Continuous Increasing Subsequence  
 682\. Baseball Game  
+687\. Longest Univalue Path (To be improved)  
 690\. Employee Importance  
+693\. Binary Number with Alternating Bits  
 700\. Search in a Binary Search Tree  
 704\. Binary Search  
 705\. Design HashSet  
@@ -514,9 +535,12 @@
 811\. Subdomain Visit Count  
 819\. Most Common Word  
 830\. Positions of Large Groups  
+832\. Flipping an Image  
+836\. Rectangle Overlap (Review)  
 860\. Lemonade Change  
 867\. Transpose Matrix  
 872\. Leaf-Similar Trees  
+874\. Walking Robot Simulation  
 876\. Middle of the Linked List  
 884\. Uncommon Words from Two Sentences  
 886\. Possible Bipartition **(Study!)**  
@@ -545,6 +569,9 @@
 1184\. Distance Between Bus Stops  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
 1277\. Count Square Submatrices with All Ones **(Review)**  
+1299\. Replace Elements with Greatest Element on Right Side  
+1302\. Deepest Leaves Sum  
+1315\. Sum of Nodes with Even-Valued Grandparent  
 1323\. Maximum 69 Number  
 1342\. Number of Steps to Reduce a Number to Zero  
 1346\. Check If N and Its Double Exist (To be improved)  
@@ -555,12 +582,18 @@
 1381\. Design a Stack With Increment Operation  
 1394\. Find Lucky Integer in an Array (To be improved)  
 1396\. Design Underground System  
+1417\. Reformat The String  
+1418\. Display Table of Food Orders in a Restaurant  
+1422\. Maximum Score After Splitting a String  
+1431\. Kids With the Greatest Number of Candies  
 1436\. Destination City  
 1441\. Build an Array With Stack Operations  
 1446\. Consecutive Characters  
 1448\. Count Good Nodes in Binary Tree  
 1450\. Number of Students Doing Homework at a Given Time  
 1451\. Rearrange Words in a Sentence  
+1455\. Check If a Word Occurs As a Prefix of Any Word in a Sentence  
+1460\. Make Two Arrays Equal by Reversing Sub-arrays  
 1464\. Maximum Product of Two Elements in an Array  
 1466\. Reorder Routes to Make All Paths Lead to the City Zero (To be improved)  
 1470\. Shuffle the Array  
@@ -570,7 +603,9 @@
 1480\. Running Sum of 1d Array  
 1486\. XOR Operation in an Array  
 1491\. Average Salary Excluding the Minimum and Maximum Salary  
+1492\. The kth Factor of n  
 1496\. Path Crossing  
+1502\. Can Make Arithmetic Progression From Sequence  
 
 ## SQL Problems
 
