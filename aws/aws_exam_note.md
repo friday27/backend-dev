@@ -14,13 +14,26 @@
 
 * AWS services (like Lambda) assumes a role and not policy. Then, you can attach policies on that role
 
+* Use IAM role for EC2 instances, and access keys for on-premise applications
+
+  A company is deploying an on-premise application server that will connect to several AWS services. What is the BEST way to provide the application server with permissions to authenticate to AWS services? -> Create an IAM role with the necessary permissions and assign it to the application server. In this scenario the application server is running on-premises. Therefore, you cannot assign an IAM role (which would be the preferable solution for Amazon EC2 instances). In this case it is therefore better to use access keys.
+
 * build web identity federation in your applications: Cognito, STS
 
 * Identity pools are the containers that Cognito Identity uses to keep your apps' federated identities organized
 
+## Secret Manager
+
+* An application will use AWS Lambda and an Amazon RDS database. The Developer needs to secure the database connection string and enable automatic rotation every 30 days. What is the SIMPLEST way to achieve this requirement? -> Store a secret in AWS Secrets Manager and enable automatic rotation every 30 days
+
 ## EC2
 
 * many idle EC2 instances: Auto Scailing Group
+
+* A **task placement strategy** is an algorithm for selecting instances for task placement or tasks for termination. Amazon ECS supports the following task placement strategies:
+  * binpack – Place tasks based on the least available amount of CPU or memory. **This minimizes the number of instances in use**
+  * random – Place tasks randomly
+  * spread – Place tasks evenly based on the specified value
 
 ## EBS
 
@@ -76,9 +89,21 @@
 
 * The hash key of the Local Secondary Index (LSI) is the same as the hash key of the main table
 
+* to MINIMIZE the time scan takes to produce the report, you should use a **Parallel Scan API operation**, you also need to use the **Limit parameter** to ensure the scan doesn't consume your table's provisioned throughput and cause the critical parts of your application to be throttled.
+
 ## Kinesis
 
 * Kinesis Streams requires manually provision to meet the needed capacity, while Kinesis Firehose scales out automatically
+
+## Lambda
+
+* An **event source mapping** is an AWS Lambda resource that reads from an event source and invokes a Lambda function. You can use event source mappings to process items from a stream or queue in services that don't invoke Lambda functions directly. Lambda provides event source mappings for: Kinesis, DynamoDB, SQS
+
+* What is the SAFEST way to do this with minimal changes to the application code? -> You can point an alias a multiple versions of your function code and then **assign a weighting** (e.g. 20%) to direct certain amounts of traffic to each version. This enables a blue/green style of deployment and means it's easy to roll back to the older version by simply updating the weighting if issues occur with user experience.
+
+## Step Functions
+
+* Step Functions provides a reliable way to **coordinate components** and step through the functions of your application. Step Functions offers a graphical console to visualize the components of your application as a series of steps. It automatically triggers and tracks each step, and retries when there are errors, so your application executes in order and as expected, every time. Step Functions logs the state of each step, so when things go wrong, you can diagnose and debug problems quickly.
 
 ## CodeXXX
 
@@ -102,6 +127,9 @@
   * the request parameters
   * the response elements returned by the service
 
+* Amazon CloudWatch Events delivers a near real-time stream of system events that describe changes in AWS resources
+  * Every time an Amazon EC2 instance is launched, certain metadata about the instance should be recorded in an Amazon DynamoDB table. The data is gathered and written to the table by an AWS Lambda function. What is the MOST efficient method of invoking the Lambda function? -> Create a CloudWatch Event with an event pattern looking for EC2 state changes and a target set to use the Lambda function
+
 ## Throughput
 
 * 1 RCU for eventually consistent is 2 reads per second of 4 KB
@@ -112,3 +140,8 @@
 * The State machines in AWS Step functions is written with JSON
 * Amazon Redshift is a fast, scalable data warehouse
 * ECR is fully-managed services that stores container images
+
+## References
+
+* [Digital Cloud: AWS CERTIFIED DEVELOPER ASSOCIATE
+FREE PRACTICE QUESTIONS](https://digitalcloud.training/aws-developer-associate-free-practice-exam-questions/)
