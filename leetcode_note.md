@@ -118,6 +118,30 @@
     };
 
 15\. 3Sum  
+
+    var threeSum = function(nums) {
+      nums = nums.sort((a, b) => a-b);
+      const res = [];
+
+      for (let i = 0; i < nums.length-2; i++) {
+        if (nums[i] === nums[i-1]) continue;
+        let lo = i + 1;
+        let hi = nums.length - 1;
+        let sum = 0 - nums[i];
+        while (lo < hi) {
+          if (nums[lo] + nums[hi] === sum) {
+            res.push([nums[lo], nums[hi], nums[i]]);
+            while (nums[lo] === nums[lo+1]) lo++;
+            while (nums[hi] === nums[hi-1]) hi--;
+            lo++;
+            hi--;
+          } else if (nums[lo] + nums[hi] < sum) lo++;
+          else hi--;
+        }
+      }
+      return res;
+    };
+
 17\. Letter Combinations of a Phone Number (To be improved)  
 19\. Remove Nth Node From End of List  
 20\. Valid Parentheses  
@@ -452,6 +476,7 @@
 
 463\. Island Perimeter  
 468\. Validate IP Address **(Study: regex)**  
+470\. Implement Rand10() Using Rand7() (Study)  
 476\. Number Complement (same as 1009.Complement of Base 10 Integer) (binary !!!)
 
     const findComplement = function(num) {
@@ -465,6 +490,7 @@
 
 482\. License Key Formatting  
 485\. Max Consecutive Ones  
+494\. Target Sum **[(Study for DP!)](https://leetcode.com/problems/target-sum/solution/)**  
 496\. Next Greater Element I  
 500\. Keyboard Row  
 501\. Find Mode in Binary Search Tree (To Be Improved)  
@@ -561,9 +587,12 @@
 1002\. Find Common Characters  
 1008\. Construct Binary Search Tree from Preorder Traversal  
 1013\. Partition Array Into Three Parts With Equal Sum  
+1018\. Binary Prefix Divisible By 5  
 1022\. Sum of Root To Leaf Binary Numbers  
 1029\. Two City Scheduling  
+1030\. Matrix Cells in Distance Order (To be improved)  
 1035\. Uncrossed Lines **(Study: DP!)**  
+1046\. Last Stone Weight (To be improved)  
 1089\. Duplicate Zeros (To be improved)  
 1154\. Day of the Year  
 1184\. Distance Between Bus Stops  
