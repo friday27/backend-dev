@@ -494,9 +494,11 @@
 496\. Next Greater Element I  
 500\. Keyboard Row  
 501\. Find Mode in Binary Search Tree (To Be Improved)  
+503\. Next Greater Element II **[(Review: Solution with stack)](https://leetcode.com/problems/next-greater-element-ii/solution/)**  
 504\. Base 7  
 506\. Relative Ranks  
 507\. Perfect Number  
+508\. Most Frequent Subtree Sum  
 509\. Fibonacci Number  
 518\. Coin Change 2 **(Study)**  
 520\. Detect Capital  
@@ -532,6 +534,7 @@
 653\. Two Sum IV - Input is a BST  
 657\. Robot Return to Origin  
 661\. Image Smoother  
+662\. Maximum Width of Binary Tree  
 669\. Trim a Binary Search Tree  
 671\. Second Minimum Node In a Binary Tree  
 674\. Longest Continuous Increasing Subsequence  
@@ -611,6 +614,9 @@
 1381\. Design a Stack With Increment Operation  
 1394\. Find Lucky Integer in an Array (To be improved)  
 1396\. Design Underground System  
+1403\. Minimum Subsequence in Non-Increasing Order  
+1408\. String Matching in an Array  
+1413\. Minimum Value to Get Positive Step by Step Sum  
 1417\. Reformat The String  
 1418\. Display Table of Food Orders in a Restaurant  
 1422\. Maximum Score After Splitting a String  
