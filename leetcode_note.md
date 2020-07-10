@@ -599,8 +599,12 @@
 1089\. Duplicate Zeros (To be improved)  
 1154\. Day of the Year  
 1184\. Distance Between Bus Stops  
-1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)
+1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)  
+1267\. Count Servers that Communicate  
+1268\. Search Suggestions System (Review)  
 1277\. Count Square Submatrices with All Ones **(Review)**  
+1287\. Element Appearing More Than 25% In Sorted Array  
+1290\. Convert Binary Number in a Linked List to Integer  
 1299\. Replace Elements with Greatest Element on Right Side  
 1302\. Deepest Leaves Sum  
 1315\. Sum of Nodes with Even-Valued Grandparent  
