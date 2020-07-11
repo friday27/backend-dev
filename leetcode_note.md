@@ -70,6 +70,14 @@
 
 * Replace characters `str.replace(/[!?',;.]/g, '')`
 
+* For iterative, use concat() instead of slice(), push() and pop()
+
+      // arr.push(nums[i]);
+      // pick(i+1, arr);
+      // arr.pop();
+
+      pick(i+1, arr.concat(nums[i]));
+
 ## Data Structures and Algorithms Problems
 
 1\. Two Sum  
@@ -452,6 +460,7 @@
 415\. Add Strings  
 419\. Battleships in a Board (To be improved)  
 429\. N-ary Tree Level Order Traversal  
+430\. Flatten a Multilevel Doubly Linked List  
 434\. Number of Segments in a String  
 437\. Path Sum III  
 438\. Find All Anagrams in a String (sliding window)  
