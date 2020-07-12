@@ -608,6 +608,7 @@
 1089\. Duplicate Zeros (To be improved)  
 1154\. Day of the Year  
 1184\. Distance Between Bus Stops  
+1207\. Unique Number of Occurrences  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)  
 1267\. Count Servers that Communicate  
 1268\. Search Suggestions System (Review)  
@@ -654,6 +655,8 @@
 1492\. The kth Factor of n  
 1496\. Path Crossing  
 1502\. Can Make Arithmetic Progression From Sequence  
+1507\. Reformat Date  
+1512\. Number of Good Pairs  
 
 ## SQL Problems
 
