@@ -548,6 +548,7 @@
 671\. Second Minimum Node In a Binary Tree  
 674\. Longest Continuous Increasing Subsequence  
 682\. Baseball Game  
+686\. Repeated String Match  
 687\. Longest Univalue Path (To be improved)  
 690\. Employee Importance  
 693\. Binary Number with Alternating Bits  
@@ -577,11 +578,13 @@
 836\. Rectangle Overlap (Review)  
 860\. Lemonade Change  
 867\. Transpose Matrix  
+868\. Binary Gap  
 872\. Leaf-Similar Trees  
 874\. Walking Robot Simulation  
 876\. Middle of the Linked List  
 884\. Uncommon Words from Two Sentences  
 886\. Possible Bipartition **(Study!)**  
+896\. Monotonic Array (To be improved)  
 901\. Online Stock Span **(Review)**  
 917\. Reverse Only Letters  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
@@ -656,6 +659,7 @@
 1496\. Path Crossing  
 1502\. Can Make Arithmetic Progression From Sequence  
 1507\. Reformat Date  
+1508\. Range Sum of Sorted Subarray Sums  
 1512\. Number of Good Pairs  
 
 ## SQL Problems
