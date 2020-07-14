@@ -4,8 +4,7 @@
 
 * Clean up problems
 * Pass by value and pass by reference in JS
-* in v.c. includes
-* The meaning of ^ operator (136. Single Number)
+* XOR operator (136. Single Number)
 * bit manipulation
 * JS regex matching
 
@@ -13,9 +12,15 @@
 
 * Design patterns - handwriting note!
 
+* Leetcode Collections
+  * [Top Interview Questions](https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/)
+  * [Binary Search](https://leetcode.com/explore/learn/card/binary-search/)
+  * [Recursion I](https://leetcode.com/explore/featured/card/recursion-i/250/principle-of-recursion/)
+  * [Recursion II](https://leetcode.com/explore/learn/card/recursion-ii/)
+  * [Leetcode: ML concepts](https://leetcode.com/explore/featured/card/machine-learning-101/287/what_is_ml/)
+
 * To Read
   * [Top Node.js Interview Questions You Must Prepare In 2020](https://www.edureka.co/blog/interview-questions/top-node-js-interview-questions-2016/)
-
   * [The Comprehensive Guide to JavaScript Design Patterns](https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns)
   * [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#introduction)
   * [4 JavaScript Design Patterns You Should Know](https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know)
@@ -618,11 +623,15 @@
 1277\. Count Square Submatrices with All Ones **(Review)**  
 1287\. Element Appearing More Than 25% In Sorted Array  
 1290\. Convert Binary Number in a Linked List to Integer  
+1295\. Find Numbers with Even Number of Digits  
 1299\. Replace Elements with Greatest Element on Right Side  
 1302\. Deepest Leaves Sum  
+1304\. Find N Unique Integers Sum up to Zero  
 1315\. Sum of Nodes with Even-Valued Grandparent  
 1323\. Maximum 69 Number  
+1337\. The K Weakest Rows in a Matrix  
 1342\. Number of Steps to Reduce a Number to Zero  
+1344\. Angle Between Hands of a Clock  
 1346\. Check If N and Its Double Exist (To be improved)  
 1351\. Count Negative Numbers in a Sorted Matrix (To be improved)  
 1356\. Sort Integers by The Number of 1 Bits  
@@ -661,6 +670,7 @@
 1507\. Reformat Date  
 1508\. Range Sum of Sorted Subarray Sums  
 1512\. Number of Good Pairs  
+1514\. Path with Maximum Probability **[(Study! Dijkstra+BFS)](https://leetcode.com/problems/path-with-maximum-probability/discuss/732721/Javascript-Dijkstra%2BBFS-clear-solution)**  
 
 ## SQL Problems
 
