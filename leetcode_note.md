@@ -303,6 +303,7 @@
 141\. Linked List Cycle  
 142\. Linked List Cycle II  
 144\. Binary Tree Preorder Traversal  
+151\. Reverse Words in a String  
 155\. Min Stack  
 160\. Intersection of Two Linked Lists  
 162\. Find Peak Element  
@@ -627,7 +628,9 @@
 1299\. Replace Elements with Greatest Element on Right Side  
 1302\. Deepest Leaves Sum  
 1304\. Find N Unique Integers Sum up to Zero  
+1313\. Decompress Run-Length Encoded List  
 1315\. Sum of Nodes with Even-Valued Grandparent  
+1317\. Convert Integer to the Sum of Two No-Zero Integers  
 1323\. Maximum 69 Number  
 1337\. The K Weakest Rows in a Matrix  
 1342\. Number of Steps to Reduce a Number to Zero  
@@ -638,8 +641,10 @@
 1365\. How Many Numbers Are Smaller Than the Current Number  
 1380\. Lucky Numbers in a Matrix  
 1381\. Design a Stack With Increment Operation  
+1389\. Create Target Array in the Given Order  
 1394\. Find Lucky Integer in an Array (To be improved)  
 1396\. Design Underground System  
+1399\. Count Largest Group  
 1403\. Minimum Subsequence in Non-Increasing Order  
 1408\. String Matching in an Array  
 1413\. Minimum Value to Get Positive Step by Step Sum  
@@ -670,6 +675,7 @@
 1507\. Reformat Date  
 1508\. Range Sum of Sorted Subarray Sums  
 1512\. Number of Good Pairs  
+1513\. Number of Substrings With Only 1s (Review)  
 1514\. Path with Maximum Probability **[(Study! Dijkstra+BFS)](https://leetcode.com/problems/path-with-maximum-probability/discuss/732721/Javascript-Dijkstra%2BBFS-clear-solution)**  
 
 ## SQL Problems
