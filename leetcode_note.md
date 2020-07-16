@@ -622,12 +622,16 @@
 1267\. Count Servers that Communicate  
 1268\. Search Suggestions System (Review)  
 1277\. Count Square Submatrices with All Ones **(Review)**  
+1281\. Subtract the Product and Sum of Digits of an Integer  
 1287\. Element Appearing More Than 25% In Sorted Array  
 1290\. Convert Binary Number in a Linked List to Integer  
 1295\. Find Numbers with Even Number of Digits  
 1299\. Replace Elements with Greatest Element on Right Side  
 1302\. Deepest Leaves Sum  
 1304\. Find N Unique Integers Sum up to Zero  
+1305\. All Elements in Two Binary Search Trees  
+1306\. Jump Game III  
+1309\. Decrypt String from Alphabet to Integer Mapping  
 1313\. Decompress Run-Length Encoded List  
 1315\. Sum of Nodes with Even-Valued Grandparent  
 1317\. Convert Integer to the Sum of Two No-Zero Integers  
@@ -639,6 +643,7 @@
 1351\. Count Negative Numbers in a Sorted Matrix (To be improved)  
 1356\. Sort Integers by The Number of 1 Bits  
 1365\. How Many Numbers Are Smaller Than the Current Number  
+1374\. Generate a String With Characters That Have Odd Counts  
 1380\. Lucky Numbers in a Matrix  
 1381\. Design a Stack With Increment Operation  
 1389\. Create Target Array in the Given Order  
