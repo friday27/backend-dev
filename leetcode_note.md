@@ -2,6 +2,7 @@
 
 ## TODOs
 
+* 500!
 * Clean up problems
 * Pass by value and pass by reference in JS
 * XOR operator (136. Single Number)
@@ -557,6 +558,7 @@
 686\. Repeated String Match  
 687\. Longest Univalue Path (To be improved)  
 690\. Employee Importance  
+692\. Top K Frequent Words  
 693\. Binary Number with Alternating Bits  
 700\. Search in a Binary Search Tree  
 704\. Binary Search  
@@ -618,14 +620,18 @@
 1154\. Day of the Year  
 1184\. Distance Between Bus Stops  
 1207\. Unique Number of Occurrences  
+1221\. Split a String in Balanced Strings  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)  
+1252\. Cells with Odd Values in a Matrix  
 1267\. Count Servers that Communicate  
 1268\. Search Suggestions System (Review)  
+1275\. Find Winner on a Tic Tac Toe Game  
 1277\. Count Square Submatrices with All Ones **(Review)**  
 1281\. Subtract the Product and Sum of Digits of an Integer  
 1287\. Element Appearing More Than 25% In Sorted Array  
 1290\. Convert Binary Number in a Linked List to Integer  
 1295\. Find Numbers with Even Number of Digits  
+1297\. Maximum Number of Occurrences of a Substring (To be improved)  
 1299\. Replace Elements with Greatest Element on Right Side  
 1302\. Deepest Leaves Sum  
 1304\. Find N Unique Integers Sum up to Zero  
