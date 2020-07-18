@@ -612,13 +612,16 @@
 1013\. Partition Array Into Three Parts With Equal Sum  
 1018\. Binary Prefix Divisible By 5  
 1022\. Sum of Root To Leaf Binary Numbers  
+1128\. Number of Equivalent Domino Pairs  
 1029\. Two City Scheduling  
 1030\. Matrix Cells in Distance Order (To be improved)  
 1035\. Uncrossed Lines **(Study: DP!)**  
+1137\. N-th Tribonacci Number  
 1046\. Last Stone Weight (To be improved)  
 1089\. Duplicate Zeros (To be improved)  
 1154\. Day of the Year  
 1184\. Distance Between Bus Stops  
+1189\. Maximum Number of Balloons  
 1207\. Unique Number of Occurrences  
 1221\. Split a String in Balanced Strings  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)  
@@ -663,6 +666,7 @@
 1418\. Display Table of Food Orders in a Restaurant  
 1422\. Maximum Score After Splitting a String  
 1431\. Kids With the Greatest Number of Candies  
+1433\. Check If a String Can Break Another String  
 1436\. Destination City  
 1441\. Build an Array With Stack Operations  
 1446\. Consecutive Characters  
