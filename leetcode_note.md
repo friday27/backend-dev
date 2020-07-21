@@ -76,6 +76,9 @@
 
 * Replace characters `str.replace(/[!?',;.]/g, '')`
 
+* Regex
+  * str.match(pattern) returns matched results. Use `typed.match(pattern) !== null` to get true/false.
+
 * For iterative, use concat() instead of slice(), push() and pop()
 
       // arr.push(nums[i]);
@@ -560,7 +563,9 @@
 690\. Employee Importance  
 692\. Top K Frequent Words  
 693\. Binary Number with Alternating Bits  
+697\. Degree of an Array  
 700\. Search in a Binary Search Tree  
+703\. Kth Largest Element in a Stream  
 704\. Binary Search  
 705\. Design HashSet  
 706\. Design HashMap  
@@ -581,6 +586,7 @@
 804\. Unique Morse Code Words  
 811\. Subdomain Visit Count  
 819\. Most Common Word  
+821\. Shortest Distance to a Character  
 830\. Positions of Large Groups  
 832\. Flipping an Image  
 836\. Rectangle Overlap (Review)  
@@ -592,23 +598,30 @@
 876\. Middle of the Linked List  
 884\. Uncommon Words from Two Sentences  
 886\. Possible Bipartition **(Study!)**  
+888\. Fair Candy Swap  
 896\. Monotonic Array (To be improved)  
+897\. Increasing Order Search Tree (To be improved)  
 901\. Online Stock Span **(Review)**  
 917\. Reverse Only Letters  
 918\. Maximum Sum Circular Subarray **[Read](https://leetcode.com/problems/maximum-sum-circular-subarray/discuss/178422/One-Pass)**  
+925\. Long Pressed Name  
 929\. Unique Email Addresses  
 933\. Number of Recent Calls  
 938\. Range Sum of BST  
 957\. Prison Cells After N Days (Study)  
+961\. N-Repeated Element in Size 2N Array  
 965\. Univalued Binary Tree  
 970\. Powerful Integers (To be improved)  
 973\. K Closest Points to Origin  
 977\. Squares of a Sorted Array  
+985\. Sum of Even Numbers After Queries  
 986\. Interval List Intersections **(Review)**  
+989\. Add to Array-Form of Integer  
 993\. Cousins in Binary Tree  
 997\. Find the Town Judge  
 1002\. Find Common Characters  
 1008\. Construct Binary Search Tree from Preorder Traversal  
+1010\. Pairs of Songs With Total Durations Divisible by 60 (To be improved)  
 1013\. Partition Array Into Three Parts With Equal Sum  
 1018\. Binary Prefix Divisible By 5  
 1022\. Sum of Root To Leaf Binary Numbers  
@@ -616,8 +629,11 @@
 1030\. Matrix Cells in Distance Order (To be improved)  
 1035\. Uncrossed Lines **(Study: DP!)**  
 1046\. Last Stone Weight (To be improved)  
+1047\. Remove All Adjacent Duplicates In String  
+1051\. Height Checker  
 1078\. Occurrences After Bigram  
 1089\. Duplicate Zeros (To be improved)  
+1103\. Distribute Candies to People  
 1108\. Defanging an IP Address  
 1122\. Relative Sort Array  
 1128\. Number of Equivalent Domino Pairs  
@@ -679,6 +695,7 @@
 1450\. Number of Students Doing Homework at a Given Time  
 1451\. Rearrange Words in a Sentence  
 1455\. Check If a Word Occurs As a Prefix of Any Word in a Sentence  
+1457\. Pseudo-Palindromic Paths in a Binary Tree  
 1460\. Make Two Arrays Equal by Reversing Sub-arrays  
 1464\. Maximum Product of Two Elements in an Array  
 1466\. Reorder Routes to Make All Paths Lead to the City Zero (To be improved)  
@@ -687,6 +704,7 @@
 1475\. Final Prices With a Special Discount in a Shop  
 1476\. Subrectangle Queries  
 1480\. Running Sum of 1d Array  
+1481\. Least Number of Unique Integers after K Removals  
 1486\. XOR Operation in an Array  
 1491\. Average Salary Excluding the Minimum and Maximum Salary  
 1492\. The kth Factor of n  
