@@ -3,6 +3,7 @@
 ## TODOs
 
 * 500!
+* 2 sum -> 3 sum -> 4 sum
 * Clean up problems
 * Pass by value and pass by reference in JS
 * XOR operator (136. Single Number)
@@ -93,6 +94,7 @@
 2\. Add Two Numbers  
 3\. **Longest Substring Without Repeating Characters (TBR !!!)**  
 4\. Median of Two Sorted Arrays  
+5\. Longest Palindromic Substring  
 6\. [ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/discuss/614271/JavaScript-Solution)
 
     const mat = Array(3).fill('');
@@ -159,7 +161,9 @@
       return res;
     };
 
+16\. 3Sum Closest (To be improved)  
 17\. Letter Combinations of a Phone Number (To be improved)  
+18\. 4Sum  (To be improved)  
 19\. Remove Nth Node From End of List  
 20\. Valid Parentheses  
 21\. Merge Two Sorted Lists (do not use condition to check null, use !variable instead)  
@@ -197,6 +201,7 @@
 27\. Remove Element  
 28\. Implement strStr()  
 29\. Divide Two Integers **[Read](https://leetcode.com/problems/divide-two-integers/discuss/13516/JavaScript-solution-with-O(logN)-time-and-O(logN)-stack-space)**  
+31\. Next Permutation **(Study!)**  
 33\. Search in Rotated Sorted Array **(Review)**  
 34\. Find First and Last Position of Element in Sorted Array **(To be improved from O(n) to O(log n))**  
 35\. Search Insert Position  
@@ -231,9 +236,12 @@
       return Math.max(...nums);
     };
 
+54\. Spiral Matrix  
 55\. Jump Game  
 56\. Merge Intervals  
 58\. Length of Last Word  
+59\. Spiral Matrix II  
+60\. Permutation Sequence  
 61\. Rotate List  
 62\. Unique Paths **(Review!)**  
 63\. Unique Paths II  
@@ -258,10 +266,12 @@
 83\. Remove Duplicates from Sorted List **+1**  
 86\. Partition List  
 88\. Merge Sorted Array **(Note: start from the end)**  
+90\. Subsets II (To be improved)  
 91\. Decode Ways **(Study - DP)**  
 92\. Reverse Linked List II  
 93\. Restore IP Addresses  
 94\. Binary Tree Inorder Traversal **(Review: iterative)**  
+95\. Unique Binary Search Trees II (To be improved)  
 96\. Unique Binary Search Trees  
 98\. Validate Binary Search Tree  
 100\. Same Tree  
@@ -288,6 +298,7 @@
 117\. Populating Next Right Pointers in Each Node II  
 118\. Pascal's Triangle  
 119\. Pascal's Triangle II  
+120\. Triangle  
 121\. Best Time to Buy and Sell Stock  
 122\. Best Time to Buy and Sell Stock II  
 125\. Valid Palindrome
@@ -297,6 +308,7 @@
 
 129\. Sum Root to Leaf Numbers  
 130\. Surrounded Regions  
+134\. Gas Station  
 136\. Single Number
 
     var singleNumber = function(nums) {
