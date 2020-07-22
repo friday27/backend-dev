@@ -1,6 +1,6 @@
 # Leetcode Note
 
-## TODOs
+## :star: TODOs
 
 * 500!
 * 2 sum -> 3 sum -> 4 sum
