@@ -27,7 +27,7 @@
   * [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#introduction)
   * [4 JavaScript Design Patterns You Should Know](https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know)
 
-## Notes
+## :book: Notes
 
 * [3 ways to merge 2 arrays](https://www.samanthaming.com/tidbits/49-2-ways-to-merge-arrays/)
 
@@ -306,6 +306,7 @@
     // replace other than alphanumeric
     const strippedString = s.replace(/\W/g, '');
 
+127\. Word Ladder (To be improved)  
 129\. Sum Root to Leaf Numbers  
 130\. Surrounded Regions  
 134\. Gas Station  
@@ -319,6 +320,7 @@
 141\. Linked List Cycle  
 142\. Linked List Cycle II  
 144\. Binary Tree Preorder Traversal  
+148\. Sort List (To be improved)  
 151\. Reverse Words in a String  
 155\. Min Stack  
 160\. Intersection of Two Linked Lists  
@@ -397,6 +399,7 @@
 242\. Valid Anagram  
 257\. Binary Tree Paths  
 258\. Add Digits  
+260\. Single Number III (Study: XOR)  
 263\. Ugly Number  
 264\. Ugly Number II [(Study!)](https://leetcode.com/problems/ugly-number-ii/discuss/69362/O(n)-Java-solution)  
 268\. Missing Number  
