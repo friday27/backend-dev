@@ -2,6 +2,7 @@
 
 ## :star: TODOs
 
+* from: 211
 * 500!
 * 2 sum -> 3 sum -> 4 sum
 * Clean up problems
@@ -321,10 +322,14 @@
 142\. Linked List Cycle II  
 144\. Binary Tree Preorder Traversal  
 148\. Sort List (To be improved)  
+150\. Evaluate Reverse Polish Notation  
 151\. Reverse Words in a String  
+152\. Maximum Product Subarray (To be improved)  
+153\. Find Minimum in Rotated Sorted Array (Review)  
 155\. Min Stack  
 160\. Intersection of Two Linked Lists  
 162\. Find Peak Element  
+165\. Compare Version Numbers  
 167\. Two Sum II - Input array is sorted  
 168\. Excel Sheet Column Title **(Review - recursive)**  
 169\. Majority Element
@@ -372,6 +377,7 @@
 205\. Isomorphic Strings **(Study!)**  
 206\. Reverse Linked List  
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
+209\. Minimum Size Subarray Sum (Review)  
 210\. Course Schedule II **[(Study!)](https://leetcode.com/problems/course-schedule-ii/discuss/146326/JavaScript-DFS)**  
 212\. Word Search II (To be improved)  
 216\. Combination Sum III  
