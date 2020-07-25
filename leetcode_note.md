@@ -2,7 +2,7 @@
 
 ## :star: TODOs
 
-* from: 211
+* from: 213
 * 500!
 * 2 sum -> 3 sum -> 4 sum
 * Clean up problems
@@ -326,6 +326,7 @@
 151\. Reverse Words in a String  
 152\. Maximum Product Subarray (To be improved)  
 153\. Find Minimum in Rotated Sorted Array (Review)  
+154\. Find Minimum in Rotated Sorted Array II  
 155\. Min Stack  
 160\. Intersection of Two Linked Lists  
 162\. Find Peak Element  
@@ -379,6 +380,7 @@
 208\. Implement Trie (Prefix Tree) **[Read](https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution)**  
 209\. Minimum Size Subarray Sum (Review)  
 210\. Course Schedule II **[(Study!)](https://leetcode.com/problems/course-schedule-ii/discuss/146326/JavaScript-DFS)**  
+211\. Add and Search Word - Data structure design  
 212\. Word Search II (To be improved)  
 216\. Combination Sum III  
 217\. Contains Duplicate (To be improved)  
@@ -604,6 +606,7 @@
 784\. Letter Case Permutation  
 787\. Cheapest Flights Within K Stops **(Study: [Dijkstra's algorithm](http://nthucad.cs.nthu.edu.tw/~yyliu/personal/nou/04ds/dijkstra.html))**  
 796\. Rotate String  
+797\. All Paths From Source to Target  
 804\. Unique Morse Code Words  
 811\. Subdomain Visit Count  
 819\. Most Common Word  
