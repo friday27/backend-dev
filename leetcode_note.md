@@ -2,7 +2,7 @@
 
 ## :star: TODOs
 
-* from: 213
+* from: 385
 * 500!
 * 2 sum -> 3 sum -> 4 sum
 * Clean up problems
@@ -382,6 +382,7 @@
 210\. Course Schedule II **[(Study!)](https://leetcode.com/problems/course-schedule-ii/discuss/146326/JavaScript-DFS)**  
 211\. Add and Search Word - Data structure design  
 212\. Word Search II (To be improved)  
+215\. Kth Largest Element in an Array  
 216\. Combination Sum III  
 217\. Contains Duplicate (To be improved)  
 222\. Count Complete Tree Nodes  
@@ -390,6 +391,7 @@
 225\. Implement Stack using Queues  
 226\. Invert Binary Tree  
 228\. Summary Ranges  
+229\. Majority Element II  
 230\. Kth Smallest Element in a BST  
 231\. Power of Two  
 
@@ -426,7 +428,8 @@
 299\. Bulls and Cows  
 303\. Range Sum Query - Immutable  
 304\. Range Sum Query 2D - Immutable  
-380\. Insert Delete GetRandom O(1)  
+307\. Range Sum Query - Mutable  
+318\. Maximum Product of Word Lengths (To be improved)  
 326\. Power of Three **(Review)**  
 328\. Odd Even Linked List  
 332\. Reconstruct Itinerary **(Review !)**  
@@ -439,12 +442,14 @@
 350\. Intersection of Two Arrays II  
 355\. Design Twitter  
 368\. Largest Divisible Subset **(Study: DP)**  
+380\. Insert Delete GetRandom O(1)  
 389\. Find the Difference (XOR operation)  
 392\. Is Subsequence  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
 374\. Guess Number Higher or Lower  
 377\. Combination Sum IV **[(Study)](https://leetcode.com/problems/combination-sum-iv/discuss/85036/1ms-Java-DP-Solution-with-Detailed-Explanation)**  
 378\. Kth Smallest Element in a Sorted Matrix  
+382\. Linked List Random Node  
 383\. Ransom Note  
 384\. Shuffle an Array  
 387\. First Unique Character in a String
