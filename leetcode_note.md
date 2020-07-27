@@ -2,7 +2,7 @@
 
 ## :star: TODOs
 
-* from: 385
+* from: 515
 * 500!
 * 2 sum -> 3 sum -> 4 sum
 * Clean up problems
@@ -287,6 +287,8 @@
       return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
     };
 
+105\. Construct Binary Tree from Preorder and Inorder Traversal **(Review!!)**  
+106\. Construct Binary Tree from Inorder and Postorder Traversal **(Review!!)**  
 107\. Binary Tree Level Order Traversal II  
 108\. Convert Sorted Array to Binary Search Tree **(To Be Improved)**  
 109\. Convert Sorted List to Binary Search Tree  
@@ -461,6 +463,9 @@
       return -1;
     };
 
+394\. Decode String (Review)  
+396\. Rotate Function  
+397\. Integer Replacement  
 398\. Random Pick Index  
 402\. Remove K Digits (time: O(n))
 
@@ -497,12 +502,15 @@
 414\. Third Maximum Number  
 415\. Add Strings  
 419\. Battleships in a Board (To be improved)  
+421\. Maximum XOR of Two Numbers in an Array (To be improved)  
+423\. Reconstruct Original Digits from English    
 429\. N-ary Tree Level Order Traversal  
 430\. Flatten a Multilevel Doubly Linked List  
 434\. Number of Segments in a String  
 437\. Path Sum III  
 438\. Find All Anagrams in a String (sliding window)  
 441\. Arranging Coins  
+442\. Find All Duplicates in an Array (To be improved)  
 448\. Find All Numbers Disappeared in an Array  
 451\. Sort Characters By Frequency  
 
@@ -547,12 +555,15 @@
 507\. Perfect Number  
 508\. Most Frequent Subtree Sum  
 509\. Fibonacci Number  
+513\. Find Bottom Left Tree Value  
+515\. Find Largest Value in Each Tree Row  
 518\. Coin Change 2 **(Study)**  
 520\. Detect Capital  
 525\. Contiguous Array **(Review)**  
 528\. Random Pick with Weight  
 530\. Minimum Absolute Difference in BST  
 532\. K-diff Pairs in an Array (Review)  
+537\. Complex Number Multiplication  
 538\. Convert BST to Greater Tree **(Study)**  
 540\. Single Element in a Sorted Array (time: O(n)) **(To Be Improved)**  
 543\. Diameter of Binary Tree **(Review)**  
@@ -579,6 +590,7 @@
 643\. Maximum Average Subarray I  
 645\. Set Mismatch  
 653\. Two Sum IV - Input is a BST  
+654\. Maximum Binary Tree  
 657\. Robot Return to Origin  
 661\. Image Smoother  
 662\. Maximum Width of Binary Tree  
@@ -591,17 +603,22 @@
 690\. Employee Importance  
 692\. Top K Frequent Words  
 693\. Binary Number with Alternating Bits  
+695\. Max Area of Island  
 697\. Degree of an Array  
 700\. Search in a Binary Search Tree  
+701\. Insert into a Binary Search Tree  
 703\. Kth Largest Element in a Stream  
 704\. Binary Search  
 705\. Design HashSet  
 706\. Design HashMap  
+707\. Design Linked List  
 709\. To Lower Case  
 720\. Longest Word in Dictionary  
 724\. Find Pivot Index  
 728\. Self Dividing Numbers  
+729\. My Calendar I  
 733\. Flood Fill  
+739\. Daily Temperatures  
 744\. Find Smallest Letter Greater Than Target  
 746\. Min Cost Climbing Stairs **(Study: DP)**  
 747\. Largest Number At Least Twice of Others  
@@ -745,6 +762,8 @@
 1513\. Number of Substrings With Only 1s (Review)  
 1514\. Path with Maximum Probability **[(Study! Dijkstra+BFS)](https://leetcode.com/problems/path-with-maximum-probability/discuss/732721/Javascript-Dijkstra%2BBFS-clear-solution)**  
 1518\. Water Bottles  
+1523\. Count Odd Numbers in an Interval Range  
+1528\. Shuffle String  
 
 ## SQL Problems
 
