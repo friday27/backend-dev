@@ -584,6 +584,7 @@
 605\. Can Place Flowers  
 606\. Construct String from Binary Tree  
 617\. Merge Two Binary Trees **(Stude: iterative)**  
+621\. Task Scheduler (Review!)  
 628\. Maximum Product of Three Numbers  
 633\. Sum of Square Numbers  
 637\. Average of Levels in Binary Tree  
@@ -636,6 +637,7 @@
 830\. Positions of Large Groups  
 832\. Flipping an Image  
 836\. Rectangle Overlap (Review)  
+841\. Keys and Rooms  
 860\. Lemonade Change  
 867\. Transpose Matrix  
 868\. Binary Gap  
@@ -645,6 +647,7 @@
 884\. Uncommon Words from Two Sentences  
 886\. Possible Bipartition **(Study!)**  
 888\. Fair Candy Swap  
+890\. Find and Replace Pattern (Review)  
 896\. Monotonic Array (To be improved)  
 897\. Increasing Order Search Tree (To be improved)  
 901\. Online Stock Span **(Review)**  
@@ -671,6 +674,7 @@
 1013\. Partition Array Into Three Parts With Equal Sum  
 1018\. Binary Prefix Divisible By 5  
 1022\. Sum of Root To Leaf Binary Numbers  
+1026\. Maximum Difference Between Node and Ancestor (To be improved)  
 1029\. Two City Scheduling  
 1030\. Matrix Cells in Distance Order (To be improved)  
 1035\. Uncrossed Lines **(Study: DP!)**  
@@ -680,19 +684,23 @@
 1078\. Occurrences After Bigram  
 1089\. Duplicate Zeros (To be improved)  
 1103\. Distribute Candies to People  
+1104\. Path In Zigzag Labelled Binary Tree (To be improved)  
 1108\. Defanging an IP Address  
 1122\. Relative Sort Array  
 1128\. Number of Equivalent Domino Pairs  
 1137\. N-th Tribonacci Number  
 1154\. Day of the Year  
 1160\. Find Words That Can Be Formed by Characters (To be improved)  
+1161\. Maximum Level Sum of a Binary Tree  
 1184\. Distance Between Bus Stops  
 1189\. Maximum Number of Balloons  
 1200\. Minimum Absolute Difference  
 1207\. Unique Number of Occurrences  
 1221\. Split a String in Balanced Strings  
+1222\. Queens That Can Attack the King  
 1232\. Check If It Is a Straight Line （[三點共線行列式](https://xyzghio.xyz/threePointInlineDiscriminance/), or you can compare slopes)  
 1252\. Cells with Odd Values in a Matrix  
+1261\. Find Elements in a Contaminated Binary Tree  
 1267\. Count Servers that Communicate  
 1268\. Search Suggestions System (Review)  
 1275\. Find Winner on a Tic Tac Toe Game  
@@ -712,14 +720,18 @@
 1315\. Sum of Nodes with Even-Valued Grandparent  
 1317\. Convert Integer to the Sum of Two No-Zero Integers  
 1323\. Maximum 69 Number  
+1325\. Delete Leaves With a Given Value (To be improved)  
 1337\. The K Weakest Rows in a Matrix  
+1338\. Reduce Array Size to The Half  
 1342\. Number of Steps to Reduce a Number to Zero  
 1344\. Angle Between Hands of a Clock  
 1346\. Check If N and Its Double Exist (To be improved)  
 1351\. Count Negative Numbers in a Sorted Matrix (To be improved)  
 1356\. Sort Integers by The Number of 1 Bits  
+1357\. Apply Discount Every n Orders  
 1365\. How Many Numbers Are Smaller Than the Current Number  
 1374\. Generate a String With Characters That Have Odd Counts  
+1379\. Find a Corresponding Node of a Binary Tree in a Clone of That Tree  
 1380\. Lucky Numbers in a Matrix  
 1381\. Design a Stack With Increment Operation  
 1389\. Create Target Array in the Given Order  
