@@ -320,6 +320,7 @@
     };
 
 137\. Single Number II  
+139\. Word Break (Review)  
 141\. Linked List Cycle  
 142\. Linked List Cycle II  
 144\. Binary Tree Preorder Traversal  
@@ -431,6 +432,7 @@
 303\. Range Sum Query - Immutable  
 304\. Range Sum Query 2D - Immutable  
 307\. Range Sum Query - Mutable  
+309\. Best Time to Buy and Sell Stock with Cooldown (Study!)  
 318\. Maximum Product of Word Lengths (To be improved)  
 326\. Power of Three **(Review)**  
 328\. Odd Even Linked List  
@@ -511,6 +513,7 @@
 438\. Find All Anagrams in a String (sliding window)  
 441\. Arranging Coins  
 442\. Find All Duplicates in an Array (To be improved)  
+445\. Add Two Numbers II (To be improved)  
 448\. Find All Numbers Disappeared in an Array  
 451\. Sort Characters By Frequency  
 
