@@ -321,6 +321,7 @@
 
 137\. Single Number II  
 139\. Word Break (Review)  
+140\. Word Break II (Study!)  
 141\. Linked List Cycle  
 142\. Linked List Cycle II  
 144\. Binary Tree Preorder Traversal  
@@ -601,6 +602,7 @@
 669\. Trim a Binary Search Tree  
 671\. Second Minimum Node In a Binary Tree  
 674\. Longest Continuous Increasing Subsequence  
+680\. Valid Palindrome II (To be improved)  
 682\. Baseball Game  
 686\. Repeated String Match  
 687\. Longest Univalue Path (To be improved)  
