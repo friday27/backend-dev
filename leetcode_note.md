@@ -2,7 +2,6 @@
 
 ## :star: TODOs
 
-* from: 515
 * 500!
 * 2 sum -> 3 sum -> 4 sum
 * Clean up problems
@@ -410,6 +409,7 @@
 236\. Lowest Common Ancestor of a Binary Tree (Review -> Iterative without parent pointers!)  
 237\. Delete Node in a Linked List  
 238\. Product of Array Except Self (To be improved)  
+240\. Search a 2D Matrix II (To be improved)  
 242\. Valid Anagram  
 257\. Binary Tree Paths  
 258\. Add Digits  
@@ -451,6 +451,7 @@
 389\. Find the Difference (XOR operation)  
 392\. Is Subsequence  
 367\. Valid Perfect Square (a square number is 1+3+5+7+...)  
+373\. Find K Pairs with Smallest Sums (To be improved)  
 374\. Guess Number Higher or Lower  
 377\. Combination Sum IV **[(Study)](https://leetcode.com/problems/combination-sum-iv/discuss/85036/1ms-Java-DP-Solution-with-Detailed-Explanation)**  
 378\. Kth Smallest Element in a Sorted Matrix  
@@ -643,6 +644,7 @@
 832\. Flipping an Image  
 836\. Rectangle Overlap (Review)  
 841\. Keys and Rooms  
+859\. Buddy Strings  
 860\. Lemonade Change  
 867\. Transpose Matrix  
 868\. Binary Gap  
