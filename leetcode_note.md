@@ -676,6 +676,7 @@
 993\. Cousins in Binary Tree  
 997\. Find the Town Judge  
 1002\. Find Common Characters  
+1005\. Maximize Sum Of Array After K Negations  
 1008\. Construct Binary Search Tree from Preorder Traversal  
 1010\. Pairs of Songs With Total Durations Divisible by 60 (To be improved)  
 1013\. Partition Array Into Three Parts With Equal Sum  
