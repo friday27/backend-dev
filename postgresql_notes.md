@@ -1,7 +1,9 @@
 # PostgreSQL Notes
 
-* `psql postgres` - enter PostgreSQL command line
-* `psql postgres -U ...` - enter the command line with the user account
+* ` initdb -d <path>` - create a new PostgreSQL database cluster
+
+* `psql postgres` - enter into a new connection with "postgre" db
+* `psql -d <db> -U <user>` - enter the command line with db and user
 
 ## Users
 
@@ -11,4 +13,11 @@
 
 ## Databases
 
+* `\list` - show databases
+* `\c <db>` - connect to db
+
 * `CREATE DATABASE taskmanager;`
+
+## Tables
+
+* `SELECT * FROM pg_catalog.pg_tables;`
