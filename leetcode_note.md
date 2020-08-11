@@ -2,22 +2,14 @@
 
 ## :star: TODOs
 
-* Pass by value and pass by reference in JS
-* 2 sum -> 3 sum -> 4 sum
-* 因數分解, 最大公因數與最小公倍數
-* XOR operator (136. Single Number)
-* bit manipulation
-* JS regex matching
-
 * Study + Review + Complexity
+
 * Leetcode Collections
   * [Top Interview Questions](https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/)
   * [Binary Search](https://leetcode.com/explore/learn/card/binary-search/)
   * [Recursion I](https://leetcode.com/explore/featured/card/recursion-i/250/principle-of-recursion/)
   * [Recursion II](https://leetcode.com/explore/learn/card/recursion-ii/)
   * [Leetcode: ML concepts](https://leetcode.com/explore/featured/card/machine-learning-101/287/what_is_ml/)
-
-* Design patterns - note!
 
 * To Read
   * [Top Node.js Interview Questions You Must Prepare In 2020](https://www.edureka.co/blog/interview-questions/top-node-js-interview-questions-2016/)
@@ -86,73 +78,88 @@
 
       pick(i+1, arr.concat(nums[i]));
 
+* isPrime
+
+      const isPrime = (n) => {
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+          if (n % i === 0) return false;
+        }
+        return true;
+      };
+
+* isPrimeFactor
+
+      const isPrimeFactor = (n) => {
+        const factors = [];
+        for (let i = 1; i <= n/i; i++) {
+          if (n % i === 0 && isPrime(i)) factors.push(i);
+        }
+        return factors;
+      };
+
+* [gcd (輾轉相除法)](https://kim85326.github.io/2018/03/15/%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8-%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B8/)
+
+      function gcd(m, n) {
+        var remainder = 0;
+        while (remainder > 0) {
+          remainder = m % n;
+          [m, n] = [n, remainder];
+        }
+        return m;
+      }
+
+      // recursioin
+      function gcd(m, n) {
+        if (n) return gcd(n, m % n);
+        return m;
+      }
+
+* lcm: `const lcm(m, n) => {return (m*n)/gcd(m, n);}`
+
 ## Data Structures and Algorithms Problems
 
-3\. **Longest Substring Without Repeating Characters (TBR !!!)**  
-6\. [ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/discuss/614271/JavaScript-Solution)
+### 2/3/4 Sum
 
-    const mat = Array(3).fill('');
-    // ['', '', '']
+1\. [2 Sum](https://leetcode.com/problems/two-sum/) - Use Map
+15\. [3 Sum](https://leetcode.com/problems/3sum/) - use sort() and lo, hi pointers
+16\. [3 Sum Closest](https://leetcode.com/problems/3sum-closest/) - same as 3 Sum
+18\. [4Sum](https://leetcode.com/problems/4sum/) - same as 3 Sum
+454\. [4Sum II](https://leetcode.com/problems/4sum-ii/) - same as 2 Sum, Use Map and deal with 2 arrays at a time
 
-    let range = [...Array(5).keys()];
-    // [0, 1, 2, 3, 4]
+### Water Container
 
-    let range2 = [...Array(5).keys].slice(1, 4).reverse();
-    // [3, 2, 1]
+11\. Container With Most Water
 
-11\. **Container With Most Water (TBR !!!)**
-
-    var maxArea = function(height) {
-      let maxArea = 0;
-      let head = 0, tail = height.length - 1;
-      while (head < tail) {
-        const area = Math.min(height[head], height[tail]) * (tail-head);
-        if (area > maxArea) maxArea = area;
-        if (height[head] > height[tail]) tail--;
-        else head++;
-      }
-      return maxArea;
-    };
-
-14\. Longest Common Prefix **(reduce !!!)**
-
-    const longestCommonPrefix = function(strs) {
-      if (strs === undefined || strs.length === 0) return '';
-      return strs.reduce((prev, next) => {
-          let i = 0;
-          while (i < prev.length && i < next.length && prev[i] === next[i]) i++;
-            return prev.slice(0, i);
-      });
-    };
-
-15\. 3Sum  
-
-    var threeSum = function(nums) {
-      nums = nums.sort((a, b) => a-b);
-      const res = [];
-
-      for (let i = 0; i < nums.length-2; i++) {
-        if (nums[i] === nums[i-1]) continue;
-        let lo = i + 1;
-        let hi = nums.length - 1;
-        let sum = 0 - nums[i];
-        while (lo < hi) {
-          if (nums[lo] + nums[hi] === sum) {
-            res.push([nums[lo], nums[hi], nums[i]]);
-            while (nums[lo] === nums[lo+1]) lo++;
-            while (nums[hi] === nums[hi-1]) hi--;
-            lo++;
-            hi--;
-          } else if (nums[lo] + nums[hi] < sum) lo++;
-          else hi--;
+      var maxArea = function(height) {
+        let maxArea = 0;
+        let head = 0, tail = height.length - 1;
+        while (head < tail) {
+          const area = Math.min(height[head], height[tail]) * (tail-head);
+          if (area > maxArea) maxArea = area;
+          if (height[head] > height[tail]) tail--;
+          else head++;
         }
-      }
-      return res;
-    };
+        return maxArea;
+      };
 
-16\. 3Sum Closest (To be improved)  
+### Substrings
+
+14\. Longest Common Prefix
+
+      var longestCommonPrefix = function(strs) {
+        if (!strs.length) return '';
+        return strs.reduce((a, b) => {
+          let i = 0;
+          while (i < a.length && i < b.length && a[i] === b[i]) i++;
+          return a.substring(0, i);
+        });
+      };
+
+----
+
+3\. **Longest Substring Without Repeating Characters (TBR !!!)**  
+
 17\. Letter Combinations of a Phone Number (To be improved)  
-18\. 4Sum  (To be improved)  
 21\. Merge Two Sorted Lists (do not use condition to check null, use !variable instead)  
 22\. Generate Parentheses
 
